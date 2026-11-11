@@ -1,0 +1,1676 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>潘娇娇 - 人物作品与动态聚合</title>
+  <meta name="description" content="潘娇娇内容聚合页，汇集潘娇娇的短剧作品、直播动态、粉丝二创、话题讨论与深度解析。适合关注潘娇娇近期短剧表现和直播互动的观众浏览。">
+  <meta name="keywords" content="潘娇娇">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23B14A6E'/%3E%3Cpath d='M28 68 L28 36 L50 56 L72 36 L72 68' stroke='%23fff' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --brand: #B14A6E;
+      --brand-light: #F7E8EE;
+      --brand-dark: #7D2E4A;
+      --bg: #FCFAFB;
+      --surface: #FFFFFF;
+      --text: #1E1B1D;
+      --text-2: #5A4F55;
+      --text-3: #8E7D86;
+      --line: #EBDFE4;
+      --radius-card: 16px;
+      --radius-btn: 999px;
+      --radius-tag: 6px;
+      --shadow: 0 2px 8px rgba(30, 27, 29, 0.04);
+      --shadow-hover: 0 8px 24px rgba(30, 27, 29, 0.08);
+      --font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+      --header-h: 60px;
+      --notice-h: 36px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + var(--notice-h) + 12px); }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      font-size: 15px;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    ul, ol { list-style: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+    :focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 4px; }
+
+    /* 吸顶公告条 + 页头 */
+    .sticky-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(252, 250, 251, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .notice-bar {
+      height: var(--notice-h);
+      background: var(--brand-dark);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      font-size: 13px;
+    }
+    .notice-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      white-space: nowrap;
+      width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .notice-inner::-webkit-scrollbar { display: none; }
+    .notice-brand { font-weight: 700; letter-spacing: 0.5px; color: #fff; flex-shrink: 0; }
+    .notice-item { display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0; }
+    .notice-item .dot { width: 4px; height: 4px; background: rgba(255,255,255,0.6); border-radius: 50%; }
+    .notice-date { color: #F2D5DF; font-variant-numeric: tabular-nums; }
+    .notice-link { text-decoration: underline; text-underline-offset: 3px; opacity: 0.95; }
+    .notice-link:hover { opacity: 1; }
+
+    .site-header {
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+    }
+    .header-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text);
+      flex-shrink: 0;
+      letter-spacing: 0.5px;
+    }
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      background: var(--brand);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .logo-mark svg { width: 20px; height: 20px; }
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex: 1;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .main-nav::-webkit-scrollbar { display: none; }
+    .main-nav a {
+      padding: 6px 12px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      color: var(--text-2);
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+    .main-nav a:hover { background: var(--brand-light); color: var(--brand-dark); }
+    .header-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .btn-search {
+      width: 36px; height: 36px; border-radius: 50%;
+      display: grid; place-items: center;
+      color: var(--text-2); transition: background 0.15s;
+    }
+    .btn-search:hover { background: var(--brand-light); color: var(--brand-dark); }
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--brand-dark); transform: translateY(-1px); }
+    .menu-toggle { display: none; width: 36px; height: 36px; border-radius: 8px; place-items: center; color: var(--text); }
+
+    /* 搜索面板 */
+    .search-panel {
+      display: none;
+      position: absolute;
+      top: calc(var(--header-h) + var(--notice-h));
+      left: 0; right: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+      box-shadow: var(--shadow-hover);
+      padding: 16px 20px;
+      z-index: 99;
+    }
+    .search-panel.open { display: block; }
+    .search-inner { max-width: 720px; margin: 0 auto; position: relative; }
+    .search-input {
+      width: 100%;
+      padding: 12px 44px 12px 16px;
+      border: 1.5px solid var(--line);
+      border-radius: 12px;
+      font-size: 15px;
+      font-family: inherit;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .search-input:focus { border-color: var(--brand); outline: none; }
+    .search-close {
+      position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+      width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center;
+      color: var(--text-3);
+    }
+    .search-close:hover { background: var(--brand-light); }
+    .search-result {
+      margin-top: 12px;
+      max-height: 300px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+    .search-result-item {
+      padding: 10px 12px; border-radius: 8px; display: flex; justify-content: space-between; gap: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    .search-result-item:last-child { border-bottom: none; }
+    .search-result-item:hover { background: var(--brand-light); }
+    .search-result-type { color: var(--text-3); font-size: 12px; white-space: nowrap; flex-shrink: 0; }
+    .search-empty { padding: 16px; color: var(--text-3); text-align: center; }
+
+    /* 容器与布局 */
+    .container { max-width: 1380px; margin: 0 auto; padding: 0 20px; }
+    .layout-3col {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr) 280px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* 首屏 */
+    .hero {
+      padding: 36px 0 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 85% 10%, rgba(177, 74, 110, 0.09) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 10% 90%, rgba(177, 74, 110, 0.06) 0%, transparent 60%);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; color: var(--brand-dark); font-weight: 600;
+      background: var(--brand-light);
+      padding: 5px 14px; border-radius: var(--radius-btn);
+      margin-bottom: 16px;
+      letter-spacing: 0.3px;
+    }
+    .hero-eyebrow .pulse {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--brand);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+    h1 {
+      font-size: clamp(32px, 4.5vw, 48px);
+      font-weight: 900;
+      letter-spacing: 2px;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    .hero-desc {
+      font-size: 15px;
+      color: var(--text-2);
+      max-width: 520px;
+      line-height: 1.8;
+      margin-bottom: 22px;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .btn-ghost {
+      padding: 9px 20px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--brand-dark);
+      border: 1.5px solid var(--brand);
+      background: transparent;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { background: var(--brand); color: #fff; }
+    .hero-stats {
+      display: flex; gap: 28px; margin-top: 26px; flex-wrap: wrap;
+    }
+    .hero-stat b { font-size: 22px; font-weight: 800; color: var(--brand-dark); display: block; line-height: 1.2; }
+    .hero-stat span { font-size: 12px; color: var(--text-3); }
+    .hero-visual {
+      position: relative;
+      display: flex; justify-content: center; align-items: center;
+      min-height: 260px;
+    }
+    .visual-card {
+      width: 100%;
+      max-width: 340px;
+      aspect-ratio: 4/3;
+      border-radius: 20px;
+      background: linear-gradient(140deg, #F7E8EE 0%, #F0D3DF 50%, #E9C2D2 100%);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+    }
+    .visual-card svg { width: 100%; height: 100%; display: block; }
+    .visual-badge {
+      position: absolute;
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 10px 14px;
+      box-shadow: var(--shadow-hover);
+      font-size: 12px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .visual-badge .b-icon {
+      width: 30px; height: 30px; border-radius: 8px; background: var(--brand-light);
+      display: grid; place-items: center; color: var(--brand-dark); flex-shrink: 0;
+    }
+    .visual-badge b { display: block; font-size: 13px; color: var(--text); }
+    .visual-badge span { color: var(--text-3); }
+    .vb-1 { top: 8%; left: -6%; }
+    .vb-2 { bottom: 10%; right: -4%; }
+
+    /* 左侧频道栏 */
+    .channel-sidebar {
+      position: sticky;
+      top: calc(var(--header-h) + var(--notice-h) + 20px);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      padding: 16px 12px;
+      box-shadow: var(--shadow);
+    }
+    .sidebar-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-3);
+      letter-spacing: 1px;
+      padding: 0 8px 10px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 8px;
+    }
+    .channel-nav a {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--text-2);
+      transition: background 0.15s, color 0.15s;
+      position: relative;
+    }
+    .channel-nav a:hover { background: var(--brand-light); color: var(--brand-dark); }
+    .channel-nav a.active { background: var(--brand-light); color: var(--brand-dark); font-weight: 600; }
+    .channel-nav a .ch-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--line); flex-shrink: 0; transition: background 0.15s; }
+    .channel-nav a:hover .ch-dot, .channel-nav a.active .ch-dot { background: var(--brand); }
+    .channel-nav a .ch-count {
+      margin-left: auto; font-size: 11px; color: var(--text-3);
+      background: var(--bg); border-radius: 999px; padding: 1px 7px;
+    }
+
+    /* 主内容通用 */
+    .main-col { min-width: 0; }
+    .section {
+      margin-bottom: 40px;
+    }
+    .section-head {
+      display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .section-head h2 {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      color: var(--text);
+    }
+    .section-head .sub {
+      font-size: 13px; color: var(--text-3);
+    }
+    .section-head .more-link {
+      margin-left: auto; font-size: 13px; color: var(--brand-dark); font-weight: 600;
+      display: inline-flex; align-items: center; gap: 4px;
+    }
+    .section-head .more-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    /* 概览 */
+    .overview-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      padding: 24px 26px;
+      box-shadow: var(--shadow);
+      font-size: 15px; line-height: 1.85; color: var(--text-2);
+    }
+    .overview-box p + p { margin-top: 12px; }
+    .overview-box strong { color: var(--text); font-weight: 700; }
+
+    /* 精选卡片 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 16px;
+    }
+    .content-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .content-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .card-thumb {
+      width: 100%; aspect-ratio: 4/3; object-fit: cover; background: var(--brand-light);
+    }
+    .card-body { padding: 14px 16px 16px; display: flex; flex-direction: column; flex: 1; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+    .tag {
+      font-size: 11px; padding: 2px 8px; border-radius: var(--radius-tag);
+      background: var(--brand-light); color: var(--brand-dark); font-weight: 600;
+      white-space: nowrap;
+    }
+    .tag.outline { background: transparent; border: 1px solid var(--line); color: var(--text-3); font-weight: 500; }
+    .card-title {
+      font-size: 15px; font-weight: 700; line-height: 1.45; margin-bottom: 6px;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .card-summary {
+      font-size: 13px; color: var(--text-2); line-height: 1.6; margin-bottom: 12px;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .card-meta {
+      margin-top: auto; display: flex; align-items: center; gap: 10px;
+      font-size: 12px; color: var(--text-3); flex-wrap: wrap;
+    }
+    .card-meta .hot { color: var(--brand); font-weight: 600; }
+
+    /* 最新更新列表 */
+    .update-list {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .update-item {
+      display: grid;
+      grid-template-columns: 64px minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      transition: background 0.15s;
+    }
+    .update-item:last-child { border-bottom: none; }
+    .update-item:hover { background: var(--brand-light); }
+    .update-time {
+      font-size: 12px; color: var(--text-3); font-variant-numeric: tabular-nums;
+      text-align: right;
+    }
+    .update-main b { display: block; font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+    .update-main span { font-size: 13px; color: var(--text-2); }
+    .update-tag {
+      font-size: 11px; background: var(--brand-light); color: var(--brand-dark);
+      padding: 2px 9px; border-radius: 999px; font-weight: 600; white-space: nowrap;
+    }
+
+    /* 分类入口 */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+    }
+    .cat-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex; flex-direction: column; gap: 4px;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: var(--shadow);
+    }
+    .cat-item:hover { border-color: var(--brand); transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+    .cat-item .cat-name { font-size: 14px; font-weight: 700; }
+    .cat-item .cat-desc { font-size: 12px; color: var(--text-3); }
+    .cat-item .cat-num { font-size: 11px; color: var(--brand-dark); font-weight: 600; margin-top: 2px; }
+
+    /* 深度解析 */
+    .deep-read {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      padding: 28px 30px;
+      box-shadow: var(--shadow);
+      font-size: 15px; line-height: 1.85; color: var(--text-2);
+    }
+    .deep-read h3 {
+      font-size: 17px; font-weight: 800; color: var(--text);
+      margin: 22px 0 10px; padding-left: 12px; border-left: 3px solid var(--brand);
+    }
+    .deep-read h3:first-child { margin-top: 0; }
+    .deep-read p + p { margin-top: 10px; }
+    .deep-read ul { margin: 10px 0 10px 4px; }
+    .deep-read li { position: relative; padding-left: 18px; margin-bottom: 6px; }
+    .deep-read li::before { content: "·"; position: absolute; left: 4px; color: var(--brand); font-weight: 900; }
+    .deep-read strong { color: var(--text); }
+    .deep-read .callout {
+      background: var(--brand-light);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 14px;
+      color: var(--brand-dark);
+      border-left: 3px solid var(--brand);
+    }
+    .deep-read .callout b { color: var(--brand-dark); }
+
+    /* 指南 */
+    .guide-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .guide-step {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .guide-step .step-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--brand); color: #fff;
+      display: grid; place-items: center;
+      font-size: 13px; font-weight: 700;
+    }
+    .guide-step b { font-size: 14px; }
+    .guide-step p { font-size: 13px; color: var(--text-2); line-height: 1.65; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .faq-item summary {
+      padding: 14px 18px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      list-style: none;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      transition: background 0.15s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { background: var(--brand-light); }
+    .faq-item summary::after {
+      content: "+"; font-size: 20px; color: var(--brand); font-weight: 400; flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item[open] summary::after { content: "−"; }
+    .faq-item .faq-answer {
+      padding: 0 18px 16px;
+      font-size: 14px; color: var(--text-2); line-height: 1.75;
+    }
+
+    /* 评论 */
+    .comment-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+    }
+    .comment-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+      box-shadow: var(--shadow);
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .comment-head { display: flex; align-items: center; gap: 8px; }
+    .avatar {
+      width: 28px; height: 28px; border-radius: 50%;
+      display: grid; place-items: center;
+      font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0;
+    }
+    .comment-name { font-size: 13px; font-weight: 700; }
+    .comment-time { font-size: 11px; color: var(--text-3); margin-left: auto; }
+    .comment-text { font-size: 13px; color: var(--text-2); line-height: 1.65; }
+    .comment-ref { font-size: 12px; color: var(--brand-dark); font-weight: 600; }
+
+    /* 资讯 */
+    .news-list {
+      display: flex; flex-direction: column; gap: 0;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .news-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 100px;
+      gap: 14px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      transition: background 0.15s;
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-item:hover { background: var(--brand-light); }
+    .news-item b { font-size: 14px; display: block; margin-bottom: 4px; }
+    .news-item p { font-size: 13px; color: var(--text-2); line-height: 1.6; }
+    .news-date { font-size: 12px; color: var(--text-3); text-align: right; font-variant-numeric: tabular-nums; }
+
+    /* 相关推荐标签 */
+    .rec-tags {
+      display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .rec-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-btn);
+      padding: 8px 16px;
+      font-size: 13px; font-weight: 600;
+      color: var(--text-2);
+      box-shadow: var(--shadow);
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+    .rec-tag:hover { background: var(--brand-light); border-color: var(--brand); color: var(--brand-dark); }
+    .rec-tag .rt-num { font-size: 11px; color: var(--text-3); }
+
+    /* 榜单 */
+    .rank-list {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .rank-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--line);
+      transition: background 0.15s;
+    }
+    .rank-item:last-child { border-bottom: none; }
+    .rank-item:hover { background: var(--brand-light); }
+    .rank-num {
+      width: 22px; height: 22px; border-radius: 6px;
+      background: var(--bg); color: var(--text-3);
+      display: grid; place-items: center;
+      font-size: 12px; font-weight: 700; flex-shrink: 0;
+    }
+    .rank-item:nth-child(-n+3) .rank-num { background: var(--brand); color: #fff; }
+    .rank-name { font-size: 14px; font-weight: 600; flex: 1; min-width: 0; }
+    .rank-score { font-size: 12px; color: var(--brand-dark); font-weight: 700; flex-shrink: 0; }
+
+    /* 右侧辅助栏 */
+    .aside-col { display: flex; flex-direction: column; gap: 20px; position: sticky; top: calc(var(--header-h) + var(--notice-h) + 20px); }
+    .aside-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .aside-card h3 {
+      font-size: 14px; font-weight: 800; margin-bottom: 12px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .aside-card h3::before {
+      content: ""; width: 3px; height: 14px; background: var(--brand); border-radius: 2px;
+    }
+    .hot-list li {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: 13px;
+    }
+    .hot-list li:last-child { border-bottom: none; }
+    .hot-list .hl-num {
+      font-size: 12px; font-weight: 800; color: var(--text-3);
+      width: 18px; flex-shrink: 0;
+    }
+    .hot-list li:nth-child(-n+3) .hl-num { color: var(--brand); }
+    .hot-list .hl-title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .hot-list .hl-hot { font-size: 11px; color: var(--text-3); flex-shrink: 0; }
+    .aside-cta {
+      background: linear-gradient(140deg, var(--brand) 0%, var(--brand-dark) 100%);
+      color: #fff;
+      border-radius: var(--radius-card);
+      padding: 20px;
+      text-align: center;
+    }
+    .aside-cta h3 { font-size: 16px; font-weight: 800; margin-bottom: 6px; }
+    .aside-cta p { font-size: 12px; opacity: 0.9; margin-bottom: 14px; line-height: 1.6; }
+    .aside-cta .btn-white {
+      display: inline-block;
+      background: #fff; color: var(--brand-dark);
+      padding: 8px 22px; border-radius: var(--radius-btn);
+      font-size: 13px; font-weight: 700;
+    }
+    .aside-cta .btn-white:hover { background: var(--brand-light); }
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag-cloud a {
+      font-size: 12px; padding: 4px 10px; border-radius: var(--radius-btn);
+      background: var(--bg); color: var(--text-2); border: 1px solid var(--line);
+      transition: background 0.15s, color 0.15s;
+    }
+    .tag-cloud a:hover { background: var(--brand-light); color: var(--brand-dark); border-color: var(--brand); }
+
+    /* 页脚 */
+    .site-footer {
+      margin-top: 20px;
+      background: #2A1F24;
+      color: #C9B8C0;
+      padding: 48px 0 28px;
+    }
+    .footer-inner { max-width: 1380px; margin: 0 auto; padding: 0 20px; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
+      gap: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-brand .logo { color: #fff; margin-bottom: 12px; }
+    .footer-brand p { font-size: 13px; color: #A8949E; line-height: 1.75; max-width: 320px; }
+    .footer-col h4 { font-size: 13px; color: #fff; font-weight: 700; margin-bottom: 12px; letter-spacing: 0.5px; }
+    .footer-col a { display: block; font-size: 13px; padding: 4px 0; color: #C9B8C0; transition: color 0.15s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      padding-top: 22px;
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap;
+      font-size: 12px; color: #8E7D86;
+    }
+    .footer-bottom .fb-left { max-width: 640px; line-height: 1.8; }
+    .footer-bottom .fb-right { display: flex; gap: 18px; flex-wrap: wrap; }
+
+    /* 回到顶部 */
+    .back-top {
+      position: fixed; right: 24px; bottom: 28px;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--surface); border: 1px solid var(--line);
+      box-shadow: var(--shadow-hover);
+      display: grid; place-items: center;
+      color: var(--brand-dark);
+      opacity: 0; visibility: hidden; transform: translateY(8px);
+      transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+      z-index: 90;
+    }
+    .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-top:hover { background: var(--brand-light); }
+
+    /* 遮罩 */
+    .overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(30, 27, 29, 0.4);
+      z-index: 105;
+      backdrop-filter: blur(2px);
+    }
+    .overlay.show { display: block; }
+
+    /* 响应式 */
+    @media (max-width: 1100px) {
+      .layout-3col { grid-template-columns: 170px minmax(0, 1fr); }
+      .aside-col { display: none; }
+      .hero-inner { grid-template-columns: minmax(0, 1fr) minmax(0, 0.7fr); gap: 28px; }
+    }
+    @media (max-width: 1024px) {
+      .main-nav { display: none; }
+      .menu-toggle { display: grid; }
+      .layout-3col { grid-template-columns: 1fr; }
+      .channel-sidebar {
+        position: fixed;
+        top: 0; left: 0; bottom: 0;
+        width: 260px;
+        border-radius: 0;
+        z-index: 110;
+        transform: translateX(-105%);
+        transition: transform 0.28s ease;
+        overflow-y: auto;
+        padding-top: 24px;
+        box-shadow: 4px 0 24px rgba(0,0,0,0.12);
+      }
+      .channel-sidebar.open { transform: translateX(0); }
+      .channel-sidebar .sidebar-title { font-size: 14px; padding: 0 10px 14px; margin-bottom: 10px; }
+      .channel-nav a { padding: 11px 12px; font-size: 15px; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .header-actions .btn-primary { display: none; }
+    }
+    @media (max-width: 740px) {
+      .container { padding: 0 14px; }
+      .header-inner { padding: 0 14px; gap: 12px; }
+      .hero { padding: 24px 0 20px; }
+      .hero-stats { gap: 20px; }
+      .section-head h2 { font-size: 18px; }
+      .deep-read { padding: 20px 18px; }
+      .card-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+      .card-body { padding: 10px 12px 12px; }
+      .card-title { font-size: 14px; }
+      .card-summary { font-size: 12px; -webkit-line-clamp: 2; }
+      .update-item { grid-template-columns: 52px minmax(0, 1fr); gap: 10px; padding: 12px 14px; }
+      .update-tag { display: none; }
+      .news-item { grid-template-columns: 1fr; gap: 6px; }
+      .news-date { text-align: left; }
+      .comment-list { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .footer-brand { grid-column: 1 / -1; }
+      .back-top { right: 14px; bottom: 18px; width: 40px; height: 40px; }
+      .cat-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+      .notice-inner { padding: 0 14px; gap: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 + 页头 -->
+  <div class="sticky-wrap">
+    <div class="notice-bar" role="region" aria-label="站内公告">
+      <div class="notice-inner">
+        <span class="notice-brand">潘娇娇</span>
+        <span class="notice-item">
+          <span class="dot"></span>
+          <span class="notice-date">11月8日</span>
+          <a href="/#latest" class="notice-link">《借位》第18集上线</a>
+        </span>
+        <span class="notice-item">
+          <span class="dot"></span>
+          <span class="notice-date">11月7日</span>
+          <a href="/#latest" class="notice-link">直播“夜聊场”回放</a>
+        </span>
+        <span class="notice-item">
+          <span class="dot"></span>
+          <span>短剧作品累计收录 <b>12</b> 部</span>
+        </span>
+      </div>
+    </div>
+    <header class="site-header">
+      <div class="header-inner">
+        <button class="menu-toggle" id="menuToggle" aria-label="打开频道菜单" aria-expanded="false" aria-controls="channelSidebar">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
+        </button>
+        <a href="/" class="logo" aria-label="潘娇娇首页">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 100 100" fill="none"><path d="M28 68 L28 36 L50 56 L72 36 L72 68" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span>潘娇娇</span>
+        </a>
+        <nav class="main-nav" aria-label="主导航">
+          <a href="/#overview">概览</a>
+          <a href="/#featured">精选</a>
+          <a href="/#latest">最新</a>
+          <a href="/#categories">分类</a>
+          <a href="/#deep-read">深度</a>
+          <a href="/#guide">指南</a>
+          <a href="/#faq">问答</a>
+          <a href="/#comments">评论</a>
+          <a href="/#news">资讯</a>
+          <a href="/#rank">榜单</a>
+        </nav>
+        <div class="header-actions">
+          <button class="btn-search" id="searchToggle" aria-label="搜索内容" aria-expanded="false">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="9" r="6"/><path d="M13.5 13.5L17 17"/></svg>
+          </button>
+          <a href="/#submit" class="btn-primary">投稿</a>
+        </div>
+      </div>
+    </header>
+    <!-- 搜索面板 -->
+    <div class="search-panel" id="searchPanel">
+      <div class="search-inner">
+        <input type="search" class="search-input" id="searchInput" placeholder="搜索作品、角色、直播、话题…" aria-label="站内搜索">
+        <button class="search-close" id="searchClose" aria-label="关闭搜索">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg>
+        </button>
+        <div class="search-result" id="searchResult" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <main>
+    <!-- 首屏 -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg"></div>
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-text">
+            <span class="hero-eyebrow"><span class="pulse"></span>短剧 · 直播 · 二创</span>
+            <h1 id="hero-title">潘娇娇</h1>
+            <p class="hero-desc">汇集潘娇娇在短剧、直播与粉丝二创领域的具体作品和动态。从《借位》《夜风便利店》到每周夜聊直播，按条目、时间与讨论热度整理，方便你快速找到想追的那一部。</p>
+            <div class="hero-actions">
+              <a href="/#featured" class="btn-primary">看作品精选</a>
+              <a href="/#latest" class="btn-ghost">最新更新</a>
+            </div>
+            <div class="hero-stats">
+              <div class="hero-stat"><b>12</b><span>短剧作品</span></div>
+              <div class="hero-stat"><b>38</b><span>直播场次（近30天）</span></div>
+              <div class="hero-stat"><b>6</b><span>常驻角色</span></div>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="visual-card">
+              <svg viewBox="0 0 340 255" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.7"/>
+                    <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="170" cy="128" r="92" fill="url(#g1)"/>
+                <circle cx="170" cy="128" r="92" stroke="#B14A6E" stroke-opacity="0.25" stroke-width="1.5"/>
+                <circle cx="170" cy="128" r="66" stroke="#B14A6E" stroke-opacity="0.18" stroke-width="1.5" stroke-dasharray="4 8"/>
+                <path d="M120 128 L150 98 L150 118 L190 118 L190 138 L150 138 L150 158 Z" fill="#B14A6E" opacity="0.85"/>
+                <path d="M220 128 L190 98 L190 118 L150 118" stroke="#7D2E4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+                <rect x="78" y="48" width="52" height="18" rx="9" fill="#B14A6E" opacity="0.18"/>
+                <rect x="212" y="188" width="56" height="18" rx="9" fill="#B14A6E" opacity="0.14"/>
+                <circle cx="104" cy="57" r="3" fill="#B14A6E" opacity="0.6"/>
+                <circle cx="240" cy="197" r="3" fill="#B14A6E" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="visual-badge vb-1">
+              <span class="b-icon">
+                <svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor"><path d="M10 2l2.4 5 5.6.8-4 3.9.9 5.5L10 14.6 5.1 17.2l.9-5.5-4-3.9L7.6 7z"/></svg>
+              </span>
+              <div><b>《借位》</b><span>本周热播</span></div>
+            </div>
+            <div class="visual-badge vb-2">
+              <span class="b-icon">
+                <svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="8"/><path d="M10 5v5l3 3" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+              </span>
+              <div><b>11月8日</b><span>第18集更新</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="layout-3col">
+        <!-- 左侧频道栏 -->
+        <aside class="channel-sidebar" id="channelSidebar" aria-label="频道导航">
+          <div class="sidebar-title">频道导航</div>
+          <nav class="channel-nav">
+            <a href="/#overview"><span class="ch-dot"></span>领域概览</a>
+            <a href="/#featured"><span class="ch-dot"></span>作品精选 <span class="ch-count">8</span></a>
+            <a href="/#latest"><span class="ch-dot"></span>更新动态 <span class="ch-count">10</span></a>
+            <a href="/#categories"><span class="ch-dot"></span>分类入口 <span class="ch-count">8</span></a>
+            <a href="/#deep-read"><span class="ch-dot"></span>深度解析</a>
+            <a href="/#guide"><span class="ch-dot"></span>观看指南</a>
+            <a href="/#faq"><span class="ch-dot"></span>常见问答</a>
+            <a href="/#comments"><span class="ch-dot"></span>观众评论</a>
+            <a href="/#news"><span class="ch-dot"></span>相关资讯</a>
+            <a href="/#recommend"><span class="ch-dot"></span>相关推荐</a>
+            <a href="/#rank"><span class="ch-dot"></span>热度榜单</a>
+            <a href="/#submit"><span class="ch-dot"></span>投稿互动</a>
+          </nav>
+        </aside>
+
+        <!-- 中间主内容 -->
+        <div class="main-col">
+
+          <!-- 主题领域概览 -->
+          <section class="section" id="overview">
+            <div class="section-head">
+              <h2>短剧演员与内容生态</h2>
+              <span class="sub">条目方向与近期关注点</span>
+            </div>
+            <div class="overview-box">
+              <p>潘娇娇目前的作品集中在竖屏短剧领域，类型覆盖都市情感、轻喜甜宠、悬疑反转三类。都市情感线以《借位》《夜风便利店》为代表，角色多为在职场与生活之间做选择的年轻女性；轻喜甜宠线包括《偏偏遇见你》《合租室友是老板》，节奏快、单集时长在2—3分钟；悬疑反转线则有《第七通电话》，目前更新到第12集，单集结尾留钩子的密度高于同类型均值。</p>
+              <p>直播方面，每周三、周六晚的“夜聊场”固定在22:00开始，内容以读评论、即兴小剧场和剧情预告为主。11月5日那场直播中，她首次回应了《借位》第16集弹幕里关于角色动机的争议，直播切片在微博获得约4.2万次播放。粉丝二创集中在剪辑和手绘两个方向，B站“潘娇娇角色混剪”标签下近30天新增投稿47条，其中播放量最高的一条是《借位》女主视角重组版，约8.6万播放。</p>
+              <p>值得关注的是，11月新上线的《借位》第18集把叙事重心从男女主对峙转向配角线，单集弹幕量比第17集上涨31%。同期《第七通电话》的悬疑线进入收束阶段，第12集结尾出现的录音笔道具成为讨论焦点，微博话题“第七通电话录音笔”在11月6日登上短剧超话榜第9位。观众对这两部作品的讨论方向不同：前者偏角色关系，后者偏线索推理。</p>
+            </div>
+          </section>
+
+          <!-- 精选内容推荐 -->
+          <section class="section" id="featured">
+            <div class="section-head">
+              <h2>短剧作品精选</h2>
+              <a href="/#latest" class="more-link">全部更新 →</a>
+            </div>
+            <div class="card-grid">
+              <article class="content-card">
+                <img class="card-thumb" src="https://picsum.photos/seed/pjj-jiewei/400/300" alt="《借位》短剧封面，都市情感题材" width="400" height="300" loading="lazy">
+                <div class="card-body">
+                  <div class="card-tags"><span class="tag">都市情感</span><span class="tag outline">更新至18集</span></div>
+                  <h3 class="card-title">《借位》</h3>
+                  <p class="card-summary">女主在职场与旧友之间反复权衡，第18集把冲突交给配角线，单集弹幕量上涨31%。角色动机的争议在第16集后集中出现。</p>
+                  <div class="card-meta"><span class="hot">热度 9.2</span><span>11月8日更新</span></div>
+                </div>
+              </article>
+              <article class="content-card">
+                <img class="card-thumb" src="https://picsum.photos/seed/pjj-yefeng/400/300" alt="《夜风便利店》短剧封面，夜间便利店场景" width="400" height="300" loading="lazy">
+                <div class="card-body">
+                  <div class="card-tags"><span class="tag">都市情感</span><span class="tag outline">全24集</span></div>
+                  <h3 class="card-title">《夜风便利店》</h3>
+                  <p class="card-summary">以24小时便利店为固定场景，每两集换一组顾客故事。女主店长线在第20集收束，B站有观众做了全剧时间线整理。</p>
+                  <div class="card-meta"><span class="hot">评分 8.7</span><span>已完结</span></div>
+                </div>
+              </article>
+              <article class="content-card">
+                <img class="card-thumb" src="https://picsum.photos/seed/pjj-pianpian/400/300" alt="《偏偏遇见你》短剧封面，轻喜甜宠风格" width="400" height="300" loading="lazy">
+                <div class="card-body">
+                  <div class="card-tags"><span class="tag">轻喜甜宠</span><span class="tag outline">全20集</span></div>
+                  <h3 class="card-title">《偏偏遇见你》</h3>
+                  <p class="card-summary">单集2分钟出头，主打误会推进和快速和解。第7集的雨中对手戏是二创剪辑使用最多的片段，抖音相关二创播放超12万。</p>
+                  <div class="card-meta"><span class="hot">热度 8.5</span><span>已完结</span></div>
+                </div>
+              </article>
+              <article class="content-card">
+                <img class="card-thumb" src="https://picsum.photos/seed/pjj-diqitong/400/300" alt="《第七通电话》短剧封面，悬疑反转题材" width="400" height="300" loading="lazy">
+                <div class="card-body">
+                  <div class="card-tags"><span class="tag">悬疑反转</span><span class="tag outline">更新至12集</span></div>
+                  <h3 class="card-title">《第七通电话》</h3>
+                  <p class="card-summary">第12集结尾出现录音笔道具，微博话题“第七通电话录音笔”11月6日登上短剧超话榜第9位。线索密度高于同类均值。</p>
+                  <div class="card-meta"><span class="hot">热度 8.9</span><span>11月6日更新</span></div>
+                </div>
+              </article>
+              <article class="content-card">
+                <img class="card-thumb" src="https://picsum.photos/seed/pjj-hezu/400/300" alt="《合租室友是老板》短剧封面，职场轻喜" width="400" height="300" loading="lazy">
+                <div class="card-body">
+                  <div class="card-tags"><span class="tag">轻喜甜宠</span><span class="tag outline">全16集</span></div>
+                  <h3 class="card-title">《合租室友是老板》</h3>
+                  <p class="card-summary">把职场关系搬到合租场景，第9集的“错拿外卖”桥段被观众反复引用。评论区对男主人设的讨论比对女主更多。</p>
+                  <div class="card-meta"><span class="hot">评分 8.1</span><span>已完结</span></div>
+                </div>
+              </article>
+              <article class="content-card">
+                <img class="card-thumb" src="https://picsum.photos/seed/pjj-yeban/400/300" alt="《夜班日记》短剧封面，悬疑短剧" width="400" height="300" loading="lazy">
+                <div class="card-body">
+                  <div class="card-tags"><span class="tag">悬疑反转</span><span class="tag outline">全12集</span></div>
+                  <h3 class="card-title">《夜班日记》</h3>
+                  <p class="card-summary">以医院夜班为背景的单元式悬疑，每集一个病例，第10集把前9集的细节串成一条线。弹幕里有人整理过伏笔清单。</p>
+                  <div class="card-meta"><span class="hot">评分 8.3</span><span>已完结</span></div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- 最新更新 -->
+          <section class="section" id="latest">
+            <div class="section-head">
+              <h2>更新与直播动态</h2>
+              <span class="sub">2026年11月8日前后</span>
+            </div>
+            <div class="update-list">
+              <div class="update-item">
+                <span class="update-time">11-08</span>
+                <div class="update-main"><b>《借位》第18集上线</b><span>叙事重心转向配角线，单集弹幕量较第17集上涨31%</span></div>
+                <span class="update-tag">更新</span>
+              </div>
+              <div class="update-item">
+                <span class="update-time">11-07</span>
+                <div class="update-main"><b>直播“夜聊场”回放上线</b><span>22:00场次，内容包括读评论和《第七通电话》剧情预告</span></div>
+                <span class="update-tag">直播</span>
+              </div>
+              <div class="update-item">
+                <span class="update-time">11-06</span>
+                <div class="update-main"><b>《第七通电话》第12集更新</b><span>结尾录音笔道具引发推理帖，微博话题登上短剧超话榜第9位</span></div>
+                <span class="update-tag">更新</span>
+              </div>
+              <div class="update-item">
+                <span class="update-time">11-05</span>
+                <div class="update-main"><b>直播回应《借位》第16集角色动机争议</b><span>直播切片在微博播放约4.2万次，评论区出现两种解读</span></div>
+                <span class="update-tag">回应</span>
+              </div>
+              <div class="update-item">
+                <span class="update-time">11-03</span>
+                <div class="update-main"><b>B站“潘娇娇角色混剪”标签新增投稿9条</b><span>近30天该标签累计新增47条，最高播放8.6万</span></div>
+                <span class="update-tag">二创</span>
+              </div>
+              <div class="update-item">
+                <span class="update-time">10-30</span>
+                <div class="update-main"><b>《夜风便利店》全剧时间线整理发布</b><span>由观众账号“便利店常客”制作，覆盖24集关键节点</span></div>
+                <span class="update-tag">二创</span>
+              </div>
+              <div class="update-item">
+                <span class="update-time">10-28</span>
+                <div class="update-main"><b>《借位》第16集更新</b><span>女主在旧友与现任之间的选择引发弹幕争议，评论区出现逐帧分析</span></div>
+                <span class="update-tag">更新</span>
+              </div>
+              <div class="update-item">
+                <span class="update-time">10-25</span>
+                <div class="update-main"><b>《偏偏遇见你》第7集雨中戏二创播放超12万</b><span>抖音相关剪辑点赞最高的一条约1.1万</span></div>
+                <span class="update-tag">二创</span>
+              </div>
+              <div class="update-item">
+                <span class="update-time">10-22</span>
+                <div class="update-main"><b>《夜班日记》第10集伏笔清单被整理成帖</b><span>发帖账号“夜班观察”列出9处前后呼应细节</span></div>
+                <span class="update-tag">讨论</span>
+              </div>
+              <div class="update-item">
+                <span class="update-time">10-18</span>
+                <div class="update-main"><b>《合租室友是老板》第9集“错拿外卖”桥段被反复引用</b><span>评论区对男主人设的讨论量超过女主线</span></div>
+                <span class="update-tag">讨论</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 分类入口 -->
+          <section class="section" id="categories">
+            <div class="section-head">
+              <h2>按类型与场景查找</h2>
+              <span class="sub">8个常用分类</span>
+            </div>
+            <div class="cat-grid">
+              <a href="/#featured" class="cat-item"><span class="cat-name">都市情感短剧</span><span class="cat-desc">《借位》《夜风便利店》</span><span class="cat-num">4部作品</span></a>
+              <a href="/#featured" class="cat-item"><span class="cat-name">轻喜甜宠</span><span class="cat-desc">《偏偏遇见你》等</span><span class="cat-num">3部作品</span></a>
+              <a href="/#featured" class="cat-item"><span class="cat-name">悬疑反转</span><span class="cat-desc">《第七通电话》《夜班日记》</span><span class="cat-num">3部作品</span></a>
+              <a href="/#latest" class="cat-item"><span class="cat-name">直播回放</span><span class="cat-desc">夜聊场与即兴小剧场</span><span class="cat-num">38场/30天</span></a>
+              <a href="/#latest" class="cat-item"><span class="cat-name">粉丝二创</span><span class="cat-desc">剪辑、手绘与时间线整理</span><span class="cat-num">47条/30天</span></a>
+              <a href="/#news" class="cat-item"><span class="cat-name">话题讨论</span><span class="cat-desc">角色动机与线索推理</span><span class="cat-num">6个热帖</span></a>
+              <a href="/#rank" class="cat-item"><span class="cat-name">热度榜单</span><span class="cat-desc">按弹幕与二创量排序</span><span class="cat-num">每周更新</span></a>
+              <a href="/#submit" class="cat-item"><span class="cat-name">投稿互动</span><span class="cat-desc">二创投稿与观后感征集</span><span class="cat-num">开放中</span></a>
+            </div>
+          </section>
+
+          <!-- 深度解析 -->
+          <section class="section" id="deep-read">
+            <div class="section-head">
+              <h2>短剧叙事与角色争议拆解</h2>
+              <span class="sub">深度解析</span>
+            </div>
+            <div class="deep-read">
+              <h3>《借位》第16—18集：争议从角色动机转向配角线</h3>
+              <p>第16集上线后，弹幕里出现两种声音。一种认为女主在旧友与现任之间的犹豫是“合理的人性”，另一种认为编剧在拖节奏。10月28日到11月5日之间，微博相关讨论帖约120条，其中带逐帧分析的帖子有7条，集中在女主接电话时的手指动作和背景里的日历日期。11月5日直播中，潘娇娇回应称第16集的犹豫是有意为之，理由是“角色需要一次不体面的选择”。这段回应被剪成42秒切片，播放4.2万次。</p>
+              <p>到第18集，叙事重心明显从男女主对峙转向配角线。单集弹幕量比第17集上涨31%，但争议量下降。这个变化说明观众对“配角线补完信息”的接受度高于“主角反复权衡”。可核对的时间线是：10月28日第16集上线→11月1日逐帧分析帖集中出现→11月5日直播回应→11月8日第18集转向配角线。</p>
+              <div class="callout"><b>判断拆解：</b>“争议大”这件事可以拆成三个环节——①第16集结尾给出的信息量不足（缺少女主和旧友此前关系的具体交代）；②弹幕和评论区提供了两种互斥解读，但没有官方补充；③直播回应只解释了动机，没解释信息缺口。可信度最高的部分是有时间戳的逐帧分析帖，最弱的部分是匿名论坛里“编剧换人”的说法，后者没有署名来源。</div>
+
+              <h3>《第七通电话》的线索密度：比同类高在哪</h3>
+              <p>《第七通电话》第12集结尾的录音笔道具，在微博话题页下有约60条推理帖。把这些帖子按线索类型分，大致是三类：录音笔来源（18条）、录音内容（27条）、录音笔与第3集道具的关联（15条）。同类悬疑短剧在单集结尾通常只留一个钩子，这部剧在第12集同时埋了道具、台词和镜头三个钩子。第3集出现过的同款录音笔在第12集被重新提起，间隔9集，这在此前潘娇娇参演的作品里没有出现过。</p>
+              <p>线索密度高带来的问题是门槛。有观众在评论区写“看到第10集已经记不住前面的细节”，这条评论获赞83次。对比《夜班日记》第10集的伏笔清单帖（列出9处前后呼应），《第七通电话》目前还没有观众整理出完整清单。信息缺口在于第12集录音笔里的声音到底是谁，目前只有网友推测，没有官方确认。</p>
+
+              <h3>甜宠线的节奏控制：2分钟一集怎么留人</h3>
+              <p>《偏偏遇见你》和《合租室友是老板》的单集时长都在2—3分钟。甜宠短剧的留人方式通常靠“误会—和解”循环，但这两部的处理不同。《偏偏遇见你》第7集用一场雨中戏把误会和解压在同一集里，抖音二创播放超12万；《合租室友是老板》第9集用“错拿外卖”制造小冲突，和解留到第10集开头。前者的节奏更紧，后者的讨论量更高——评论区对男主人设的讨论超过女主线。</p>
+              <p>从可核对的数据看，《偏偏遇见你》第7集的二创播放量是《合租室友是老板》第9集相关二创的约3倍。这不能直接说明哪部更好，但能说明“单集内完成误会和解”的片段更容易被剪成短视频传播。甜宠线的判断依据可以拆成三项：单集内是否完成情绪闭环、冲突是否依赖外部误会、角色反应是否有一处超出预期。</p>
+            </div>
+          </section>
+
+          <!-- 体验指南 -->
+          <section class="section" id="guide">
+            <div class="section-head">
+              <h2>观看顺序与选择方法</h2>
+              <span class="sub">先看什么、怎么判断</span>
+            </div>
+            <div class="guide-steps">
+              <div class="guide-step">
+                <span class="step-num">1</span>
+                <b>先按类型锁定范围</b>
+                <p>想快速入坑，从轻喜甜宠线开始，《偏偏遇见你》全20集、单集2分钟出头，一个周末能看完。喜欢推理的从《第七通电话》第1集看起，中途跳集会漏线索。</p>
+              </div>
+              <div class="guide-step">
+                <span class="step-num">2</span>
+                <b>看单集时长和钩子位置</b>
+                <p>2—3分钟一集的短剧，钩子通常留在最后15秒。《借位》第18集的钩子在第16分钟处，比前几集提前，观感上会觉得节奏变了。</p>
+              </div>
+              <div class="guide-step">
+                <span class="step-num">3</span>
+                <b>用弹幕和评论区做判断</b>
+                <p>弹幕量突然上涨的单集值得先看，通常对应剧情转折。《借位》第18集弹幕量涨31%，说明观众集中讨论配角线。评论区逐帧分析帖可作参考，但需核对时间戳。</p>
+              </div>
+              <div class="guide-step">
+                <span class="step-num">4</span>
+                <b>同类条目比较看三项</b>
+                <p>单集内是否完成情绪闭环、冲突是否依赖外部误会、角色反应是否有一处超出预期。三项满足两项的条目，二创传播通常更好。</p>
+              </div>
+              <div class="guide-step">
+                <span class="step-num">5</span>
+                <b>直播回放挑着看</b>
+                <p>“夜聊场”回放时长普遍在90分钟左右。只想看剧情预告的，从第60分钟开始；想看回应争议的，找11月5日那场，回应片段在第35分钟前后。</p>
+              </div>
+              <div class="guide-step">
+                <span class="step-num">6</span>
+                <b>二创作为补充而非替代</b>
+                <p>B站混剪适合回顾角色线，但会省略线索铺设。悬疑类作品建议先看原片，再看二创，顺序反了容易被剧透。</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- FAQ -->
+          <section class="section" id="faq">
+            <div class="section-head">
+              <h2>常见问答</h2>
+              <span class="sub">围绕作品与观看</span>
+            </div>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>《借位》一共多少集，现在更新到哪了？</summary>
+                <div class="faq-answer">《借位》规划24集，目前更新到第18集，11月8日上线。剩下6集按每周两集的节奏，预计11月22日前后完结。第18集把重心放在配角线，第16集的角色动机争议在第18集里没有直接回应。</div>
+              </details>
+              <details class="faq-item">
+                <summary>《第七通电话》录音笔里的声音是谁？</summary>
+                <div class="faq-answer">截至11月8日，录音笔内容的归属没有官方确认。第12集只给了声音片段和背景杂音，微博推理帖里有“旧案证人”和“男主本人”两种推测，都缺少画面或台词佐证。可核对的是录音笔与第3集道具同款，间隔9集再次出现。</div>
+              </details>
+              <details class="faq-item">
+                <summary>潘娇娇的直播一般什么时间，回放在哪看？</summary>
+                <div class="faq-answer">固定场次是每周三、周六22:00开始，时长90分钟左右。11月5日那场回应了《借位》第16集争议，切片在微博播放4.2万次。回放会在直播结束后次日上线，通常保留30天。想看剧情预告的，从第60分钟开始。</div>
+              </details>
+              <details class="faq-item">
+                <summary>甜宠线和悬疑线先看哪部比较合适？</summary>
+                <div class="faq-answer">时间少、想轻松看的，先看《偏偏遇见你》，20集、单集2分钟出头，一个周末能看完。喜欢推理的从《第七通电话》第1集看起，中途跳集容易漏线索。两条线都看的话，建议先甜宠后悬疑，避免悬疑的钩子影响甜宠的轻松感。</div>
+              </details>
+              <details class="faq-item">
+                <summary>《夜风便利店》的24集有固定观看顺序吗？</summary>
+                <div class="faq-answer">有。表面是单元剧，但女主店长线在第20集收束，前面几集埋了店长和常客的对应关系。观众账号“便利店常客”做过全剧时间线整理，覆盖24集关键节点。按原顺序看，第20集的收束效果最好；跳集看会漏掉店长线的铺垫。</div>
+              </details>
+              <details class="faq-item">
+                <summary>粉丝二创里哪类内容信息量比较大？</summary>
+                <div class="faq-answer">时间线整理和伏笔清单两类信息量最大。B站“潘娇娇角色混剪”标签下，剪辑向视频偏情绪表达，适合回顾角色线；伏笔清单类帖子（如《夜班日记》第10集列出9处呼应）适合对照原片核对。混剪会省略线索，悬疑类作品先看原片再看二创。</div>
+              </details>
+            </div>
+          </section>
+
+          <!-- 评论 -->
+          <section class="section" id="comments">
+            <div class="section-head">
+              <h2>观众评论</h2>
+              <span class="sub">12—20条，来自具体条目讨论</span>
+            </div>
+            <div class="comment-list">
+              <div class="comment-card">
+                <div class="comment-head"><span class="avatar" style="background:#B14A6E">阿</span><span class="comment-name">阿野不熬夜</span><span class="comment-time">11-08</span></div>
+                <p class="comment-text">第18集弹幕量涨了不是没道理，配角线一出来节奏顺多了。前两集看得我有点急。</p>
+                <span class="comment-ref">《借位》第18集</span>
+              </div>
+              <div class="comment-card">
+                <div class="comment-head"><span class="avatar" style="background:#7D2E4A">林</span><span class="comment-name">林间有风</span><span class="comment-time">11-08</span></div>
+                <p class="comment-text">录音笔那段倒回去听了三遍，背景杂音里好像有电梯声。有人听出来了吗？</p>
+                <span class="comment-ref">《第七通电话》第12集</span>
+              </div>
+              <div class="comment-card">
+                <div class="comment-head"><span class="avatar" style="background:#C97A96">便</span><span class="comment-name">便利店常客</span><span class="comment-time">11-07</span></div>
+                <p class="comment-text">整理时间线的时候发现第20集的收束其实第6集就埋了，店长和那个常客的对应关系第一遍完全没注意。</p>
+                <span class="comment-ref">《夜风便利店》</span>
+              </div>
+              <div class="comment-card">
+                <div class="comment-head"><span class="avatar" style="background:#A85572">南</span><span class="comment-name">南瓜粥不加糖</span><span class="comment-time">11-07</span></div>
+                <p class="comment-text">甜宠线看多了确实有点腻，但《合租室友是老板》第9集那个外卖梗我笑了半天，男主反应太真实了。</p>
+                <span class="comment-ref">《合租室友是老板》第9集</span>
+              </div>
+              <div class="comment-card">
+                <div class="comment-head"><span class="avatar" style="background:#8E5B6E">秋</span><span class="comment-name">秋天的第一杯冰美式</span><span class="comment-time">11-06</span></div>
+                <p class="comment-text">直播回应那段看了，解释动机可以，但第16集信息给太少是事实。观众不是不接受犹豫，是不知道在犹豫什么。</p>
+                <span class="comment-ref">11月5日直播</span>
+              </div>
+              <div class="comment-card">
+                <div class="comment-head"><span class="avatar" style="background:#B14A6E">小</span><span class="comment-name">小满没睡醒</span><span class="comment-time">11-06</span></div>
+                <p class="comment-text">《夜班日记》第10集伏笔清单有人整理出来了，九处呼应我看漏了四处……</p>
+                <span class="comment-ref">《夜班日记》第10集</span>
+              </div>
+              <div class="comment-card">
+                <div class="comment-head"><span class="avatar" style="background:#7D2E4A">剪</span><span class="comment-name">剪辑手老张</span><span class="comment-time">11-05</span></div>
+                <p class="comment-text">雨中戏那条二创数据好是有原因的，单集内误会和解全走完，剪起来不用加旁白。</p>
+                <span class="comment-ref">《偏偏遇见你》第7集</span>
+              </div>
+              <div class="comment-card">
+                <div class="comment-head"><span class="avatar" style="background:#C97A96">路</span><span class="comment-name">路过打酱油的</span><span class="comment-time">11-05</span></div>
+                <p class="comment-text">说真的，短剧一周两集有点慢，等更新的时候我都去把旧剧翻出来重看了。</p>
+              </div>
+              <div class="comment-card">
+                <div class="comment-head"><span class="avatar" style="background:#A85572">桃</span><span class="comment-name">桃子汽水</span><span class="comment-time">11-04</span></div>
+                <p class="comment-text">《借位》第16集那个日历日期我暂停看了，和台词里说的月份对不上。可能是我多心。</p>
+                <span class="comment-ref">《借位》第16集</span>
+              </div>
+              <div class="comment-card">
+                <div class="comment-head"><span class="avatar" style="background:#8E5B6E">周</span><span class="comment-name">周三不加班</span><span class="comment-time">11-03</span></div>
+                <p class="comment-text">夜聊场回放90分钟太长了，建议直接出个切片合集。不过读评论那段确实好笑。</p>
+                <span class="comment-ref">直播“夜聊场”</span>
+              </div>
+              <div class="comment-card">
+                <div class="comment-head"><span class="avatar" style="background:#B14A6E">不</span><span class="comment-name">不追更会难受</span><span class="comment-time">11-02</span></div>
+                <p class="comment-text">悬疑线两部都在追，《第七通电话》钩子密但记不住，《夜班日记》单元式反而好消化。个人偏好后者。</p>
+              </div>
+              <div class="comment-card">
+                <div class="comment-head"><span class="avatar" style="background:#7D2E4A">豆</span><span class="comment-name">豆瓣酱拌饭</span><span class="comment-time">11-01</span></div>
+                <p class="comment-text">混剪标签下有个重组版做得真好，女主视角重看一遍故事完全不一样。</p>
+                <span class="comment-ref">B站角色混剪</span>
+              </div>
+              <div class="comment-card">
+                <div class="comment-head"><span class="avatar" style="background:#C97A96">一</span><span class="comment-name">一只小透明</span><span class="comment-time">10-30</span></div>
+                <p class="comment-text">《合租室友是老板》男主线讨论比女主多我是没想到的，明明女主戏份更重。</p>
+                <span class="comment-ref">《合租室友是老板》</span>
+              </div>
+              <div class="comment-card">
+                <div class="comment-head"><span class="avatar" style="background:#A85572">冬</span><span class="comment-name">冬天吃冰</span><span class="comment-time">10-29</span></div>
+                <p class="comment-text">刚刷到这条，先收藏了慢慢看。最近短剧太多了挑不过来。</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 相关资讯 -->
+          <section class="section" id="news">
+            <div class="section-head">
+              <h2>近期资讯</h2>
+              <span class="sub">2026年10月—11月</span>
+            </div>
+            <div class="news-list">
+              <div class="news-item">
+                <div><b>《借位》第18集上线，配角线弹幕量上涨31%</b><p>11月8日更新的第18集把叙事重心从男女主对峙转向配角线，单集弹幕量比第17集增加31%，争议量同步下降。</p></div>
+                <span class="news-date">11-08</span>
+              </div>
+              <div class="news-item">
+                <div><b>“第七通电话录音笔”登上短剧超话榜第9位</b><p>11月6日，微博话题“第七通电话录音笔”进入短剧超话榜第9位，话题页下推理帖约60条，其中27条围绕录音内容展开。</p></div>
+                <span class="news-date">11-06</span>
+              </div>
+              <div class="news-item">
+                <div><b>直播回应《借位》角色动机争议，切片播放4.2万次</b><p>11月5日直播中，潘娇娇称第16集的犹豫是有意为之，理由是角色需要一次不体面的选择。42秒切片在微博播放4.2万次。</p></div>
+                <span class="news-date">11-05</span>
+              </div>
+              <div class="news-item">
+                <div><b>“潘娇娇角色混剪”标签近30天新增47条投稿</b><p>B站该标签下，10月9日至11月7日累计新增47条投稿，最高播放量8.6万，为《借位》女主视角重组版。</p></div>
+                <span class="news-date">11-03</span>
+              </div>
+              <div class="news-item">
+                <div><b>《夜风便利店》全剧时间线整理帖发布</b><p>10月30日，观众账号“便利店常客”发布覆盖24集关键节点的时间线整理，指出店长线第6集已有铺垫。</p></div>
+                <span class="news-date">10-30</span>
+              </div>
+              <div class="news-item">
+                <div><b>《偏偏遇见你》第7集雨中戏二创播放超12万</b><p>10月25日前后，抖音相关二创视频播放量累计超过12万，点赞最高的一条约1.1万，集中在误会和解的片段。</p></div>
+                <span class="news-date">10-25</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 相关推荐 -->
+          <section class="section" id="recommend">
+            <div class="section-head">
+              <h2>相关推荐方向</h2>
+            </div>
+            <div class="rec-tags">
+              <a href="/#featured" class="rec-tag">《借位》第16集逐帧分析 <span class="rt-num">7帖</span></a>
+              <a href="/#featured" class="rec-tag">《第七通电话》录音笔推理 <span class="rt-num">60帖</span></a>
+              <a href="/#featured" class="rec-tag">《夜风便利店》店长线 <span class="rt-num">24集</span></a>
+              <a href="/#featured" class="rec-tag">《偏偏遇见你》雨中戏二创 <span class="rt-num">12万播放</span></a>
+              <a href="/#featured" class="rec-tag">《夜班日记》伏笔清单 <span class="rt-num">9处</span></a>
+              <a href="/#latest" class="rec-tag">夜聊场直播回放 <span class="rt-num">38场</span></a>
+              <a href="/#latest" class="rec-tag">B站角色混剪标签 <span class="rt-num">47条</span></a>
+            </div>
+          </section>
+
+          <!-- 补充板块：榜单 -->
+          <section class="section" id="rank">
+            <div class="section-head">
+              <h2>本周热度榜单</h2>
+              <span class="sub">按弹幕量与二创量综合排序</span>
+            </div>
+            <div class="rank-list">
+              <div class="rank-item"><span class="rank-num">1</span><span class="rank-name">《借位》第18集</span><span class="rank-score">热度 9.2</span></div>
+              <div class="rank-item"><span class="rank-num">2</span><span class="rank-name">《第七通电话》第12集</span><span class="rank-score">热度 8.9</span></div>
+              <div class="rank-item"><span class="rank-num">3</span><span class="rank-name">《夜风便利店》全剧</span><span class="rank-score">评分 8.7</span></div>
+              <div class="rank-item"><span class="rank-num">4</span><span class="rank-name">《偏偏遇见你》第7集</span><span class="rank-score">热度 8.5</span></div>
+              <div class="rank-item"><span class="rank-num">5</span><span class="rank-name">《夜班日记》第10集</span><span class="rank-score">评分 8.3</span></div>
+              <div class="rank-item"><span class="rank-num">6</span><span class="rank-name">《合租室友是老板》第9集</span><span class="rank-score">评分 8.1</span></div>
+            </div>
+          </section>
+
+          <!-- 投稿互动 -->
+          <section class="section" id="submit">
+            <div class="section-head">
+              <h2>投稿与互动</h2>
+              <span class="sub">二创与观后感征集</span>
+            </div>
+            <div class="overview-box" style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;">
+              <div style="flex:1;min-width:240px;">
+                <p><strong>二创投稿：</strong>剪辑、手绘、时间线整理、伏笔清单，均可投到站内二创栏目。近30天“潘娇娇角色混剪”标签下已收录47条投稿。</p>
+                <p><strong>观后感征集：</strong>围绕具体单集或角色线的观后感，优先采纳带时间戳或具体片段的稿件。11月主题为“《借位》配角线”与“《第七通电话》录音笔推测”。</p>
+              </div>
+              <a href="/#submit" class="btn-primary" style="flex-shrink:0;">我要投稿</a>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- 右侧辅助栏 -->
+        <aside class="aside-col" aria-label="辅助信息">
+          <div class="aside-card">
+            <h3>热榜速览</h3>
+            <ul class="hot-list">
+              <li><span class="hl-num">1</span><span class="hl-title">《借位》第18集</span><span class="hl-hot">9.2</span></li>
+              <li><span class="hl-num">2</span><span class="hl-title">《第七通电话》第12集</span><span class="hl-hot">8.9</span></li>
+              <li><span class="hl-num">3</span><span class="hl-title">《夜风便利店》</span><span class="hl-hot">8.7</span></li>
+              <li><span class="hl-num">4</span><span class="hl-title">《偏偏遇见你》第7集</span><span class="hl-hot">8.5</span></li>
+              <li><span class="hl-num">5</span><span class="hl-title">《夜班日记》第10集</span><span class="hl-hot">8.3</span></li>
+              <li><span class="hl-num">6</span><span class="hl-title">《合租室友是老板》</span><span class="hl-hot">8.1</span></li>
+            </ul>
+          </div>
+          <div class="aside-card">
+            <h3>热门标签</h3>
+            <div class="tag-cloud">
+              <a href="/#featured">借位</a>
+              <a href="/#featured">第七通电话</a>
+              <a href="/#featured">夜风便利店</a>
+              <a href="/#featured">偏偏遇见你</a>
+              <a href="/#featured">夜班日记</a>
+              <a href="/#latest">夜聊场</a>
+              <a href="/#latest">角色混剪</a>
+              <a href="/#latest">录音笔</a>
+              <a href="/#latest">店长线</a>
+              <a href="/#featured">雨中戏</a>
+            </div>
+          </div>
+          <div class="aside-cta">
+            <h3>提交你的二创</h3>
+            <p>剪辑、手绘、时间线整理均可投稿。11月主题：配角线与录音笔推测。</p>
+            <a href="/#submit" class="btn-white">去投稿</a>
+          </div>
+          <div class="aside-card">
+            <h3>最近更新</h3>
+            <ul class="hot-list">
+              <li><span class="hl-num">11-08</span><span class="hl-title">《借位》第18集</span></li>
+              <li><span class="hl-num">11-07</span><span class="hl-title">夜聊场回放</span></li>
+              <li><span class="hl-num">11-06</span><span class="hl-title">《第七通电话》第12集</span></li>
+              <li><span class="hl-num">11-05</span><span class="hl-title">直播回应争议</span></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <span class="logo-mark" aria-hidden="true">
+              <svg viewBox="0 0 100 100" fill="none"><path d="M28 68 L28 36 L50 56 L72 36 L72 68" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span>潘娇娇</span>
+          </a>
+          <p>内容覆盖2026年8月至11月的短剧条目、直播场次与二创投稿，以都市情感和悬疑反转两类为主。更新节奏：短剧每周两集，直播每周三、周六，二创数据每周一整理。</p>
+        </div>
+        <div class="footer-col">
+          <h4>作品</h4>
+          <a href="/#featured">《借位》</a>
+          <a href="/#featured">《夜风便利店》</a>
+          <a href="/#featured">《第七通电话》</a>
+          <a href="/#featured">《偏偏遇见你》</a>
+          <a href="/#featured">《夜班日记》</a>
+        </div>
+        <div class="footer-col">
+          <h4>动态</h4>
+          <a href="/#latest">更新列表</a>
+          <a href="/#latest">直播回放</a>
+          <a href="/#news">近期资讯</a>
+          <a href="/#rank">热度榜单</a>
+          <a href="/#comments">观众评论</a>
+        </div>
+        <div class="footer-col">
+          <h4>参与</h4>
+          <a href="/#submit">二创投稿</a>
+          <a href="/#submit">观后感征集</a>
+          <a href="/#guide">观看指南</a>
+          <a href="/#faq">常见问答</a>
+          <a href="/#recommend">相关推荐</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="fb-left">
+          <p>页面条目与数据为内容聚合示例，短剧作品、直播场次、二创数量等信息按主题特征整理。最后更新：2026年11月8日，对应《借位》第18集上线与直播回放条目。</p>
+          <p style="margin-top:6px;">© 2026 潘娇娇内容聚合页。站内文字与图形标志为示例设计，不表示官方身份或授权。</p>
+        </div>
+        <div class="fb-right">
+          <span>条目收录 12 部</span>
+          <span>直播 38 场/30天</span>
+          <span>二创 47 条/30天</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="回到顶部">
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 16V5M5 9l5-5 5 5"/></svg>
+  </button>
+
+  <script>
+    (function() {
+      "use strict";
+
+      // 侧栏菜单
+      var menuToggle = document.getElementById('menuToggle');
+      var channelSidebar = document.getElementById('channelSidebar');
+      var overlay = document.getElementById('overlay');
+
+      function openMenu() {
+        channelSidebar.classList.add('open');
+        overlay.classList.add('show');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        channelSidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+      menuToggle.addEventListener('click', function() {
+        if (channelSidebar.classList.contains('open')) { closeMenu(); } else { openMenu(); }
+      });
+      overlay.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeMenu();
+          closeSearch();
+        }
+      });
+      channelSidebar.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          if (window.innerWidth <= 1024) closeMenu();
+        });
+      });
+
+      // 搜索
+      var searchToggle = document.getElementById('searchToggle');
+      var searchPanel = document.getElementById('searchPanel');
+      var searchClose = document.getElementById('searchClose');
+      var searchInput = document.getElementById('searchInput');
+      var searchResult = document.getElementById('searchResult');
+
+      var searchData = [
+        { t: '《借位》', d: '都市情感短剧，更新至第18集', type: '作品' },
+        { t: '《借位》第18集', d: '配角线弹幕量上涨31%', type: '更新' },
+        { t: '《借位》第16集', d: '角色动机争议，逐帧分析帖7条', type: '讨论' },
+        { t: '《夜风便利店》', d: '全24集，店长线第20集收束', type: '作品' },
+        { t: '《偏偏遇见你》', d: '轻喜甜宠，全20集', type: '作品' },
+        { t: '《偏偏遇见你》第7集', d: '雨中戏二创播放超12万', type: '二创' },
+        { t: '《第七通电话》', d: '悬疑反转，更新至第12集', type: '作品' },
+        { t: '《第七通电话》录音笔', d: '第12集结尾道具，微博话题第9位', type: '讨论' },
+        { t: '《合租室友是老板》', d: '轻喜甜宠，全16集', type: '作品' },
+        { t: '《夜班日记》', d: '悬疑单元剧，全12集', type: '作品' },
+        { t: '《夜班日记》第10集', d: '伏笔清单列出9处前后呼应', type: '讨论' },
+        { t: '夜聊场直播', d: '每周三、周六22:00，回放保留30天', type: '直播' },
+        { t: '11月5日直播回应', d: '回应第16集角色动机争议', type: '直播' },
+        { t: '角色混剪标签', d: 'B站近30天新增47条投稿', type: '二创' },
+        { t: '热度榜单', d: '按弹幕量与二创量综合排序', type: '榜单' },
+        { t: '二创投稿', d: '剪辑、手绘、时间线整理均可投', type: '互动' }
+      ];
+
+      function openSearch() {
+        searchPanel.classList.add('open');
+        searchToggle.setAttribute('aria-expanded', 'true');
+        searchInput.focus();
+      }
+      function closeSearch() {
+        searchPanel.classList.remove('open');
+        searchToggle.setAttribute('aria-expanded', 'false');
+        searchInput.value = '';
+        searchResult.innerHTML = '';
+      }
+      searchToggle.addEventListener('click', function() {
+        if (searchPanel.classList.contains('open')) { closeSearch(); } else { openSearch(); }
+      });
+      searchClose.addEventListener('click', closeSearch);
+
+      searchInput.addEventListener('input', function() {
+        var q = searchInput.value.trim().toLowerCase();
+        if (!q) { searchResult.innerHTML = ''; return; }
+        var hits = searchData.filter(function(item) {
+          return item.t.toLowerCase().indexOf(q) !== -1 || item.d.toLowerCase().indexOf(q) !== -1;
+        });
+        if (hits.length === 0) {
+          searchResult.innerHTML = '<div class="search-empty">没有找到与“' + escapeHtml(searchInput.value.trim()) + '”相关的内容。试试“借位”“直播”或“录音笔”。</div>';
+          return;
+        }
+        searchResult.innerHTML = hits.map(function(item) {
+          return '<div class="search-result-item"><span>' + escapeHtml(item.t) + ' <span style="color:#8E7D86;font-size:12px;">— ' + escapeHtml(item.d) + '</span></span><span class="search-result-type">' + escapeHtml(item.type) + '</span></div>';
+        }).join('');
+      });
+
+      function escapeHtml(str) {
+        return str.replace(/[&<>"']/g, function(m) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m];
+        });
+      }
+
+      // 回到顶部
+      var backTop = document.getElementById('backTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) {
+          backTop.classList.add('show');
+        } else {
+          backTop.classList.remove('show');
+        }
+      }, { passive: true });
+      backTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 侧栏当前板块高亮
+      var sections = document.querySelectorAll('main section[id]');
+      var navLinks = document.querySelectorAll('.channel-nav a');
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              var id = entry.target.getAttribute('id');
+              navLinks.forEach(function(link) {
+                link.classList.toggle('active', link.getAttribute('href') === '/#' + id);
+              });
+            }
+          });
+        }, { rootMargin: '-30% 0px -60% 0px' });
+        sections.forEach(function(sec) { observer.observe(sec); });
+      }
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "潘娇娇",
+    "description": "潘娇娇内容聚合页，汇集短剧作品、直播动态、粉丝二创与话题讨论。",
+    "keywords": "潘娇娇"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "《借位》一共多少集，现在更新到哪了？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "《借位》规划24集，目前更新到第18集，11月8日上线。剩下6集按每周两集的节奏，预计11月22日前后完结。第18集把重心放在配角线。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "《第七通电话》录音笔里的声音是谁？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "截至11月8日，录音笔内容的归属没有官方确认。第12集只给了声音片段和背景杂音，微博推理帖里有“旧案证人”和“男主本人”两种推测，都缺少画面或台词佐证。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "潘娇娇的直播一般什么时间，回放在哪看？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "固定场次是每周三、周六22:00开始，时长90分钟左右。11月5日那场回应了《借位》第16集争议，切片在微博播放4.2万次。回放会在直播结束后次日上线，通常保留30天。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "甜宠线和悬疑线先看哪部比较合适？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "时间少、想轻松看的，先看《偏偏遇见你》，20集、单集2分钟出头。喜欢推理的从《第七通电话》第1集看起，中途跳集容易漏线索。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "《夜风便利店》的24集有固定观看顺序吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "有。表面是单元剧，但女主店长线在第20集收束，前面几集埋了店长和常客的对应关系。观众账号“便利店常客”做过全剧时间线整理，覆盖24集关键节点。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "粉丝二创里哪类内容信息量比较大？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "时间线整理和伏笔清单两类信息量最大。剪辑向视频偏情绪表达，适合回顾角色线；伏笔清单类帖子适合对照原片核对。混剪会省略线索，悬疑类作品先看原片再看二创。"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+                    </html>
