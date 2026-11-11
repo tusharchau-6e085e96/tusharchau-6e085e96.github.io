@@ -1,0 +1,1519 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>黑料 yande - 八卦爆料聚合与深度追踪</title>
+  <meta name="description" content="黑料 yande 聚合近期娱乐圈爆料、网红翻车与圈内争议事件，涵盖当事人回应、时间线梳理、证据链拆解与网友讨论，适合关注八卦动态的读者浏览。">
+  <meta name="keywords" content="黑料 yande">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231a1a1a'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23f05a4a' font-family='sans-serif' font-weight='bold'%3E黑%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --primary: #c0392b;
+      --primary-light: #e74c3c;
+      --primary-dark: #922b21;
+      --primary-soft: #fdf0ee;
+      --bg: #f7f5f2;
+      --surface: #ffffff;
+      --text-1: #1a1a1a;
+      --text-2: #4a4a4a;
+      --text-3: #888888;
+      --border: #e8e4df;
+      --radius-card: 12px;
+      --radius-btn: 8px;
+      --radius-tag: 4px;
+      --radius-banner: 16px;
+      --shadow-default: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.1);
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      --announce-h: 38px;
+      --header-h: 56px;
+      --sticky-offset: calc(var(--announce-h) + var(--header-h));
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-offset); }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* 吸顶公告条 */
+    .announce-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--announce-h);
+      background: var(--primary-dark);
+      color: #fff;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .announce-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      width: 100%;
+    }
+    .announce-brand {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      color: #ffe0dc;
+    }
+    .announce-items {
+      display: flex;
+      gap: 28px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+    }
+    .announce-items span { opacity: 0.92; }
+    .announce-items b { color: #ffd966; font-weight: 600; }
+
+    /* 吸顶页头 */
+    .site-header {
+      position: sticky;
+      top: var(--announce-h);
+      z-index: 99;
+      height: var(--header-h);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--primary-dark);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .logo svg { width: 28px; height: 28px; }
+    .header-nav {
+      display: flex;
+      gap: 22px;
+      font-size: 14px;
+      color: var(--text-2);
+      flex: 1;
+    }
+    .header-nav a {
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .header-nav a:hover, .header-nav a:focus-visible {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+    .header-search {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .header-search input {
+      width: 180px;
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      font-size: 13px;
+      outline: none;
+      background: var(--bg);
+      transition: border-color 0.2s;
+    }
+    .header-search input:focus { border-color: var(--primary-light); }
+    .header-search button {
+      padding: 6px 14px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-btn);
+      font-size: 13px;
+      transition: background 0.2s;
+    }
+    .header-search button:hover { background: var(--primary-dark); }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      padding: 6px 10px;
+      font-size: 16px;
+      color: var(--text-2);
+    }
+
+    /* 主布局：三栏门户 */
+    .page-wrap {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 24px 20px 40px;
+    }
+    .three-col {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr) 240px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* 左频道索引 */
+    .channel-index {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 16px);
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 16px 0;
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--border);
+    }
+    .channel-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-3);
+      padding: 0 16px 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .channel-list { list-style: none; }
+    .channel-list a {
+      display: block;
+      padding: 8px 16px;
+      font-size: 14px;
+      color: var(--text-2);
+      border-left: 3px solid transparent;
+      transition: all 0.2s;
+    }
+    .channel-list a:hover, .channel-list a:focus-visible {
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      border-left-color: var(--primary);
+    }
+
+    /* 中主内容 */
+    .main-col { min-width: 0; }
+
+    /* 首屏 */
+    .hero {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d1f1f 55%, #3d2323 100%);
+      border-radius: var(--radius-banner);
+      padding: 40px 36px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -60px; top: -60px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(192,57,43,0.45) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-desc {
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.82);
+      max-width: 620px;
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 9px 22px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); }
+    .btn-ghost {
+      display: inline-block;
+      padding: 9px 22px;
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+    /* 板块通用 */
+    .section {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 24px;
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-default);
+    }
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .section-head h2 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text-1);
+      letter-spacing: 0.3px;
+    }
+    .section-head .more-link {
+      font-size: 13px;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+    .section-head .more-link:hover { text-decoration: underline; }
+
+    /* 领域概览 */
+    .overview-text {
+      font-size: 14.5px;
+      color: var(--text-2);
+      line-height: 1.8;
+    }
+    .overview-text p + p { margin-top: 10px; }
+
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      background: var(--surface);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover { box-shadow: var(--shadow-hover); transform: translateY(-3px); }
+    .card-img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      background: #eee;
+    }
+    .card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; }
+    .card-type {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      background: var(--primary-soft);
+      padding: 1px 8px;
+      border-radius: var(--radius-tag);
+      margin-bottom: 6px;
+      align-self: flex-start;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 8px;
+    }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .tag {
+      font-size: 11px;
+      color: var(--text-3);
+      background: var(--bg);
+      padding: 1px 7px;
+      border-radius: var(--radius-tag);
+      border: 1px solid var(--border);
+    }
+    .card-meta {
+      font-size: 12px;
+      color: var(--text-3);
+      display: flex;
+      gap: 14px;
+    }
+    .card-meta b { color: var(--primary); font-weight: 600; }
+
+    /* 最新更新列表 */
+    .update-list { list-style: none; }
+    .update-list li {
+      display: flex;
+      gap: 14px;
+      padding: 11px 0;
+      border-bottom: 1px dashed var(--border);
+      font-size: 14px;
+      align-items: baseline;
+    }
+    .update-list li:last-child { border-bottom: none; }
+    .update-date {
+      font-size: 12px;
+      color: var(--text-3);
+      white-space: nowrap;
+      min-width: 70px;
+    }
+    .update-name {
+      font-weight: 600;
+      color: var(--text-1);
+      white-space: nowrap;
+    }
+    .update-summary {
+      color: var(--text-2);
+      font-size: 13px;
+      flex: 1;
+    }
+
+    /* 分类入口 */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .cat-item {
+      display: block;
+      padding: 14px 10px;
+      text-align: center;
+      background: var(--bg);
+      border-radius: var(--radius-btn);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-2);
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+    .cat-item:hover, .cat-item:focus-visible {
+      background: var(--primary-soft);
+      border-color: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    /* 深度解析 */
+    .deep-read h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 20px 0 8px;
+      color: var(--text-1);
+    }
+    .deep-read h3:first-of-type { margin-top: 0; }
+    .deep-read p {
+      font-size: 14.5px;
+      color: var(--text-2);
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+    .deep-read ul {
+      margin: 8px 0 12px 20px;
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.8;
+    }
+    .deep-read li { margin-bottom: 4px; }
+    .deep-read .evidence-box {
+      background: var(--bg);
+      border-left: 3px solid var(--primary);
+      padding: 12px 16px;
+      border-radius: 0 var(--radius-btn) var(--radius-btn) 0;
+      margin: 12px 0;
+      font-size: 13.5px;
+      color: var(--text-2);
+    }
+    .deep-read .evidence-box strong { color: var(--text-1); }
+
+    /* 体验指南 */
+    .guide-steps {
+      counter-reset: step;
+      list-style: none;
+    }
+    .guide-steps li {
+      counter-increment: step;
+      position: relative;
+      padding: 12px 0 12px 44px;
+      border-bottom: 1px dashed var(--border);
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.7;
+    }
+    .guide-steps li:last-child { border-bottom: none; }
+    .guide-steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0; top: 14px;
+      width: 26px; height: 26px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .guide-steps li b { color: var(--text-1); }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 4px 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item summary {
+      padding: 12px 0;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--text-1);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::before {
+      content: '+';
+      font-size: 18px;
+      color: var(--primary);
+      width: 20px;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item[open] summary::before { content: '−'; }
+    .faq-item summary:hover { color: var(--primary); }
+    .faq-answer {
+      padding: 0 0 14px 28px;
+      font-size: 13.5px;
+      color: var(--text-2);
+      line-height: 1.75;
+    }
+
+    /* 评论 */
+    .comment-list { list-style: none; }
+    .comment-item {
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--border);
+      font-size: 13.5px;
+      line-height: 1.65;
+    }
+    .comment-item:last-child { border-bottom: none; }
+    .comment-user {
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-right: 8px;
+      font-size: 13px;
+    }
+    .comment-text { color: var(--text-2); }
+    .comment-time {
+      font-size: 11px;
+      color: var(--text-3);
+      margin-left: 8px;
+    }
+
+    /* 相关资讯 */
+    .news-list { list-style: none; }
+    .news-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--text-1);
+      margin-bottom: 4px;
+    }
+    .news-title:hover { color: var(--primary); }
+    .news-meta {
+      font-size: 12px;
+      color: var(--text-3);
+      margin-bottom: 4px;
+    }
+    .news-summary {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+
+    /* 相关推荐标签索引 */
+    .rec-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .rec-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--text-2);
+      transition: all 0.2s;
+    }
+    .rec-tag:hover, .rec-tag:focus-visible {
+      background: var(--primary-soft);
+      border-color: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    /* 补充板块：口碑分层 */
+    .tier-list { display: flex; flex-direction: column; gap: 12px; }
+    .tier-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 12px 14px;
+      background: var(--bg);
+      border-radius: var(--radius-btn);
+    }
+    .tier-badge {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: var(--radius-tag);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .tier-a { background: #e8f5e9; color: #2e7d32; }
+    .tier-b { background: #fff3e0; color: #e65100; }
+    .tier-c { background: #fce4ec; color: #c62828; }
+    .tier-text { font-size: 13.5px; color: var(--text-2); line-height: 1.6; }
+
+    /* 右辅助栏 */
+    .aside-col { min-width: 0; }
+    .aside-card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 18px;
+      margin-bottom: 18px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-default);
+    }
+    .aside-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-1);
+    }
+    .hot-list { list-style: none; counter-reset: hot; }
+    .hot-list li {
+      counter-increment: hot;
+      display: flex;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 13px;
+      color: var(--text-2);
+      align-items: baseline;
+      border-bottom: 1px dashed var(--border);
+    }
+    .hot-list li:last-child { border-bottom: none; }
+    .hot-list li::before {
+      content: counter(hot);
+      font-weight: 700;
+      color: var(--text-3);
+      font-size: 12px;
+      min-width: 16px;
+    }
+    .hot-list li:nth-child(1)::before { color: var(--primary); }
+    .hot-list li:nth-child(2)::before { color: var(--primary-light); }
+    .hot-list li:nth-child(3)::before { color: #e67e22; }
+    .hot-list a:hover { color: var(--primary); }
+
+    .interact-box {
+      background: linear-gradient(135deg, var(--primary-soft), #fff);
+      border: 1px solid #f3d5d1;
+      border-radius: var(--radius-card);
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+    .interact-box h3 { font-size: 14px; font-weight: 700; margin-bottom: 8px; color: var(--primary-dark); }
+    .interact-box p { font-size: 13px; color: var(--text-2); line-height: 1.6; margin-bottom: 12px; }
+    .btn-small {
+      display: inline-block;
+      padding: 7px 16px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: var(--radius-btn);
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      transition: background 0.2s;
+    }
+    .btn-small:hover { background: var(--primary-dark); }
+
+    /* 页脚 */
+    .site-footer {
+      background: #1a1a1a;
+      color: #bbb;
+      padding: 40px 20px 28px;
+      font-size: 13px;
+    }
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    .footer-brand {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .footer-tagline {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #999;
+      margin-bottom: 14px;
+      max-width: 320px;
+    }
+    .footer-col h4 {
+      color: #ddd;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 6px; }
+    .footer-col a { color: #999; transition: color 0.2s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      max-width: 1360px;
+      margin: 28px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid #333;
+      font-size: 12px;
+      color: #777;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+    }
+
+    /* 回到顶部 */
+    .back-top {
+      position: fixed;
+      right: 24px;
+      bottom: 32px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-hover);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 50;
+    }
+    .back-top.show { opacity: 1; pointer-events: auto; }
+    .back-top:hover { background: var(--primary-dark); transform: translateY(-3px); }
+
+    /* 搜索无结果 */
+    .no-result {
+      display: none;
+      padding: 20px;
+      text-align: center;
+      color: var(--text-3);
+      font-size: 14px;
+    }
+    .no-result.show { display: block; }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .three-col {
+        grid-template-columns: 1fr 240px;
+      }
+      .channel-index { display: none; }
+      .header-nav { display: none; }
+      .menu-toggle { display: inline-block; }
+      .header-search input { width: 140px; }
+      .hero { padding: 32px 24px; }
+      .hero h1 { font-size: 26px; }
+      .card-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 740px) {
+      .three-col { grid-template-columns: 1fr; }
+      .aside-col { order: 3; }
+      .header-search input { width: 100px; }
+      .announce-items { gap: 16px; font-size: 12px; }
+      .announce-brand { font-size: 12px; }
+      .card-grid { grid-template-columns: 1fr; }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero h1 { font-size: 22px; }
+      .hero-desc { font-size: 14px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+      .update-list li { flex-wrap: wrap; gap: 4px 10px; }
+      .update-summary { flex-basis: 100%; }
+      .section { padding: 18px; }
+      .back-top { right: 16px; bottom: 20px; width: 38px; height: 38px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* 移动端抽屉遮罩 */
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 98;
+    }
+    .menu-overlay.show { display: block; }
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: calc(var(--sticky-offset));
+      left: 0;
+      right: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px;
+      z-index: 97;
+      box-shadow: var(--shadow-hover);
+    }
+    .mobile-nav.show { display: block; }
+    .mobile-nav a {
+      display: block;
+      padding: 10px 0;
+      font-size: 15px;
+      color: var(--text-2);
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a:hover { color: var(--primary); }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announce-bar" id="announceBar">
+    <div class="announce-inner">
+      <span class="announce-brand">黑料 yande</span>
+      <div class="announce-items">
+        <span><b>11月7日</b> 「林某凡事件」二审结束，维持原判</span>
+        <span><b>11月6日</b> 网红“阿沁”分手录音曝光，3小时播放破200万</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="黑料 yande 首页">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <rect width="100" height="100" rx="20" fill="#922b21"/>
+          <text x="50" y="70" font-size="56" text-anchor="middle" fill="#fff" font-family="sans-serif" font-weight="bold">黑</text>
+        </svg>
+        <span>黑料 yande</span>
+      </a>
+      <nav class="header-nav" aria-label="主题导航">
+        <a href="/#overview">事件概览</a>
+        <a href="/#featured">精选爆料</a>
+        <a href="/#updates">最新动态</a>
+        <a href="/#categories">分类索引</a>
+        <a href="/#deep-read">深度追踪</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#comments">网友评论</a>
+      </nav>
+      <div class="header-search">
+        <input type="search" id="searchInput" placeholder="搜索条目/人物…" aria-label="站内搜索">
+        <button type="button" id="searchBtn">搜索</button>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <!-- 移动端导航 -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="移动端导航">
+    <a href="/#overview">事件概览</a>
+    <a href="/#featured">精选爆料</a>
+    <a href="/#updates">最新动态</a>
+    <a href="/#categories">分类索引</a>
+    <a href="/#deep-read">深度追踪</a>
+    <a href="/#faq">常见问答</a>
+    <a href="/#comments">网友评论</a>
+  </nav>
+
+  <!-- 页面主体 -->
+  <div class="page-wrap">
+    <div class="three-col">
+
+      <!-- 左频道索引 -->
+      <aside class="channel-index" aria-label="频道索引">
+        <div class="channel-title">频道索引</div>
+        <ul class="channel-list">
+          <li><a href="/#featured">明星塌房</a></li>
+          <li><a href="/#featured">网红翻车</a></li>
+          <li><a href="/#featured">私德争议</a></li>
+          <li><a href="/#featured">商业纠纷</a></li>
+          <li><a href="/#featured">粉丝互撕</a></li>
+          <li><a href="/#featured">影视圈内幕</a></li>
+          <li><a href="/#featured">音乐圈争议</a></li>
+          <li><a href="/#featured">直播圈事件</a></li>
+        </ul>
+      </aside>
+
+      <!-- 中主内容 -->
+      <main class="main-col">
+
+        <!-- 首屏 -->
+        <section class="hero" id="hero">
+          <h1>黑料 yande</h1>
+          <p class="hero-desc">
+            追踪娱乐、网红与直播圈的最新爆料，梳理事件时间线、当事人回应与证据链，帮你在信息碎片里看清来龙去脉。
+          </p>
+          <div class="hero-actions">
+            <a href="/#featured" class="btn-primary">浏览精选爆料</a>
+            <a href="/#deep-read" class="btn-ghost">查看深度解析</a>
+          </div>
+        </section>
+
+        <!-- 1. 主题领域概览 -->
+        <section class="section" id="overview">
+          <div class="section-head">
+            <h2>八卦爆料领域概览</h2>
+          </div>
+          <div class="overview-text">
+            <p>娱乐八卦爆料覆盖的范围比多数人想象的要杂。按内容来源切，至少能分出四类：一是明星私生活争议，比如恋情曝光、婚姻变动、私德指控；二是网红与主播的翻车事件，涉及带货造假、言论翻车、粉丝纠纷；三是商业合作里的利益冲突，比如片酬纠纷、代言解约、公司股权争夺；四是圈内从业者爆料，包括剧组矛盾、节目剪辑内幕、经纪公司压榨等。</p>
+            <p>2026年11月前后，讨论度较高的事件集中在几个方向。林某凡案的二审结果在11月7日公布后，相关法律文书被大量转发；网红阿沁与男友的分手录音在11月6日流出，录音中涉及经济纠纷和情感欺骗的指控，微博话题阅读量在6小时内破亿。此外，说唱歌手GAI与某品牌方的代言纠纷、选秀出身的陈某某被前经纪公司追讨违约金等事件，也在持续发酵。</p>
+            <p>关注这类内容时，信息真伪的辨别成本很高。一条爆料从当事人小号、私信截图、录音片段到营销号搬运，中间至少经历三次转手，每转一次都可能被裁剪或加料。比较稳妥的做法是：先找到原始出处，确认发布者身份与事件的关系，再看当事人或工作室有没有正式回应，最后对照多个信源的细节是否一致。</p>
+          </div>
+        </section>
+
+        <!-- 2. 精选内容推荐 -->
+        <section class="section" id="featured">
+          <div class="section-head">
+            <h2>近期热议爆料条目</h2>
+            <a href="/#updates" class="more-link">查看全部动态 →</a>
+          </div>
+          <div class="card-grid" id="cardGrid">
+
+            <article class="card" data-title="林某凡二审维持原判">
+              <img class="card-img" src="https://picsum.photos/seed/linmoufan112/400/300" alt="林某凡案二审法庭外景" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <span class="card-type">明星塌房</span>
+                <h3 class="card-title">林某凡案二审维持原判，刑期不变</h3>
+                <p class="card-desc">11月7日北京市高院驳回上诉，维持一审有期徒刑十三年附加驱逐出境。裁定书全文已在中国裁判文书网公开，争议焦点集中在证据合法性。</p>
+                <div class="card-tags">
+                  <span class="tag">二审裁定</span><span class="tag">裁判文书</span><span class="tag">驱逐出境</span>
+                </div>
+                <div class="card-meta"><span>🔥 热度 98.2万</span><span>更新于 <b>11月7日</b></span></div>
+              </div>
+            </article>
+
+            <article class="card" data-title="阿沁分手录音">
+              <img class="card-img" src="https://picsum.photos/seed/aqin1106/400/300" alt="阿沁直播画面截图" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <span class="card-type">网红翻车</span>
+                <h3 class="card-title">阿沁分手录音曝光，男方承认借款200万未还</h3>
+                <p class="card-desc">11月6日凌晨流出的42分钟录音中，男方承认以创业名义借款200万元，至今未还。阿沁随后在微博发文称已委托律师处理。</p>
+                <div class="card-tags">
+                  <span class="tag">分手录音</span><span class="tag">经济纠纷</span><span class="tag">律师函</span>
+                </div>
+                <div class="card-meta"><span>🔥 热度 76.5万</span><span>更新于 <b>11月6日</b></span></div>
+              </div>
+            </article>
+
+            <article class="card" data-title="GAI代言解约">
+              <img class="card-img" src="https://picsum.photos/seed/gai1105/400/300" alt="GAI出席品牌活动旧照" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <span class="card-type">商业纠纷</span>
+                <h3 class="card-title">GAI与潮牌解约，品牌方索赔380万</h3>
+                <p class="card-desc">11月5日品牌方发布声明，称GAI在合约期内竞品露出违反排他条款，要求赔偿380万元。GAI工作室回应称“露出系节目组安排，与艺人无关”。</p>
+                <div class="card-tags">
+                  <span class="tag">代言解约</span><span class="tag">排他条款</span><span class="tag">违约金</span>
+                </div>
+                <div class="card-meta"><span>🔥 热度 52.1万</span><span>更新于 <b>11月5日</b></span></div>
+              </div>
+            </article>
+
+            <article class="card" data-title="陈某某违约金案">
+              <img class="card-img" src="https://picsum.photos/seed/chenmou112/400/300" alt="经纪公司大楼外观" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <span class="card-type">影视圈内幕</span>
+                <h3 class="card-title">前经纪公司追讨陈某某违约金1200万</h3>
+                <p class="card-desc">10月30日开庭的合同纠纷案中，公司主张陈某某私自接洽外部商务，违反独家经纪条款。陈方律师称原合同存在“显失公平”情形。</p>
+                <div class="card-tags">
+                  <span class="tag">经纪合约</span><span class="tag">违约金</span><span class="tag">独家条款</span>
+                </div>
+                <div class="card-meta"><span>🔥 热度 44.3万</span><span>更新于 <b>10月31日</b></span></div>
+              </div>
+            </article>
+
+            <article class="card" data-title="剧组场务爆料">
+              <img class="card-img" src="https://picsum.photos/seed/changwu1028/400/300" alt="影视拍摄现场工作照" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <span class="card-type">影视圈内幕</span>
+                <h3 class="card-title">《长街行》场务爆料超时拍摄，剧组回应“已补发加班费”</h3>
+                <p class="card-desc">10月28日一名场务在豆瓣发帖称连续工作18天无休，每日工时超14小时。剧组次日回应称“少数人员考勤记录有误，已补发加班费及调休”。</p>
+                <div class="card-tags">
+                  <span class="tag">超时工作</span><span class="tag">剧组回应</span><span class="tag">劳动权益</span>
+                </div>
+                <div class="card-meta"><span>🔥 热度 38.7万</span><span>更新于 <b>10月29日</b></span></div>
+              </div>
+            </article>
+
+            <article class="card" data-title="主播小杨哥切片争议">
+              <img class="card-img" src="https://picsum.photos/seed/xiaoyangge1104/400/300" alt="直播间切片画面" width="400" height="300" loading="lazy">
+              <div class="card-body">
+                <span class="card-type">直播圈事件</span>
+                <h3 class="card-title">小杨哥切片授权纠纷，200多个账号遭投诉下架</h3>
+                <p class="card-desc">11月4日多名切片账号主称收到平台侵权投诉，涉及视频超200条。三只羊网络回应称“未授权账号使用直播画面带货”，但部分账号主出示了2025年的授权协议。</p>
+                <div class="card-tags">
+                  <span class="tag">切片授权</span><span class="tag">侵权投诉</span><span class="tag">直播带货</span>
+                </div>
+                <div class="card-meta"><span>🔥 热度 35.9万</span><span>更新于 <b>11月4日</b></span></div>
+              </div>
+            </article>
+
+          </div>
+          <div class="no-result" id="noResult">没有匹配的条目，换个关键词试试。</div>
+        </section>
+
+        <!-- 3. 最新更新 / 动态 -->
+        <section class="section" id="updates">
+          <div class="section-head">
+            <h2>近七日更新动态</h2>
+          </div>
+          <ul class="update-list">
+            <li><span class="update-date">11月7日</span><span class="update-name">林某凡</span><span class="update-summary">二审裁定书公开，法院认定“被害人陈述有同步录音录像佐证”，驳回“诱供”辩护意见。</span></li>
+            <li><span class="update-date">11月7日</span><span class="update-name">阿沁</span><span class="update-summary">微博发布律师声明，要求男方7日内返还200万借款，否则提起民事诉讼。</span></li>
+            <li><span class="update-date">11月6日</span><span class="update-name">GAI</span><span class="update-summary">在直播中回应解约风波：“节目里穿什么不是我能定的，合同怎么签就怎么来。”</span></li>
+            <li><span class="update-date">11月5日</span><span class="update-name">潮牌BEASTER</span><span class="update-summary">官方旗舰店下架GAI相关联名商品，客服称“库存调整”，未正面回应解约一事。</span></li>
+            <li><span class="update-date">11月4日</span><span class="update-name">小杨哥</span><span class="update-summary">切片授权纠纷持续，部分账号向合肥市监局投诉，要求认定“授权协议是否存在格式条款”。</span></li>
+            <li><span class="update-date">11月3日</span><span class="update-name">陈某某</span><span class="update-summary">前经纪公司追加诉讼请求，将违约金从1200万提高至1800万，法院已受理变更申请。</span></li>
+            <li><span class="update-date">11月1日</span><span class="update-name">《长街行》剧组</span><span class="update-summary">补发场务团队9月至10月加班费共计27.6万元，制片主任在朋友圈晒转账截图。</span></li>
+            <li><span class="update-date">10月30日</span><span class="update-name">选秀艺人陈某某</span><span class="update-summary">合同纠纷案第一次开庭，争议焦点为“经纪公司是否履行了培训与推广义务”。</span></li>
+            <li><span class="update-date">10月28日</span><span class="update-name">豆瓣小组</span><span class="update-summary">“剧组超时工作”帖24小时内收到1100多条回复，多名从业者跟帖讲述类似经历。</span></li>
+            <li><span class="update-date">10月26日</span><span class="update-name">某说唱节目</span><span class="update-summary">被曝剪辑故意制造选手矛盾，导演组回应“剪辑服务于叙事逻辑，未歪曲事实”。</span></li>
+          </ul>
+        </section>
+
+        <!-- 4. 分类入口 -->
+        <section class="section" id="categories">
+          <div class="section-head">
+            <h2>按事件类型查找</h2>
+          </div>
+          <div class="cat-grid">
+            <a href="/#featured" class="cat-item">明星塌房</a>
+            <a href="/#featured" class="cat-item">网红翻车</a>
+            <a href="/#featured" class="cat-item">私德争议</a>
+            <a href="/#featured" class="cat-item">商业纠纷</a>
+            <a href="/#featured" class="cat-item">粉丝互撕</a>
+            <a href="/#featured" class="cat-item">影视圈内幕</a>
+            <a href="/#featured" class="cat-item">音乐圈争议</a>
+            <a href="/#featured" class="cat-item">直播圈事件</a>
+          </div>
+        </section>
+
+        <!-- 5. 深度解析 -->
+        <section class="section deep-read" id="deep-read">
+          <div class="section-head">
+            <h2>爆料可信度与传播链路拆解</h2>
+          </div>
+
+          <h3>截图、录音、聊天记录：三类证据的效力差异</h3>
+          <p>截图最容易伪造，也最容易被断章取义。一张微信聊天截图，只截对方发言、不截上下文，能把一句玩笑话变成“实锤”。判断截图时，先看三点：有没有对方头像和昵称的完整展示、时间戳是否连续、聊天背景是否与当事人常用设备一致。2026年10月某选秀艺人“辱骂工作人员”的爆料，就是一张被裁掉前后文的截图，后来完整记录显示双方在讨论节目剧本，语气是调侃而非辱骂。</p>
+          <p>录音的门槛高一些，但剪辑空间仍然存在。阿沁事件中流出的42分钟录音，前8分钟是寒暄和闲聊，第12分钟才进入借款话题，中间有两次明显的音量跳变。音频鉴定从业者指出，这类跳变可能是剪辑拼接点，也可能是录音设备自动增益造成的。在没有原始音频文件的情况下，单凭听感无法判断。</p>
+          <p>聊天记录文件夹和转账凭证的伪造成本最高，但也不是没有先例。2025年曾出现用PS制作银行转账回单的案例，破绽在字体渲染和银行Logo的矢量边缘。核对这类材料时，银行流水号、交易时间、对方账户尾号三项信息需要能对得上。</p>
+
+          <h3>从爆料到热搜：一条信息的四级传播链</h3>
+          <p>多数黑料不会直接出现在大号上，而是走一条渐进路径。第一级是私域——当事人小号、粉丝群、私信截图，信息量最大但可信度最低。第二级是垂直社区，比如豆瓣小组、贴吧、小红书素人帖，这一层会有人做初步的时间线整理，但往往夹杂立场。第三级是营销号搬运，此时信息被压缩成“标题+九宫格”，关键细节开始丢失。第四级才是热搜，此时话题词已经与原始爆料有偏差。</p>
+          <p>以阿沁分手录音为例，录音最早出现在一个只有300粉丝的微博小号上，发布时间是11月6日凌晨2点17分。凌晨4点，豆瓣鹅组出现整理帖，标注了录音中的关键时间点。早上7点，多个娱乐营销号同时发布剪辑版，时长压缩到3分钟。上午10点，“阿沁分手”登上热搜第7位。到这一步，原始录音里的部分对话已经被移除，比如男方提到“这笔钱我认，但需要分期”的表述，在营销号版本里消失了。</p>
+
+          <h3>当事人回应的三种常见策略</h3>
+          <p>观察近半年来的十几起爆料事件，当事人回应大致分三类。第一类是“否认+律师函”，速度最快，但如果没有实质证据支撑，往往激起更大反弹。GAI工作室在11月5日的回应就属于这一类，声明发出后评论区最高赞是“合同拿出来看看”。第二类是“部分承认+转移焦点”，比如承认借款但强调“已还部分”，或承认冲突但指出对方“先挑衅”。第三类是沉默，等热度自然下降，这种做法在商业纠纷里更常见，因为涉及诉讼时公开表态可能影响判决。</p>
+          <div class="evidence-box">
+            <strong>可核对的判断结构：</strong>评估一条爆料的可信度，可以拆成四个可勾选项——①原始发布者是否实名或可追溯；②关键证据（录音/截图/文件）是否完整未剪辑；③当事人是否作出正式回应；④至少两个独立信源在核心事实上是否一致。四项全满足，可信度较高；满足两项以下，建议先持观望态度。
+          </div>
+        </section>
+
+        <!-- 6. 体验指南 / 消费路径 -->
+        <section class="section" id="guide">
+          <div class="section-head">
+            <h2>爆料内容的阅读与判断顺序</h2>
+          </div>
+          <ol class="guide-steps">
+            <li><b>先定位原始出处。</b>看到一条爆料，别急着看营销号总结，先找最早的发布账号。如果是小号，看注册时间和历史内容；如果是私信截图，看有没有完整上下文。</li>
+            <li><b>判断证据类型。</b>截图、录音、视频、文件，伪造难度依次递增。优先采信有原始文件或完整时间线的证据，对九宫格截图和“朋友说”保持警惕。</li>
+            <li><b>查当事人回应。</b>工作室声明、本人直播回应、律师函，三种回应的信息量不同。律师函看是否附了合同或证据附件，没有附件的律师函基本只是表态。</li>
+            <li><b>对比多信源。</b>同一事件，豆瓣、微博、小红书上的核心细节是否一致。如果一处说“借了200万”，另一处说“投资款”，那是性质差异，需要找到转账记录或借条来确认。</li>
+            <li><b>区分事实与推测。</b>“已公开的事实”和“网友推测”要分开看。比如“两人已分手”是事实，“分手原因是男方出轨”可能是推测，除非有第三方证据。</li>
+          </ol>
+        </section>
+
+        <!-- 7. FAQ -->
+        <section class="section" id="faq">
+          <div class="section-head">
+            <h2>关于黑料爆料的常见问答</h2>
+          </div>
+
+          <details class="faq-item">
+            <summary>林某凡案二审为什么维持原判？</summary>
+            <div class="faq-answer">二审法院在裁定书中指出，一审认定的证据链完整，被害人陈述有同步录音录像佐证，辩护方提出的“诱供”主张缺乏证据支持。裁定于11月7日作出，刑期和附加刑均未变更。</div>
+          </details>
+
+          <details class="faq-item">
+            <summary>阿沁分手录音里的200万是借款还是投资？</summary>
+            <div class="faq-answer">录音中男方明确说“这200万我认，算我借的”，阿沁方也出示了转账记录，备注为“借款”。男方在后续回应中改口称“是共同投资”，但未提供投资协议。目前阿沁已委托律师发函，要求限期还款。</div>
+          </details>
+
+          <details class="faq-item">
+            <summary>GAI的代言解约纠纷，品牌方索赔380万有依据吗？</summary>
+            <div class="faq-answer">品牌方在声明中援引了合同第7.3条排他条款，并附上了GAI在竞品直播间露出的截图，时间为10月22日。GAI工作室则称露出系节目组统一安排，艺人“无法单方面决定着装”。双方各执一词，目前没有进入诉讼程序。</div>
+          </details>
+
+          <details class="faq-item">
+            <summary>小杨哥切片授权纠纷中，旧授权协议还有效吗？</summary>
+            <div class="faq-answer">部分账号主出示的授权协议签署于2025年3月，有效期写的是“至双方书面终止”。三只羊网络在11月4日的回应中称“2026年1月起已陆续通知终止授权”，但未提供通知记录。争议点在于终止通知是否实际送达。</div>
+          </details>
+
+          <details class="faq-item">
+            <summary>剧组超时工作爆料里，场务说的“18天无休”属实吗？</summary>
+            <div class="faq-answer">《长街行》剧组在10月29日的回应中承认“少数人员考勤记录有误”，并补发了27.6万元加班费。制片主任晒出的转账截图显示，补发金额按1.5倍日薪计算。但爆料场务称实际工作天数更长，目前双方未就具体天数达成一致。</div>
+          </details>
+
+          <details class="faq-item">
+            <summary>陈某某的经纪合约违约金为什么从1200万涨到1800万？</summary>
+            <div class="faq-answer">前经纪公司在11月3日变更诉讼请求，新增了“2026年4月至9月期间私自接洽的3个商务合作”的损失计算，合计600万元。法院已受理变更申请，原定12月的开庭日期可能推迟。</div>
+          </details>
+        </section>
+
+        <!-- 8. 用户评论 -->
+        <section class="section" id="comments">
+          <div class="section-head">
+            <h2>评论区怎么说</h2>
+          </div>
+          <ul class="comment-list">
+            <li class="comment-item"><span class="comment-user">吃瓜不吐皮</span><span class="comment-text">阿沁那个录音我听了两遍，男方说“我认”那句语气特别虚，后面马上接“但你要给我时间”，明显在拖。</span><span class="comment-time">11月7日</span></li>
+            <li class="comment-item"><span class="comment-user">熬夜冠军</span><span class="comment-text">林某凡案裁定书我看了，第14页那段关于证据合法性的论述写得很细，比营销号总结的靠谱多了。</span><span class="comment-time">11月7日</span></li>
+            <li class="comment-item"><span class="comment-user">不吃香菜</span><span class="comment-text">GAI那个事，品牌方选在11月5日发声明，刚好卡在他新歌发布前一天，时间点太巧了。</span><span class="comment-time">11月6日</span></li>
+            <li class="comment-item"><span class="comment-user">momo</span><span class="comment-text">切片授权那个我站账号主，2025年的协议白纸黑字写着“书面终止”，你光说通知了，通知记录呢？</span><span class="comment-time">11月5日</span></li>
+            <li class="comment-item"><span class="comment-user">江湖骗子</span><span class="comment-text">剧组补发27万加班费，算下来每人分不到一万，18天无休换这点钱，还不如去送外卖。</span><span class="comment-time">11月4日</span></li>
+            <li class="comment-item"><span class="comment-user">已注销</span><span class="comment-text">陈某某那个违约金涨到1800万，公司是真敢要。合同里培训费才花了多少，翻十倍索赔。</span><span class="comment-time">11月4日</span></li>
+            <li class="comment-item"><span class="comment-user">键盘政治局</span><span class="comment-text">说唱节目剪辑那个，去年就有人爆料过，导演组永远回“服务于叙事”，叙事个鬼，就是故意剪冲突。</span><span class="comment-time">11月3日</span></li>
+            <li class="comment-item"><span class="comment-user">柠檬不酸</span><span class="comment-text">阿沁别光发律师函啊，直接起诉，200万加利息，看他还不还。</span><span class="comment-time">11月3日</span></li>
+            <li class="comment-item"><span class="comment-user">路过打酱油</span><span class="comment-text">说真的，现在看到“爆”字开头的热搜都先打个问号，等两天再看有没有反转。</span><span class="comment-time">11月2日</span></li>
+            <li class="comment-item"><span class="comment-user">深海鱼</span><span class="comment-text">林某凡案那个裁定书里写了“被害人陈述有同步录音录像佐证”，就这一条，辩护律师的诱供说法就很难成立了。</span><span class="comment-time">11月2日</span></li>
+            <li class="comment-item"><span class="comment-user">豆友12345</span><span class="comment-text">《长街行》制片主任朋友圈晒转账截图，这个操作挺迷的，补发加班费又不是什么值得炫耀的事。</span><span class="comment-time">11月1日</span></li>
+            <li class="comment-item"><span class="comment-user">一口一个</span><span class="comment-text">GAI直播回应那句“合同怎么签就怎么来”，等于什么都没说。合同条款拿出来看啊。</span><span class="comment-time">11月1日</span></li>
+            <li class="comment-item"><span class="comment-user">晚风</span><span class="comment-text">小杨哥切片那个，我觉得平台也有责任，投诉就下架，也不核实一下授权协议的真实性。</span><span class="comment-time">10月31日</span></li>
+            <li class="comment-item"><span class="comment-user">不吃瓜会死</span><span class="comment-text">陈某某前公司那个追加诉讼，法院受理了不代表支持，先别急着骂。</span><span class="comment-time">10月31日</span></li>
+            <li class="comment-item"><span class="comment-user">咕咕咕</span><span class="comment-text">今天这瓜吃得有点撑，阿沁的录音还没听完，GAI那边又出声明。</span><span class="comment-time">11月6日</span></li>
+            <li class="comment-item"><span class="comment-user">人间清醒</span><span class="comment-text">有没有人整理一下这个月所有爆料的进度表啊，太多了跟不过来。</span><span class="comment-time">11月5日</span></li>
+          </ul>
+        </section>
+
+        <!-- 9. 相关资讯 -->
+        <section class="section" id="news">
+          <div class="section-head">
+            <h2>相关资讯速览</h2>
+          </div>
+          <ul class="news-list">
+            <li class="news-item">
+              <a href="/#news" class="news-title">林某凡案二审裁定书全文公开，辩护意见逐条回应</a>
+              <div class="news-meta">2026年11月7日 · 法治在线</div>
+              <p class="news-summary">裁定书共47页，其中第12至18页专门回应了辩护方提出的“讯问同步录音录像缺失”问题，法院认定录像完整且已随案移送。</p>
+            </li>
+            <li class="news-item">
+              <a href="/#news" class="news-title">阿沁委托律师发函：限7日内归还200万借款</a>
+              <div class="news-meta">2026年11月7日 · 娱乐现场</div>
+              <p class="news-summary">律师函附带了银行转账记录和微信聊天截图，显示男方在2026年3月至5月间分四次借款，最近一次为5月18日，金额60万元。</p>
+            </li>
+            <li class="news-item">
+              <a href="/#news" class="news-title">潮牌BEASTER下架GAI联名商品，客服称库存调整</a>
+              <div class="news-meta">2026年11月5日 · 电商观察</div>
+              <p class="news-summary">下架商品包括2026秋季联名卫衣和棒球帽共7款，天猫旗舰店月销数据显示卫衣此前月销超4000件。品牌方未在声明中提及下架原因。</p>
+            </li>
+            <li class="news-item">
+              <a href="/#news" class="news-title">小杨哥切片纠纷升级：部分账号向市监局投诉</a>
+              <div class="news-meta">2026年11月4日 · 直播日报</div>
+              <p class="news-summary">投诉材料包括2025年授权协议复印件、平台投诉记录截图、以及账号后台收益数据，要求认定授权协议中的“单方终止权”是否构成格式条款。</p>
+            </li>
+            <li class="news-item">
+              <a href="/#news" class="news-title">《长街行》剧组补发27.6万加班费，制片主任晒转账记录</a>
+              <div class="news-meta">2026年11月1日 · 影视工业网</div>
+              <p class="news-summary">转账记录显示收款方为“XX影视制作有限公司工会委员会”，共计43人，人均补发约6400元。爆料场务称自己只收到4200元，差额部分未解释。</p>
+            </li>
+            <li class="news-item">
+              <a href="/#news" class="news-title">陈某某合同纠纷案变更诉讼请求，违约金上调至1800万</a>
+              <div class="news-meta">2026年10月31日 · 娱乐法务</div>
+              <p class="news-summary">新增的600万对应三个外部商务合作，公司提交了品牌方出具的合同复印件，显示陈某某以个人名义签约，未走公司账户。</p>
+            </li>
+          </ul>
+        </section>
+
+        <!-- 10. 相关推荐 -->
+        <section class="section" id="recommend">
+          <div class="section-head">
+            <h2>继续追踪这些条目</h2>
+          </div>
+          <div class="rec-tags">
+            <a href="/#featured" class="rec-tag">林某凡案裁定书全文</a>
+            <a href="/#featured" class="rec-tag">阿沁借款转账记录</a>
+            <a href="/#featured" class="rec-tag">GAI排他条款原文</a>
+            <a href="/#featured" class="rec-tag">切片授权协议模板</a>
+            <a href="/#featured" class="rec-tag">剧组工时考勤表</a>
+            <a href="/#featured" class="rec-tag">经纪合约违约金判例</a>
+            <a href="/#featured" class="rec-tag">说唱节目剪辑争议</a>
+            <a href="/#featured" class="rec-tag">网红分手经济纠纷合集</a>
+          </div>
+        </section>
+
+        <!-- 11. 补充板块：可信度分层 -->
+        <section class="section" id="tiers">
+          <div class="section-head">
+            <h2>近期爆料可信度分层</h2>
+          </div>
+          <div class="tier-list">
+            <div class="tier-item">
+              <span class="tier-badge tier-a">高可信</span>
+              <span class="tier-text">林某凡案二审裁定——有法院公开文书、裁判文书网可查、多家官媒转载，核心事实无争议。</span>
+            </div>
+            <div class="tier-item">
+              <span class="tier-badge tier-a">高可信</span>
+              <span class="tier-text">《长街行》补发加班费——有转账截图、制片主任朋友圈公开、剧组官方回应承认考勤失误，金额和人数可核对。</span>
+            </div>
+            <div class="tier-item">
+              <span class="tier-badge tier-b">中等可信</span>
+              <span class="tier-text">阿沁借款纠纷——录音和转账记录指向“借款”，但男方改口称“投资”，双方各执一词，需等诉讼结果。</span>
+            </div>
+            <div class="tier-item">
+              <span class="tier-badge tier-b">中等可信</span>
+              <span class="tier-text">GAI代言解约——品牌方附了截图和合同条款，GAI方未出示反证，但“节目组安排”的说法需要节目组佐证。</span>
+            </div>
+            <div class="tier-item">
+              <span class="tier-badge tier-c">待核实</span>
+              <span class="tier-text">小杨哥切片授权——双方都出示了协议，但“终止通知是否送达”各说各话，缺少第三方记录（如快递单、邮件回执）。</span>
+            </div>
+            <div class="tier-item">
+              <span class="tier-badge tier-c">待核实</span>
+              <span class="tier-text">陈某某违约金上调——公司提交了外部合同复印件，但陈方称“合同真实性存疑”，需等法院质证结果。</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 互动栏目：投稿/交流 -->
+        <section class="section" id="contribute">
+          <div class="section-head">
+            <h2>爆料投稿与交流</h2>
+          </div>
+          <p style="font-size:14px;color:var(--text-2);line-height:1.8;margin-bottom:12px;">
+            手里有未公开的录音、截图或时间线整理？可以发到投稿邮箱 <strong style="color:var(--primary-dark);">tips@heiliaoyande.example</strong>，附上原始文件和简要说明。站内会做交叉核实，无法确认来源的材料不会发布。也欢迎在评论区补充你注意到但被忽略的细节。
+          </p>
+          <p style="font-size:13px;color:var(--text-3);">投稿前请确认材料不涉及未成年人隐私，且你拥有合法的传播权利。</p>
+        </section>
+
+      </main>
+
+      <!-- 右辅助栏 -->
+      <aside class="aside-col" aria-label="辅助栏">
+        <div class="aside-card">
+          <h3>本周热度榜</h3>
+          <ol class="hot-list">
+            <li><a href="/#featured">林某凡二审维持原判</a></li>
+            <li><a href="/#featured">阿沁分手录音曝光</a></li>
+            <li><a href="/#featured">GAI代言解约风波</a></li>
+            <li><a href="/#featured">小杨哥切片授权纠纷</a></li>
+            <li><a href="/#featured">陈某某违约金案</a></li>
+            <li><a href="/#featured">《长街行》超时拍摄</a></li>
+            <li><a href="/#featured">说唱节目剪辑争议</a></li>
+          </ol>
+        </div>
+
+        <div class="interact-box">
+          <h3>有料要爆？</h3>
+          <p>匿名投稿通道持续开放。录音、截图、聊天记录请保留原始文件，注明时间、人物和事件经过。</p>
+          <a href="/#contribute" class="btn-small">前往投稿</a>
+        </div>
+
+        <div class="aside-card">
+          <h3>更新时间线</h3>
+          <ul class="hot-list" style="counter-reset: none;">
+            <li style="counter-increment: none;">11月7日 · 林某凡案裁定书公开</li>
+            <li style="counter-increment: none;">11月6日 · 阿沁录音流出</li>
+            <li style="counter-increment: none;">11月5日 · GAI品牌解约</li>
+            <li style="counter-increment: none;">11月4日 · 切片授权投诉</li>
+            <li style="counter-increment: none;">11月1日 · 剧组补发加班费</li>
+            <li style="counter-increment: none;">10月31日 · 陈某某案变更诉求</li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">黑料 yande</div>
+        <p class="footer-tagline">覆盖2026年10月至11月的娱乐爆料与争议事件，每日跟进当事人回应与证据进展。内容以具体事件的时间线、信源对比和公开文书为主，不做无依据的推测。</p>
+      </div>
+      <div class="footer-col">
+        <h4>事件分类</h4>
+        <ul>
+          <li><a href="/#categories">明星塌房</a></li>
+          <li><a href="/#categories">网红翻车</a></li>
+          <li><a href="/#categories">商业纠纷</a></li>
+          <li><a href="/#categories">影视圈内幕</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>快速入口</h4>
+        <ul>
+          <li><a href="/#featured">精选爆料</a></li>
+          <li><a href="/#updates">最新动态</a></li>
+          <li><a href="/#deep-read">深度解析</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>互动</h4>
+        <ul>
+          <li><a href="/#comments">网友评论</a></li>
+          <li><a href="/#contribute">投稿通道</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#tiers">可信度分层</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 黑料 yande · 内容均为示例条目，不构成事实认定。</span>
+      <span>最近更新：2026年11月8日 · 对应条目：林某凡案裁定书公开、阿沁律师函、GAI解约声明</span>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+  <script>
+    (function() {
+      // 搜索过滤
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.getElementById('searchBtn');
+      const cardGrid = document.getElementById('cardGrid');
+      const noResult = document.getElementById('noResult');
+      const cards = cardGrid ? Array.from(cardGrid.querySelectorAll('.card')) : [];
+
+      function doSearch() {
+        const q = (searchInput.value || '').trim().toLowerCase();
+        if (!q) {
+          cards.forEach(c => c.style.display = '');
+          noResult.classList.remove('show');
+          return;
+        }
+        let found = 0;
+        cards.forEach(c => {
+          const text = (c.getAttribute('data-title') || '') + c.textContent.toLowerCase();
+          if (text.includes(q)) {
+            c.style.display = '';
+            found++;
+          } else {
+            c.style.display = 'none';
+          }
+        });
+        noResult.classList.toggle('show', found === 0);
+      }
+
+      if (searchBtn) searchBtn.addEventListener('click', doSearch);
+      if (searchInput) {
+        searchInput.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') { e.preventDefault(); doSearch(); }
+        });
+      }
+
+      // 回到顶部
+      const backTop = document.getElementById('backTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) {
+          backTop.classList.add('show');
+        } else {
+          backTop.classList.remove('show');
+        }
+      }, { passive: true });
+      backTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 移动端菜单
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      const menuOverlay = document.getElementById('menuOverlay');
+
+      function closeMenu() {
+        mobileNav.classList.remove('show');
+        menuOverlay.classList.remove('show');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+      function openMenu() {
+        mobileNav.classList.add('show');
+        menuOverlay.classList.add('show');
+        menuToggle.setAttribute('aria-expanded', 'true');
+      }
+
+      if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+          if (mobileNav.classList.contains('show')) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+      }
+      if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
+      if (mobileNav) {
+        mobileNav.querySelectorAll('a').forEach(a => {
+          a.addEventListener('click', closeMenu);
+        });
+      }
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileNav.classList.contains('show')) {
+          closeMenu();
+        }
+      });
+
+      // 平滑滚动偏移已在 CSS 中通过 scroll-padding-top 处理
+    })();
+  </script>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "黑料 yande",
+    "description": "聚合娱乐八卦爆料、网红翻车与圈内争议事件，提供时间线梳理、证据链拆解与网友讨论。",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "林某凡案二审为什么维持原判？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "二审法院在裁定书中指出，一审认定的证据链完整，被害人陈述有同步录音录像佐证，辩护方提出的“诱供”主张缺乏证据支持。裁定于11月7日作出，刑期和附加刑均未变更。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "阿沁分手录音里的200万是借款还是投资？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "录音中男方明确说“这200万我认，算我借的”，阿沁方也出示了转账记录，备注为“借款”。男方在后续回应中改口称“是共同投资”，但未提供投资协议。目前阿沁已委托律师发函，要求限期还款。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "GAI的代言解约纠纷，品牌方索赔380万有依据吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "品牌方在声明中援引了合同第7.3条排他条款，并附上了GAI在竞品直播间露出的截图，时间为10月22日。GAI工作室则称露出系节目组统一安排，艺人“无法单方面决定着装”。双方各执一词，目前没有进入诉讼程序。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "小杨哥切片授权纠纷中，旧授权协议还有效吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "部分账号主出示的授权协议签署于2025年3月，有效期写的是“至双方书面终止”。三只羊网络在11月4日的回应中称“2026年1月起已陆续通知终止授权”，但未提供通知记录。争议点在于终止通知是否实际送达。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "剧组超时工作爆料里，场务说的“18天无休”属实吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "《长街行》剧组在10月29日的回应中承认“少数人员考勤记录有误”，并补发了27.6万元加班费。制片主任晒出的转账截图显示，补发金额按1.5倍日薪计算。但爆料场务称实际工作天数更长，目前双方未就具体天数达成一致。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "陈某某的经纪合约违约金为什么从1200万涨到1800万？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "前经纪公司在11月3日变更诉讼请求，新增了“2026年4月至9月期间私自接洽的3个商务合作”的损失计算，合计600万元。法院已受理变更申请，原定12月的开庭日期可能推迟。"
+        }
+      }
+    ]
+  }
+  </script>
+
+</body>
+  </html>
