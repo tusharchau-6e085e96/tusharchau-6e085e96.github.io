@@ -1,0 +1,1580 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WWWXXX日本 - 日本文化趋势与旅行消费指南</title>
+  <meta name="description" content="WWWXXX日本汇聚2026年日本流行文化、旅行路线与消费趋势的深度内容，涵盖动漫圣地巡礼、地方美食榜单、药妆比价、铁道周游券攻略及用户实拍评论，适合计划赴日或关注日本动态的读者。">
+  <meta name="keywords" content="WWWXXX日本">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23d32f2f'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23fff'%3E日%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --primary: #c62828;
+      --primary-light: #ef5350;
+      --primary-dark: #8e0000;
+      --bg: #faf6f0;
+      --surface: #ffffff;
+      --text: #1e1e1e;
+      --text-secondary: #5f5f5f;
+      --text-tertiary: #8b8b8b;
+      --border: #e0d6cc;
+      --radius-card: 12px;
+      --radius-btn: 24px;
+      --radius-tag: 16px;
+      --shadow: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-hover: 0 6px 20px rgba(0,0,0,0.12);
+      --font-sans: 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans', 'Microsoft YaHei', sans-serif;
+      --font-serif: 'Noto Serif JP', 'Songti SC', Georgia, serif;
+      --announce-h: 40px;
+      --header-h: 64px;
+      --sticky-offset: 104px;
+      --max-width: 1380px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-offset); }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    ul { list-style: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* 吸顶公告条 + 页头 */
+    .announce-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--primary-dark);
+      color: #fff;
+      height: var(--announce-h);
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      font-size: 13px;
+      overflow: hidden;
+    }
+    .announce-inner {
+      display: flex;
+      gap: 32px;
+      white-space: nowrap;
+      animation: scrollAnnounce 28s linear infinite;
+    }
+    .announce-inner:hover { animation-play-state: paused; }
+    @keyframes scrollAnnounce {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .announce-item { display: inline-flex; align-items: center; gap: 6px; }
+    .announce-tag {
+      background: rgba(255,255,255,0.2);
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .announce-brand { font-weight: 700; letter-spacing: 1px; margin-right: 8px; color: #ffcdd2; }
+    .site-header {
+      position: sticky;
+      top: var(--announce-h);
+      z-index: 99;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+    }
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, var(--primary-light), var(--primary-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: 0 2px 6px rgba(198,40,40,0.35);
+    }
+    .brand-text {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--primary-dark);
+    }
+    .main-nav {
+      display: flex;
+      gap: 4px;
+      flex: 1;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .main-nav::-webkit-scrollbar { display: none; }
+    .main-nav a {
+      padding: 6px 12px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+      background: var(--primary-light);
+      color: #fff;
+      outline: none;
+    }
+    .header-actions { display: flex; gap: 8px; align-items: center; }
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      padding: 4px 8px 4px 14px;
+      gap: 4px;
+    }
+    .search-box input {
+      border: none;
+      background: transparent;
+      font-size: 13px;
+      width: 130px;
+      outline: none;
+      color: var(--text);
+    }
+    .search-box input::placeholder { color: var(--text-tertiary); }
+    .search-box button {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .search-box button:hover { background: var(--primary-dark); }
+    .hamburger {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      font-size: 22px;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    /* 首屏 */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #3d1e1e 100%);
+      color: #fff;
+      overflow: hidden;
+      padding: 64px 24px 56px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -80px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(239,83,80,0.35), transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -40px;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 900;
+      letter-spacing: 2px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #fff 30%, #ffcdd2 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-desc {
+      font-size: 16px;
+      color: rgba(255,255,255,0.82);
+      max-width: 600px;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); }
+    .btn-outline {
+      border: 1.5px solid rgba(255,255,255,0.45);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-end;
+    }
+    .hero-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: var(--radius-card);
+      padding: 16px 20px;
+      width: 100%;
+      max-width: 320px;
+    }
+    .hero-card-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #ffab91;
+      margin-bottom: 6px;
+    }
+    .hero-card-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .hero-card-meta { font-size: 12px; color: rgba(255,255,255,0.6); }
+
+    /* 三栏布局 */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 32px 24px 48px;
+      display: grid;
+      grid-template-columns: 180px 1fr 260px;
+      gap: 28px;
+      align-items: start;
+    }
+    .channel-nav {
+      position: sticky;
+      top: var(--sticky-offset);
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      padding: 16px 0;
+      overflow: hidden;
+    }
+    .channel-nav h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--text-tertiary);
+      padding: 0 16px 10px;
+      font-weight: 600;
+    }
+    .channel-nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      border-left: 3px solid transparent;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .channel-nav a:hover,
+    .channel-nav a.active {
+      background: #fdf0ef;
+      color: var(--primary-dark);
+      border-left-color: var(--primary);
+    }
+    .channel-nav .ch-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      flex-shrink: 0;
+    }
+
+    .main-content { display: flex; flex-direction: column; gap: 36px; }
+    .aside-right { display: flex; flex-direction: column; gap: 28px; position: sticky; top: var(--sticky-offset); }
+
+    /* 板块标题 */
+    .section-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 22px;
+      border-radius: 3px;
+      background: var(--primary);
+      flex-shrink: 0;
+    }
+    .section-sub {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      margin-bottom: 18px;
+      padding-left: 15px;
+    }
+
+    /* 概览 */
+    .overview-text {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      padding: 24px 28px;
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--text-secondary);
+    }
+    .overview-text p + p { margin-top: 14px; }
+    .overview-text strong { color: var(--text); }
+
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      background: var(--border);
+    }
+    .card-body { padding: 14px 16px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+    .card-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      background: #fdf0ef;
+      border-radius: var(--radius-tag);
+      padding: 2px 10px;
+      align-self: flex-start;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--text);
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      margin-top: 4px;
+    }
+    .card-heat { color: var(--primary); font-weight: 600; }
+
+    /* 最新更新列表 */
+    .update-list { display: flex; flex-direction: column; gap: 2px; background: var(--surface); border-radius: var(--radius-card); box-shadow: var(--shadow); overflow: hidden; }
+    .update-item {
+      display: flex;
+      gap: 16px;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+      align-items: baseline;
+    }
+    .update-item:last-child { border-bottom: none; }
+    .update-item:hover { background: #fdfaf6; }
+    .update-date {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+      width: 72px;
+    }
+    .update-title { font-size: 14px; font-weight: 600; color: var(--text); flex-shrink: 0; max-width: 200px; }
+    .update-summary { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 12px;
+    }
+    .category-item {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      padding: 18px 14px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: center;
+      border: 1px solid transparent;
+    }
+    .category-item:hover {
+      background: var(--primary-light);
+      color: #fff;
+      transform: translateY(-2px);
+      border-color: var(--primary-light);
+    }
+    .category-item span { font-size: 12px; font-weight: 400; opacity: 0.7; }
+
+    /* 深度解析 */
+    .deep-dive {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      padding: 28px 32px;
+    }
+    .deep-dive h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .deep-dive .lead { font-size: 14px; color: var(--text-tertiary); margin-bottom: 24px; }
+    .deep-dive h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 28px 0 10px;
+      color: var(--primary-dark);
+      padding-left: 4px;
+    }
+    .deep-dive h3:first-of-type { margin-top: 0; }
+    .deep-dive p { font-size: 14.5px; line-height: 1.85; color: var(--text-secondary); margin-bottom: 12px; }
+    .deep-dive ul { margin: 10px 0 16px 22px; list-style: disc; font-size: 14px; color: var(--text-secondary); line-height: 1.8; }
+    .deep-dive ul li { margin-bottom: 4px; }
+    .deep-dive strong { color: var(--text); }
+    .compare-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+      background: #fdf8f4;
+      border-radius: 10px;
+      padding: 18px;
+    }
+    .compare-col h4 { font-size: 14px; font-weight: 700; margin-bottom: 8px; color: var(--primary-dark); }
+    .compare-col p { font-size: 13px; line-height: 1.7; margin: 0; }
+
+    /* 体验指南 */
+    .guide-steps { display: flex; flex-direction: column; gap: 0; background: var(--surface); border-radius: var(--radius-card); box-shadow: var(--shadow); overflow: hidden; }
+    .guide-step {
+      display: flex;
+      gap: 18px;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .guide-step:last-child { border-bottom: none; }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .step-content h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .step-content p { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    details {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    summary {
+      padding: 16px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.15s;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: '+';
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--text-tertiary);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    details[open] summary::after { content: '−'; }
+    summary:hover { background: #fdfaf6; }
+    details p { padding: 0 20px 18px; font-size: 14px; line-height: 1.8; color: var(--text-secondary); }
+
+    /* 评论 */
+    .comment-list { display: flex; flex-direction: column; gap: 12px; }
+    .comment-item {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      padding: 14px 18px;
+    }
+    .comment-head { display: flex; gap: 10px; align-items: center; margin-bottom: 6px; }
+    .comment-avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .comment-name { font-size: 13px; font-weight: 600; }
+    .comment-time { font-size: 11px; color: var(--text-tertiary); margin-left: auto; }
+    .comment-text { font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; }
+
+    /* 相关资讯 */
+    .news-list { display: flex; flex-direction: column; gap: 0; background: var(--surface); border-radius: var(--radius-card); box-shadow: var(--shadow); overflow: hidden; }
+    .news-item { padding: 16px 20px; border-bottom: 1px solid var(--border); transition: background 0.15s; }
+    .news-item:last-child { border-bottom: none; }
+    .news-item:hover { background: #fdfaf6; }
+    .news-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .news-meta { font-size: 12px; color: var(--text-tertiary); margin-bottom: 6px; }
+    .news-summary { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* 相关推荐标签 */
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 10px; }
+    .tag-link {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-tag);
+      padding: 7px 16px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .tag-link:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    /* 榜单/时间线 */
+    .ranking-list { background: var(--surface); border-radius: var(--radius-card); box-shadow: var(--shadow); overflow: hidden; }
+    .rank-item {
+      display: flex;
+      gap: 14px;
+      padding: 13px 18px;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .rank-item:last-child { border-bottom: none; }
+    .rank-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: var(--bg);
+      color: var(--text-secondary);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .rank-item:nth-child(1) .rank-num { background: var(--primary); color: #fff; }
+    .rank-item:nth-child(2) .rank-num { background: var(--primary-light); color: #fff; }
+    .rank-item:nth-child(3) .rank-num { background: #ef9a9a; color: #fff; }
+    .rank-name { font-size: 14px; font-weight: 600; flex: 1; }
+    .rank-score { font-size: 12px; color: var(--text-tertiary); }
+
+    /* 侧栏小部件 */
+    .widget {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      padding: 18px 20px;
+    }
+    .widget h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--primary-light);
+      display: inline-block;
+    }
+    .widget-list { display: flex; flex-direction: column; gap: 10px; }
+    .widget-list li { font-size: 13px; color: var(--text-secondary); display: flex; gap: 8px; align-items: baseline; }
+    .widget-list li::before { content: '·'; color: var(--primary); font-weight: 700; font-size: 16px; }
+    .widget-list li a:hover { color: var(--primary); }
+
+    /* 投稿互动栏 */
+    .interact-bar {
+      background: linear-gradient(135deg, #fdf0ef, #fff5f2);
+      border: 1px dashed var(--primary-light);
+      border-radius: var(--radius-card);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .interact-bar p { font-size: 14px; color: var(--text-secondary); }
+    .interact-bar strong { color: var(--primary-dark); }
+
+    /* 页脚 */
+    .site-footer {
+      background: #1a1a1a;
+      color: rgba(255,255,255,0.7);
+      padding: 40px 24px 28px;
+      margin-top: 0;
+    }
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    .footer-brand { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .footer-desc { font-size: 13px; line-height: 1.7; max-width: 320px; }
+    .footer-col h4 { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .footer-col a { display: block; font-size: 13px; padding: 3px 0; transition: color 0.15s; }
+    .footer-col a:hover { color: #ffcdd2; }
+    .footer-bottom {
+      max-width: var(--max-width);
+      margin: 24px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* 回到顶部 */
+    .back-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 20px;
+      box-shadow: 0 4px 14px rgba(198,40,40,0.4);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 90;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .back-top.visible { display: flex; }
+    .back-top:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+    /* 移动端菜单遮罩 */
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 98;
+    }
+    .menu-overlay.active { display: block; }
+
+    /* 搜索结果反馈 */
+    .no-result { padding: 20px; text-align: center; color: var(--text-tertiary); font-size: 14px; display: none; }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .container { grid-template-columns: 160px 1fr; }
+      .aside-right { grid-column: 2; position: static; flex-direction: row; flex-wrap: wrap; }
+      .aside-right .widget { flex: 1; min-width: 220px; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { flex-direction: row; flex-wrap: wrap; justify-content: flex-start; }
+      .hero-card { max-width: 100%; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 740px) {
+      .container { grid-template-columns: 1fr; padding: 20px 14px 32px; }
+      .channel-nav { display: none; }
+      .aside-right { grid-column: 1; flex-direction: column; }
+      .main-nav { display: none; }
+      .hamburger { display: flex; }
+      .search-box input { width: 90px; }
+      .hero { padding: 40px 16px 36px; }
+      .hero h1 { font-size: 2rem; }
+      .hero-desc { font-size: 14px; }
+      .card-grid { grid-template-columns: 1fr; }
+      .update-item { flex-wrap: wrap; gap: 4px; }
+      .update-title { max-width: 100%; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .compare-box { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+      .brand-text { font-size: 17px; }
+      .back-top { bottom: 18px; right: 18px; width: 40px; height: 40px; }
+      .deep-dive { padding: 20px 18px; }
+      .overview-text { padding: 18px 16px; }
+    }
+
+    /* 移动端抽屉导航 */
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 280px;
+      background: var(--surface);
+      z-index: 100;
+      padding: 20px 0;
+      overflow-y: auto;
+      box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+    }
+    .mobile-drawer.open { transform: translateX(0); }
+    .mobile-drawer a {
+      display: block;
+      padding: 10px 24px;
+      font-size: 15px;
+      color: var(--text-secondary);
+      border-left: 3px solid transparent;
+    }
+    .mobile-drawer a:hover, .mobile-drawer a.active { background: #fdf0ef; color: var(--primary-dark); border-left-color: var(--primary); }
+    .mobile-drawer .drawer-title {
+      padding: 0 24px 12px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-tertiary);
+      font-weight: 600;
+    }
+    @media (max-width: 740px) {
+      .mobile-drawer { display: block; }
+    }
+
+    /* 搜索隐藏 */
+    .hidden-by-search { display: none !important; }
+    .search-status { padding: 8px 0; font-size: 13px; color: var(--text-tertiary); }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+  <!-- 吸顶公告条 -->
+  <div class="announce-bar" role="region" aria-label="更新公告">
+    <div class="announce-inner">
+      <span class="announce-brand">WWWXXX日本</span>
+      <span class="announce-item"><span class="announce-tag">11月7日</span>「东京下町咖啡地图」新增清澄白河6家实测</span>
+      <span class="announce-item"><span class="announce-tag">11月6日</span>关西铁道周游券2026冬版比价上线</span>
+      <span class="announce-item"><span class="announce-tag">11月5日</span>「京都红叶夜游」实时见顷速报更新至第4期</span>
+      <span class="announce-item"><span class="announce-tag">11月4日</span>药妆店免税叠券攻略新增松本清2026新版</span>
+    </div>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">日</div>
+        <span class="brand-text">WWWXXX日本</span>
+      </div>
+      <nav class="main-nav" aria-label="主题导航">
+        <a href="/#cat-anime">动漫圣地</a>
+        <a href="/#cat-food">地方美食</a>
+        <a href="/#cat-travel">铁道旅行</a>
+        <a href="/#cat-shopping">药妆比价</a>
+        <a href="/#cat-culture">传统工艺</a>
+        <a href="/#cat-event">祭典花火</a>
+        <a href="/#cat-photo">摄影机位</a>
+        <a href="/#cat-stay">温泉旅馆</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-box">
+          <input type="search" id="searchInput" placeholder="搜条目 / 地名" aria-label="搜索内容">
+          <button type="button" id="searchBtn" aria-label="搜索">🔍</button>
+        </div>
+        <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 移动端抽屉 -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <nav class="mobile-drawer" id="mobileDrawer" aria-label="移动端导航">
+    <div class="drawer-title">频道导航</div>
+    <a href="/#cat-anime">动漫圣地</a>
+    <a href="/#cat-food">地方美食</a>
+    <a href="/#cat-travel">铁道旅行</a>
+    <a href="/#cat-shopping">药妆比价</a>
+    <a href="/#cat-culture">传统工艺</a>
+    <a href="/#cat-event">祭典花火</a>
+    <a href="/#cat-photo">摄影机位</a>
+    <a href="/#cat-stay">温泉旅馆</a>
+  </nav>
+
+  <!-- 首屏 -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1 id="hero-title">WWWXXX日本</h1>
+        <p class="hero-desc">汇聚2026年日本动漫圣地巡礼、地方美食实测、铁道周游券比价与药妆免税攻略。从东京清澄白河咖啡地图到京都红叶夜游见顷速报，每一条都带具体店名、价格和到访日期。</p>
+        <div class="hero-actions">
+          <a href="/#featured" class="btn-primary">浏览精选条目 ↓</a>
+          <a href="/#deep-dive" class="btn-outline">深度解析</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-label">本周焦点</div>
+          <div class="hero-card-title">京都红叶夜游 2026 见顷速报</div>
+          <div class="hero-card-meta">11月5日更新 · 永观堂/清水寺/北野天满宫</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-label">比价更新</div>
+          <div class="hero-card-title">松本清 vs 唐吉诃德 免税叠券实测</div>
+          <div class="hero-card-meta">11月4日 · 新宿三丁目两店同款差价 12%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 三栏主体 -->
+  <div class="container">
+    <!-- 左频道栏 -->
+    <aside class="channel-nav" aria-label="频道索引">
+      <h2>频道索引</h2>
+      <a href="/#cat-anime" class="active"><span class="ch-dot"></span>动漫圣地巡礼</a>
+      <a href="/#cat-food"><span class="ch-dot"></span>地方美食实测</a>
+      <a href="/#cat-travel"><span class="ch-dot"></span>铁道周游券</a>
+      <a href="/#cat-shopping"><span class="ch-dot"></span>药妆免税比价</a>
+      <a href="/#cat-culture"><span class="ch-dot"></span>传统工艺体验</a>
+      <a href="/#cat-event"><span class="ch-dot"></span>祭典花火日程</a>
+      <a href="/#cat-photo"><span class="ch-dot"></span>摄影机位地图</a>
+      <a href="/#cat-stay"><span class="ch-dot"></span>温泉旅馆选宿</a>
+      <a href="/#featured"><span class="ch-dot"></span>精选条目推荐</a>
+      <a href="/#deep-dive"><span class="ch-dot"></span>深度解析</a>
+      <a href="/#faq"><span class="ch-dot"></span>常见问答</a>
+    </aside>
+
+    <!-- 中主内容 -->
+    <main class="main-content">
+
+      <!-- 1. 主题领域概览 -->
+      <section id="overview" aria-labelledby="overview-title">
+        <h2 class="section-title" id="overview-title">日本在地体验与消费内容全景</h2>
+        <p class="section-sub">2026年11月 · 覆盖关东、关西、九州、北海道四个区域的条目方向</p>
+        <div class="overview-text">
+          <p>日本旅行内容大致分为六条主线：<strong>动漫圣地巡礼</strong>（animate合作店、剧场版取景地、痛电车）、<strong>地方美食实测</strong>（食べログ高分店、市场早市、B级美食）、<strong>铁道与交通</strong>（JR Pass调价后的替代券、私铁周游券、夜行巴士）、<strong>药妆与免税</strong>（松本清、唐吉诃德、SUGI药局的叠券策略）、<strong>传统工艺与体验</strong>（金泽金箔、京都西阵织、有田烧窑元见学）、<strong>祭典与花火</strong>（祇园祭、青森睡魔祭、全国花火竞技大会）。</p>
+          <p>2026年值得留意的变化：JR东日本在10月调整了「JR东京广域周游券」的适用范围，新增了伊豆急行线；关西三家私铁联合推出「关西铁道周游券2026冬版」，覆盖范围比去年多了和歌山电铁贵志川线。药妆方面，松本清在11月更新了免税叠券规则——原先可叠加的5%折扣券现在单笔上限降到3万日元。京都红叶夜游的特别拜观从11月1日开始，永观堂和清水寺的夜间入场时间比去年提前了30分钟。</p>
+        </div>
+      </section>
+
+      <!-- 2. 精选内容推荐 -->
+      <section id="featured" aria-labelledby="featured-title">
+        <h2 class="section-title" id="featured-title">精选条目推荐</h2>
+        <p class="section-sub">编辑筛选 · 含具体店名、票价与到访日期</p>
+        <div class="card-grid">
+          <article class="card">
+            <img class="card-img" src="https://picsum.photos/seed/kyotoMomiji/400/300" width="400" height="300" loading="lazy" alt="京都永观堂夜间红叶点灯，石阶两侧枫叶被灯光染成红色">
+            <div class="card-body">
+              <span class="card-tag">红叶夜游</span>
+              <h3 class="card-title">永观堂夜间特别拜观 11月1日-12月3日</h3>
+              <p class="card-desc">今年提前30分钟开场，17:00即可入场。多宝塔前的石阶是拍照最挤的位置，建议17:10前到达。门票600日元，夜间加收400日元。</p>
+              <div class="card-meta"><span>更新 11-05</span><span class="card-heat">热度 9,842</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img class="card-img" src="https://picsum.photos/seed/tokyoCoffee/400/300" width="400" height="300" loading="lazy" alt="清澄白河一家烘焙工坊内的手冲咖啡吧台，木质装潢">
+            <div class="card-body">
+              <span class="card-tag">咖啡地图</span>
+              <h3 class="card-title">清澄白河烘焙工坊6家实测</h3>
+              <p class="card-desc">从蓝瓶到本土小烘焙，实测了6家的手冲单品。最推荐「ARiSE」的埃塞俄比亚日晒，650日元/杯，店主会主动聊豆子产地。</p>
+              <div class="card-meta"><span>更新 11-07</span><span class="card-heat">热度 7,215</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img class="card-img" src="https://picsum.photos/seed/kansaiRail/400/300" width="400" height="300" loading="lazy" alt="关西私铁特急列车停靠在站台，车身涂装为深蓝色">
+            <div class="card-body">
+              <span class="card-tag">铁道周游券</span>
+              <h3 class="card-title">关西铁道周游券2026冬版比价</h3>
+              <p class="card-desc">覆盖南海、近铁、京阪三家私铁，新增和歌山电铁贵志川线。2日券4,800日元，比单买省约1,200日元，适合大阪-和歌山-京都三角路线。</p>
+              <div class="card-meta"><span>更新 11-06</span><span class="card-heat">热度 6,893</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img class="card-img" src="https://picsum.photos/seed/matsukiyo/400/300" width="400" height="300" loading="lazy" alt="药妆店内货架摆放各类护肤品与防晒霜，价格标签清晰">
+            <div class="card-body">
+              <span class="card-tag">药妆比价</span>
+              <h3 class="card-title">松本清 vs 唐吉诃德 新宿同款差价</h3>
+              <p class="card-desc">选了10款热门品比价，资生堂安耐晒金瓶60ml在两店差378日元。松本清免税叠券上限降到3万日元后，大额采购需分单。</p>
+              <div class="card-meta"><span>更新 11-04</span><span class="card-heat">热度 11,204</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img class="card-img" src="https://picsum.photos/seed/kanazawaGold/400/300" width="400" height="300" loading="lazy" alt="金泽金箔工艺体验，桌面放置金箔与刷具，光线柔和">
+            <div class="card-body">
+              <span class="card-tag">传统工艺</span>
+              <h3 class="card-title">金泽金箔贴箔体验 90分钟工坊</h3>
+              <p class="card-desc">「箔一」本店工坊，费用2,800日元，做一个小碟子或首饰盒。金箔极轻，呼吸重一点就会吹飞，老师会帮忙补救。需提前3天官网预约。</p>
+              <div class="card-meta"><span>更新 11-03</span><span class="card-heat">热度 5,431</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img class="card-img" src="https://picsum.photos/seed/akihabaraAnime/400/300" width="400" height="300" loading="lazy" alt="秋叶原动漫周边店外立面，橱窗摆满手办与海报">
+            <div class="card-body">
+              <span class="card-tag">动漫圣地</span>
+              <h3 class="card-title">秋叶原 animate 本店 11月新刊到货</h3>
+              <p class="card-desc">11月第一周到货的漫画新刊集中在4楼，包括《葬送的芙莉莲》第14卷特装版。5楼有剧场版《高达SEED》重映的限定周边，每人限购2件。</p>
+              <div class="card-meta"><span>更新 11-02</span><span class="card-heat">热度 8,760</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. 最新更新 -->
+      <section id="updates" aria-labelledby="updates-title">
+        <h2 class="section-title" id="updates-title">最新更新与动态</h2>
+        <p class="section-sub">11月1日—11月7日 · 条目新增与价格调整</p>
+        <div class="update-list">
+          <div class="update-item">
+            <span class="update-date">11月7日</span>
+            <span class="update-title">东京下町咖啡地图</span>
+            <span class="update-summary">新增清澄白河6家烘焙工坊实测，含「ARiSE」日晒单品650日元。</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月6日</span>
+            <span class="update-title">关西铁道周游券2026冬版</span>
+            <span class="update-summary">2日券4,800日元，新增和歌山电铁贵志川线，与单买对比省1,200日元。</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月5日</span>
+            <span class="update-title">京都红叶夜游见顷速报</span>
+            <span class="update-summary">永观堂见顷提前至11月5日，清水寺预计11月18日进入最佳观赏期。</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月4日</span>
+            <span class="update-title">药妆免税叠券攻略</span>
+            <span class="update-summary">松本清5%折扣券单笔上限降至3万日元，唐吉诃德仍可叠加且无上限。</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月3日</span>
+            <span class="update-title">金泽金箔贴箔体验</span>
+            <span class="update-summary">「箔一」本店工坊11月周末名额已满，平日尚可预约，费用2,800日元。</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月2日</span>
+            <span class="update-title">秋叶原animate新刊到货</span>
+            <span class="update-summary">《葬送的芙莉莲》第14卷特装版到货，5楼SEED重映周边每人限购2件。</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月1日</span>
+            <span class="update-title">温泉旅馆选宿指南</span>
+            <span class="update-summary">新增箱根、由布院、登别三地共9家旅馆的2026冬价格与私汤条件对比。</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月1日</span>
+            <span class="update-title">祇园祭2027日程预告</span>
+            <span class="update-summary">前祭山鉾巡行定于7月17日，后祭7月24日，与2026年维持同一周次结构。</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section id="categories" aria-labelledby="categories-title">
+        <h2 class="section-title" id="categories-title">按类别找条目</h2>
+        <p class="section-sub">点击进入对应频道 · 共8个分类</p>
+        <div class="category-grid">
+          <a href="/#cat-anime" class="category-item">动漫圣地巡礼 <span>animate/取景地/痛电车</span></a>
+          <a href="/#cat-food" class="category-item">地方美食实测 <span>食べログ/市场/B级</span></a>
+          <a href="/#cat-travel" class="category-item">铁道周游券 <span>JR Pass/私铁/夜巴</span></a>
+          <a href="/#cat-shopping" class="category-item">药妆免税比价 <span>松本清/唐吉诃德/SUGI</span></a>
+          <a href="/#cat-culture" class="category-item">传统工艺体验 <span>金箔/西阵织/有田烧</span></a>
+          <a href="/#cat-event" class="category-item">祭典花火日程 <span>祇园祭/睡魔祭/花火大会</span></a>
+          <a href="/#cat-photo" class="category-item">摄影机位地图 <span>富士山/函馆山/千本鸟居</span></a>
+          <a href="/#cat-stay" class="category-item">温泉旅馆选宿 <span>箱根/由布院/登别</span></a>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析 -->
+      <section id="deep-dive" class="deep-dive" aria-labelledby="deep-title">
+        <h2 id="deep-title">2026年赴日消费的三个判断维度</h2>
+        <p class="lead">以关西铁道券、药妆叠券和红叶夜游排队为例，拆开算一遍</p>
+
+        <h3>铁道周游券：涨价后哪些组合仍划算</h3>
+        <p>JR Pass全国版在2023年10月调价后，7日券涨到50,000日元。2026年11月，关西地区实际在用的替代方案有三类：关西铁道周游券2026冬版（2日4,800日元）、JR西日本关西广域周游券（5日12,000日元）、以及南海电铁+近铁单买组合。判断标准不是“能不能坐回本”，而是<strong>行程中有没有至少一段新干线或特急</strong>。</p>
+        <ul>
+          <li>关西铁道周游券2026冬版：覆盖南海、近铁、京阪，新增和歌山电铁贵志川线。适合大阪—和歌山—京都三角路线。以难波到和歌山市、和歌山市到京都、京都到大阪三条行程计算，单买合计6,020日元，周游券4,800日元，省1,220日元。</li>
+          <li>JR西日本关西广域券：5日12,000日元，覆盖新大阪到冈山的新干线自由席。如果行程含姬路或冈山，单买新大阪—冈山往返约11,600日元，加上其他JR线即可回本。</li>
+          <li>南海+近铁单买：适合只走大阪—奈良—京都的短途，3天总花费约3,400日元，买任何周游券都不划算。</li>
+        </ul>
+        <p>一个常被忽略的细节：关西铁道周游券的“2日”是连续2日，不是任意2日。如果中间隔一天去环球影城，这张券就白买了。</p>
+
+        <h3>药妆叠券：上限调整后的实际差价</h3>
+        <p>2026年11月4日，松本清将免税5%折扣券的单笔使用上限从5万日元下调到3万日元。同一周，唐吉诃德维持原有规则——免税8%+5%折扣券可叠加，无单笔上限。以新宿三丁目的两家门店实测10款热门品，总价约42,000日元的购物车，松本清需拆成两单才能用满折扣，唐吉诃德可一单完成。价差最大的单品是资生堂安耐晒金瓶60ml：松本清3,278日元（免税后），唐吉诃德3,656日元，松本清反而便宜378日元。</p>
+        <div class="compare-box">
+          <div class="compare-col">
+            <h4>松本清（新宿三丁目店）</h4>
+            <p>免税8% + 5%折扣券，单笔上限3万日元。热门品单价低，但大额采购需拆单。11月4日实测安耐晒金瓶60ml免税价3,278日元。</p>
+          </div>
+          <div class="compare-col">
+            <h4>唐吉诃德（新宿三丁目店）</h4>
+            <p>免税8% + 5%折扣券，无上限。同一单品免税价3,656日元，但可一单买齐所有品类。适合集中采购。</p>
+          </div>
+        </div>
+        <p>判断逻辑：<strong>单店单笔低于3万日元选松本清，高于3万日元选唐吉诃德</strong>。如果只买一两件小东西，两家差距可以忽略，就近即可。</p>
+
+        <h3>红叶夜游排队：时间窗口比门票更重要</h3>
+        <p>2026年京都红叶夜游的特别拜观从11月1日开始。永观堂的夜间入场时间从17:30提前到17:00，清水寺维持17:30。两个场地的排队结构完全不同：永观堂的瓶颈在多宝塔前的石阶，宽度只容两人并行，17:10之后到达就要排20分钟以上才能上石阶；清水寺的瓶颈在舞台入口，但分流路线多，排队时间相对均匀。北野天满宫的夜枫规模较小，排队压力最低，适合不想挤的游客。</p>
+        <p>一个可核对的对比：11月5日当晚，永观堂石阶处排队约25分钟（17:20到达），清水寺舞台入口约12分钟（17:45到达），北野天满宫基本无排队（18:10到达）。如果目标是拍石阶两侧的枫叶隧道，必须在17:10前进入永观堂；如果只是想看夜枫氛围，北野天满宫的性价比最高，门票只要800日元。</p>
+      </section>
+
+      <!-- 6. 体验指南 -->
+      <section id="guide" aria-labelledby="guide-title">
+        <h2 class="section-title" id="guide-title">赴日内容消费路径</h2>
+        <p class="section-sub">从选条目到排行程的判断顺序</p>
+        <div class="guide-steps">
+          <div class="guide-step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>先定交通券，再排景点</h4>
+              <p>周游券的覆盖范围决定了哪些城市值得去。关西铁道周游券2026冬版覆盖和歌山电铁后，贵志川线的猫咪电车才进入合理行程。反过来先排景点再买券，经常发现券用不上。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>用「见顷速报」定红叶行程日期</h4>
+              <p>京都红叶的见顷从11月5日永观堂开始，清水寺要到11月18日左右。如果行程只有三天，优先选已经见顷的场地，而不是按名气排序。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>药妆采购看单笔金额决定门店</h4>
+              <p>单笔3万日元以下去松本清，单价更低；超过3万日元去唐吉诃德，叠券无上限。这个规则在2026年11月松本清调整上限后成立。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>体验类项目先查工坊空位再付款</h4>
+              <p>金泽金箔贴箔体验的周末名额通常提前一周满。11月3日查「箔一」本店，11月周末已满，平日还有。先确认空位再安排交通，避免到了金泽却约不上。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <h4>温泉旅馆对比私汤和餐食，不只看价格</h4>
+              <p>箱根和由布院的同价位旅馆，私汤是否附在房内差别很大。带私汤的房间通常贵8,000—15,000日元，但如果主要目的是泡汤，这个差价值得花。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section id="faq" aria-labelledby="faq-title">
+        <h2 class="section-title" id="faq-title">常见问答</h2>
+        <p class="section-sub">围绕具体条目与规则的6个问题</p>
+        <div class="faq-list">
+          <details>
+            <summary>关西铁道周游券2026冬版能坐贵志川线吗？</summary>
+            <p>能。2026冬版新增了和歌山电铁贵志川线，从和歌山站到贵志站全程可坐，包括猫咪电车。但要注意这张券是连续2日有效，不是任意2日。如果行程里安排了环球影城这类非铁道日，这张券的性价比会下降。</p>
+          </details>
+          <details>
+            <summary>松本清免税叠券上限降到3万日元后，买大额怎么划算？</summary>
+            <p>单笔控制在3万日元以内用掉5%折扣券，超出部分拆成第二单。或者直接去唐吉诃德，免税8%加5%折扣券没有单笔上限。11月4日实测，同一款安耐晒金瓶60ml松本清3,278日元、唐吉诃德3,656日元，小件在松本清更便宜，大额采购在唐吉诃德更方便。</p>
+          </details>
+          <details>
+            <summary>永观堂夜间拜观几点到不用排长队？</summary>
+            <p>17:00开场，17:10之前到达基本可以直接上石阶。17:20之后石阶入口要排20分钟以上，11月5日实测排队25分钟。如果目标是拍枫叶隧道，建议17:00前到门口；如果只是想看夜枫氛围，北野天满宫排队压力小很多。</p>
+          </details>
+          <details>
+            <summary>金箔贴箔体验需要提前几天预约？</summary>
+            <p>金泽「箔一」本店工坊建议提前3天预约。11月3日查预约情况，11月周末名额已满，平日还有空位。体验费用2,800日元，做一个小碟子或首饰盒，全程约90分钟。金箔很轻，操作时呼吸要轻，老师会帮忙修补失误。</p>
+          </details>
+          <details>
+            <summary>清水寺红叶见顷一般比永观堂晚几天？</summary>
+            <p>2026年永观堂11月5日见顷，清水寺预计11月18日进入最佳观赏期，晚约13天。两个场地都在东山，可以安排在同一天，但要看清水寺的见顷得等到11月中旬。如果11月上旬到京都，优先选永观堂和北野天满宫。</p>
+          </details>
+          <details>
+            <summary>秋叶原animate本店的新刊到货一般周几最多？</summary>
+            <p>新刊到货集中在周二和周五。11月第一周的《葬送的芙莉莲》第14卷特装版是周二到货，周五补了一次普通版。限定周边通常在周六上架，每人限购2件，上午去选择更多。</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section id="comments" aria-labelledby="comments-title">
+        <h2 class="section-title" id="comments-title">用户实拍与评论</h2>
+        <p class="section-sub">12条来自近期到访者的反馈</p>
+        <div class="comment-list">
+          <div class="comment-item">
+            <div class="comment-head"><div class="comment-avatar">K</div><span class="comment-name">京都跑断腿</span><span class="comment-time">11-07</span></div>
+            <p class="comment-text">永观堂17:05到的，石阶那里已经排了十几个人。拍出来的枫叶隧道确实好看，但人一多就不好构图。下次试试北野天满宫。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-head"><div class="comment-avatar">M</div><span class="comment-name">药妆猎人</span><span class="comment-time">11-06</span></div>
+            <p class="comment-text">松本清那个3万上限真的烦，买了两大袋分两单结账，收银员都认识我了。唐吉诃德虽然单价高一点但一单搞定，省事。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-head"><div class="comment-avatar">S</div><span class="comment-name">铁道宅小陈</span><span class="comment-time">11-06</span></div>
+            <p class="comment-text">关西铁道券坐贵志川线那个猫咪电车值回票价，和歌山站到贵志站单买要780日元，券里包了。不过连续2日确实要算好，我第二天去了USJ就浪费了。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-head"><div class="comment-avatar">Y</div><span class="comment-name">清澄白河常客</span><span class="comment-time">11-05</span></div>
+            <p class="comment-text">ARiSE那家埃塞日晒确实不错，650日元在清澄算便宜了。店主聊豆子能聊半小时，社恐慎入哈哈。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-head"><div class="comment-avatar">T</div><span class="comment-name">金泽打工中</span><span class="comment-time">11-04</span></div>
+            <p class="comment-text">箔一周末真的约不上，本地人表示平日去体验感好很多。金箔吹飞两次，老师帮我补了，没多收钱。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-head"><div class="comment-avatar">A</div><span class="comment-name">秋叶原扫货王</span><span class="comment-time">11-03</span></div>
+            <p class="comment-text">SEED重映周边周六上午去的，限购2件，排了40分钟。芙莉莲特装版周二到货当天下午就没了，建议开门就去。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-head"><div class="comment-avatar">N</div><span class="comment-name">温泉比较党</span><span class="comment-time">11-02</span></div>
+            <p class="comment-text">箱根和由布院同价位旅馆，带私汤的房间贵了一万日元左右。如果主要泡大浴场，其实没必要加这个钱，看个人需求。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-head"><div class="comment-avatar">R</div><span class="comment-name">大阪吃货老林</span><span class="comment-time">11-02</span></div>
+            <p class="comment-text">食べログ3.8以上的店现在也越来越难订了，上周试了一家烧鸟，提前两周才约到。建议别只盯高分店，3.5左右的社区店反而好进。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-head"><div class="comment-avatar">H</div><span class="comment-name">红叶摄影菜鸟</span><span class="comment-time">11-01</span></div>
+            <p class="comment-text">清水寺舞台那边17:45到的，排队12分钟，比想象中快。但人实在太多，三脚架根本没法用。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-head"><div class="comment-avatar">J</div><span class="comment-name">JR Pass老用户</span><span class="comment-time">11-01</span></div>
+            <p class="comment-text">全国版JR Pass涨到5万以后就没买过了，关西广域券12,000日元走冈山姬路刚好回本。关西铁道券更适合纯大阪和歌山京都的玩法。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-head"><div class="comment-avatar">L</div><span class="comment-name">睡魔祭围观群众</span><span class="comment-time">10-31</span></div>
+            <p class="comment-text">青森睡魔祭2027年8月2日到7日，和今年一样。住宿要提前半年订，去年5月看青森站前酒店就满了。</p>
+          </div>
+          <div class="comment-item">
+            <div class="comment-head"><div class="comment-avatar">P</div><span class="comment-name">富士山打卡人</span><span class="comment-time">10-30</span></div>
+            <p class="comment-text">新仓山浅间公园那个机位早上6点半到已经有三脚架占位了。11月红叶季人更多，建议5点半到。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section id="news" aria-labelledby="news-title">
+        <h2 class="section-title" id="news-title">相关资讯</h2>
+        <p class="section-sub">11月1日—11月7日 · 日本在地动态</p>
+        <div class="news-list">
+          <div class="news-item">
+            <div class="news-title">JR东日本10月调整东京广域周游券，新增伊豆急行线</div>
+            <div class="news-meta">11月6日 · 来源：JR东日本官网公告</div>
+            <p class="news-summary">调整后的券面从10月1日起生效，伊豆急行线伊豆高原至伊豆急下田段纳入范围。此前需另购的伊豆急行1日券（1,200日元）不再需要单独购买。</p>
+          </div>
+          <div class="news-item">
+            <div class="news-title">松本清11月4日下调免税叠券上限至3万日元</div>
+            <div class="news-meta">11月4日 · 来源：松本清新宿三丁目店店内告示</div>
+            <p class="news-summary">5%折扣券的单笔使用上限从5万日元降至3万日元，当日生效。唐吉诃德、SUGI药局暂未跟进调整，维持原规则。</p>
+          </div>
+          <div class="news-item">
+            <div class="news-title">京都永观堂夜间拜观11月1日开场，提前30分钟</div>
+            <div class="news-meta">11月1日 · 来源：永观堂官网</div>
+            <p class="news-summary">夜间入场时间从17:30提前至17:00，结束时间不变。11月5日见顷，多宝塔石阶区域17:10后开始排队。</p>
+          </div>
+          <div class="news-item">
+            <div class="news-title">关西三家私铁联合发行2026冬版周游券，覆盖和歌山电铁</div>
+            <div class="news-meta">10月28日 · 来源：南海电铁新闻稿</div>
+            <p class="news-summary">2日券定价4,800日元，比2025冬版涨200日元，新增贵志川线。发售日11月1日，使用期至2027年3月31日。</p>
+          </div>
+          <div class="news-item">
+            <div class="news-title">金泽「箔一」本店工坊11月周末预约全满</div>
+            <div class="news-meta">10月30日 · 来源：箔一官网预约页面</div>
+            <p class="news-summary">11月所有周末时段已显示满员，平日仍有空位。12月预约从11月15日开放，费用维持2,800日元不变。</p>
+          </div>
+          <div class="news-item">
+            <div class="news-title">秋叶原animate本店公布11月新刊到货日程</div>
+            <div class="news-meta">10月29日 · 来源：animate秋叶原推特账号</div>
+            <p class="news-summary">《葬送的芙莉莲》第14卷特装版周二到货，《高达SEED》重映限定周边周六上架，每人限购2件。4楼新刊区改为预约制取货。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section id="related" aria-labelledby="related-title">
+        <h2 class="section-title" id="related-title">相关推荐方向</h2>
+        <p class="section-sub">具体内容方向与条目名</p>
+        <div class="tag-cloud">
+          <a href="/#cat-anime" class="tag-link">葬送的芙莉莲第14卷</a>
+          <a href="/#cat-food" class="tag-link">清澄白河烘焙工坊</a>
+          <a href="/#cat-travel" class="tag-link">JR东京广域周游券</a>
+          <a href="/#cat-shopping" class="tag-link">安耐晒金瓶比价</a>
+          <a href="/#cat-culture" class="tag-link">金泽金箔贴箔</a>
+          <a href="/#cat-event" class="tag-link">青森睡魔祭2027</a>
+          <a href="/#cat-photo" class="tag-link">新仓山浅间公园机位</a>
+          <a href="/#cat-stay" class="tag-link">箱根私汤旅馆</a>
+        </div>
+      </section>
+
+      <!-- 11. 补充板块：热门榜单 + 投稿互动 -->
+      <section id="ranking" aria-labelledby="ranking-title">
+        <h2 class="section-title" id="ranking-title">本周热度榜</h2>
+        <p class="section-sub">11月1日—11月7日 · 按页面浏览与收藏加权</p>
+        <div class="ranking-list">
+          <div class="rank-item"><span class="rank-num">1</span><span class="rank-name">松本清 vs 唐吉诃德 新宿同款差价</span><span class="rank-score">11,204</span></div>
+          <div class="rank-item"><span class="rank-num">2</span><span class="rank-name">永观堂夜间特别拜观 11月1日-12月3日</span><span class="rank-score">9,842</span></div>
+          <div class="rank-item"><span class="rank-num">3</span><span class="rank-name">秋叶原 animate 本店 11月新刊到货</span><span class="rank-score">8,760</span></div>
+          <div class="rank-item"><span class="rank-num">4</span><span class="rank-name">清澄白河烘焙工坊6家实测</span><span class="rank-score">7,215</span></div>
+          <div class="rank-item"><span class="rank-num">5</span><span class="rank-name">关西铁道周游券2026冬版比价</span><span class="rank-score">6,893</span></div>
+          <div class="rank-item"><span class="rank-num">6</span><span class="rank-name">金泽金箔贴箔体验 90分钟工坊</span><span class="rank-score">5,431</span></div>
+        </div>
+      </section>
+
+      <div class="interact-bar">
+        <p><strong>投稿 / 上传 / 交流</strong>：拍了红叶夜游或药妆比价实拍图？欢迎把具体日期、店名和价格发到交流区，被选入下期条目的投稿会标注来源。</p>
+        <a href="/#comments" class="btn-primary" style="white-space:nowrap;">去交流区 →</a>
+      </div>
+
+      <p class="search-status" id="searchStatus" aria-live="polite"></p>
+      <div class="no-result" id="noResult">没有找到匹配的条目，换个关键词试试，比如「永观堂」「松本清」「周游券」。</div>
+
+    </main>
+
+    <!-- 右辅助栏 -->
+    <aside class="aside-right" aria-label="辅助信息">
+      <div class="widget">
+        <h3>本周热词</h3>
+        <ul class="widget-list">
+          <li><a href="/#cat-shopping">松本清叠券上限</a></li>
+          <li><a href="/#cat-travel">贵志川线猫咪电车</a></li>
+          <li><a href="/#cat-food">ARiSE 日晒单品</a></li>
+          <li><a href="/#cat-anime">芙莉莲第14卷</a></li>
+          <li><a href="/#cat-event">祇园祭2027日程</a></li>
+        </ul>
+      </div>
+      <div class="widget">
+        <h3>红叶见顷速报</h3>
+        <ul class="widget-list">
+          <li>永观堂 · 11月5日见顷</li>
+          <li>北野天满宫 · 11月8日见顷</li>
+          <li>清水寺 · 预计11月18日</li>
+          <li>东福寺 · 预计11月22日</li>
+        </ul>
+      </div>
+      <div class="widget">
+        <h3>投稿交流</h3>
+        <ul class="widget-list">
+          <li><a href="/#comments">11月7日 清澄白河咖啡实拍</a></li>
+          <li><a href="/#comments">11月6日 关西券用后感</a></li>
+          <li><a href="/#comments">11月4日 松本清拆单经验</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">WWWXXX日本</div>
+        <p class="footer-desc">记录2026年11月关东、关西、九州、北海道四地的在地体验条目。内容覆盖红叶夜游、铁道周游券、药妆比价、金箔工艺与祭典日程，每周二、周五更新新条目与价格变动。</p>
+      </div>
+      <div class="footer-col">
+        <h4>频道</h4>
+        <a href="/#cat-anime">动漫圣地</a>
+        <a href="/#cat-food">地方美食</a>
+        <a href="/#cat-travel">铁道周游券</a>
+        <a href="/#cat-shopping">药妆比价</a>
+      </div>
+      <div class="footer-col">
+        <h4>更多</h4>
+        <a href="/#cat-culture">传统工艺</a>
+        <a href="/#cat-event">祭典花火</a>
+        <a href="/#cat-photo">摄影机位</a>
+        <a href="/#cat-stay">温泉旅馆</a>
+      </div>
+      <div class="footer-col">
+        <h4>互动</h4>
+        <a href="/#comments">用户评论</a>
+        <a href="/#ranking">本周热度榜</a>
+        <a href="/#faq">常见问答</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 WWWXXX日本 · 示例内容页面</span>
+      <span>最近更新：2026年11月8日 · 对应条目「红叶见顷速报」与「松本清叠券上限」</span>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+  <script>
+    (function() {
+      // 移动端抽屉
+      const hamburger = document.getElementById('hamburgerBtn');
+      const drawer = document.getElementById('mobileDrawer');
+      const overlay = document.getElementById('menuOverlay');
+
+      function openDrawer() {
+        drawer.classList.add('open');
+        overlay.classList.add('active');
+        hamburger.setAttribute('aria-expanded', 'true');
+      }
+      function closeDrawer() {
+        drawer.classList.remove('open');
+        overlay.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+      hamburger.addEventListener('click', function() {
+        if (drawer.classList.contains('open')) { closeDrawer(); } else { openDrawer(); }
+      });
+      overlay.addEventListener('click', closeDrawer);
+      drawer.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', closeDrawer);
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && drawer.classList.contains('open')) { closeDrawer(); }
+      });
+
+      // 回到顶部
+      const backTop = document.getElementById('backTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) {
+          backTop.classList.add('visible');
+        } else {
+          backTop.classList.remove('visible');
+        }
+      });
+      backTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 搜索过滤
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.getElementById('searchBtn');
+      const noResult = document.getElementById('noResult');
+      const searchStatus = document.getElementById('searchStatus');
+
+      function performSearch() {
+        const q = searchInput.value.trim().toLowerCase();
+        const sections = document.querySelectorAll('.main-content > section');
+        let totalVisible = 0;
+
+        if (!q) {
+          sections.forEach(function(s) { s.classList.remove('hidden-by-search'); });
+          noResult.style.display = 'none';
+          searchStatus.textContent = '';
+          return;
+        }
+
+        sections.forEach(function(section) {
+          let hasMatch = false;
+          const text = section.textContent.toLowerCase();
+          if (text.includes(q)) {
+            hasMatch = true;
+          }
+          if (hasMatch) {
+            section.classList.remove('hidden-by-search');
+            totalVisible++;
+          } else {
+            section.classList.add('hidden-by-search');
+          }
+        });
+
+        if (totalVisible === 0) {
+          noResult.style.display = 'block';
+          searchStatus.textContent = '';
+        } else {
+          noResult.style.display = 'none';
+          searchStatus.textContent = '找到 ' + totalVisible + ' 个相关板块';
+        }
+      }
+
+      searchBtn.addEventListener('click', performSearch);
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') { performSearch(); }
+      });
+      searchInput.addEventListener('input', function() {
+        if (this.value.trim() === '') { performSearch(); }
+      });
+
+      // 频道导航高亮
+      const navLinks = document.querySelectorAll('.channel-nav a');
+      const sectionsForHighlight = [];
+      navLinks.forEach(function(link) {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('/#')) {
+          const id = href.substring(2);
+          const el = document.getElementById(id);
+          if (el) sectionsForHighlight.push({ link: link, el: el });
+        }
+      });
+
+      function highlightNav() {
+        let current = null;
+        const offset = 140;
+        sectionsForHighlight.forEach(function(item) {
+          const rect = item.el.getBoundingClientRect();
+          if (rect.top <= offset) { current = item.link; }
+        });
+        navLinks.forEach(function(l) { l.classList.remove('active'); });
+        if (current) { current.classList.add('active'); }
+      }
+      window.addEventListener('scroll', highlightNav);
+      highlightNav();
+    })();
+  </script>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "WWWXXX日本",
+    "description": "汇聚2026年日本动漫圣地巡礼、地方美食实测、铁道周游券比价与药妆免税攻略的示例内容页面。",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "关西铁道周游券2026冬版能坐贵志川线吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "能。2026冬版新增了和歌山电铁贵志川线，从和歌山站到贵志站全程可坐，包括猫咪电车。注意这张券是连续2日有效，不是任意2日。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "松本清免税叠券上限降到3万日元后，买大额怎么划算？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "单笔控制在3万日元以内用掉5%折扣券，超出部分拆成第二单。或者直接去唐吉诃德，免税8%加5%折扣券没有单笔上限。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "永观堂夜间拜观几点到不用排长队？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "17:00开场，17:10之前到达基本可以直接上石阶。17:20之后石阶入口要排20分钟以上，11月5日实测排队25分钟。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "金箔贴箔体验需要提前几天预约？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "金泽「箔一」本店工坊建议提前3天预约。11月3日查预约情况，11月周末名额已满，平日还有空位。体验费用2,800日元，全程约90分钟。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "清水寺红叶见顷一般比永观堂晚几天？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026年永观堂11月5日见顷，清水寺预计11月18日进入最佳观赏期，晚约13天。11月上旬到京都优先选永观堂和北野天满宫。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "秋叶原animate本店的新刊到货一般周几最多？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "新刊到货集中在周二和周五。11月第一周的《葬送的芙莉莲》第14卷特装版是周二到货，周五补了一次普通版。限定周边通常在周六上架，每人限购2件。"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+  </html>
