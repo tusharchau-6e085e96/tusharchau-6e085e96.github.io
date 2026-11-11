@@ -1,0 +1,1360 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>桥本有菜经典作品番号 - 作品索引与观看指南</title>
+  <meta name="description" content="桥本有菜经典作品番号专题页，汇总2016至2020年间高评分番号、共演作品、单体企划与VR条目，按题材与发行时间整理，适合想系统回顾或补全收藏的观众查阅。">
+  <meta name="keywords" content="桥本有菜经典作品番号">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23c13b4a'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23fffae8' font-family='serif'%3E橋%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --brand: #c13b4a;
+      --brand-light: #e8b4b8;
+      --brand-dark: #8a2832;
+      --bg: #fbf8f3;
+      --panel: #ffffff;
+      --text: #2a2522;
+      --text-secondary: #6f655e;
+      --text-tertiary: #9e9089;
+      --line: #e6ddd4;
+      --card-radius: 10px;
+      --btn-radius: 6px;
+      --tag-radius: 4px;
+      --banner-radius: 12px;
+      --shadow: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-hover: 0 8px 20px rgba(0,0,0,0.08);
+      --font-sans: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      --font-serif: "Songti SC", "Noto Serif SC", Georgia, serif;
+      --max-width: 1340px;
+      --anchor-offset: 96px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--anchor-offset); }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    ul { list-style: none; }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+    /* 吸顶公告条 */
+    .notice-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--brand-dark);
+      color: #fdf5ed;
+      font-size: 13px;
+      line-height: 1.5;
+      padding: 6px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .notice-bar .container {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      animation: marquee 22s linear infinite;
+    }
+    .notice-bar span { display: inline-flex; align-items: center; gap: 6px; }
+    .notice-bar .badge {
+      background: rgba(255,255,255,0.18);
+      border-radius: 10px;
+      padding: 1px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .notice-bar .container { animation: none; white-space: normal; flex-wrap: wrap; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* 页头 */
+    .site-header {
+      position: sticky;
+      top: 34px;
+      z-index: 99;
+      background: rgba(251, 248, 243, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 14px 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .brand svg { width: 36px; height: 36px; }
+    .brand-text {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--brand-dark);
+    }
+    .nav-main {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .nav-main a {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-main a:hover, .nav-main a:focus-visible {
+      background: var(--brand-light);
+      color: var(--brand-dark);
+      outline: none;
+    }
+    .nav-main a:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+    .header-actions { display: flex; gap: 10px; align-items: center; }
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 4px 4px 4px 14px;
+      transition: border-color 0.2s;
+    }
+    .search-box:focus-within { border-color: var(--brand); }
+    .search-box input {
+      border: none;
+      background: transparent;
+      font-size: 13px;
+      width: 130px;
+      outline: none;
+      color: var(--text);
+      font-family: inherit;
+    }
+    .search-box input::placeholder { color: var(--text-tertiary); }
+    .search-box button {
+      background: var(--brand);
+      border: none;
+      color: #fff;
+      border-radius: 16px;
+      padding: 4px 12px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: inherit;
+    }
+    .search-box button:hover { background: var(--brand-dark); }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 18px;
+      cursor: pointer;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    /* 首屏 */
+    .hero {
+      position: relative;
+      padding: 48px 0 40px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+    .hero-bg svg { width: 100%; height: 100%; }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-text h1 {
+      font-family: var(--font-serif);
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--brand-dark);
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+    }
+    .hero-text p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 520px;
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: var(--btn-radius);
+      font-size: 15px;
+      font-weight: 500;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-primary:hover { background: var(--brand-dark); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--brand);
+      color: var(--brand-dark);
+      padding: 10px 24px;
+      border-radius: var(--btn-radius);
+      font-size: 15px;
+      transition: background 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { background: rgba(193, 59, 74, 0.06); }
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-visual svg { width: 100%; max-width: 380px; height: auto; }
+
+    /* 主布局 */
+    .layout-3col {
+      display: grid;
+      grid-template-columns: 180px 1fr 260px;
+      gap: 28px;
+      align-items: start;
+      padding: 36px 0 60px;
+    }
+    .channel-sidebar {
+      position: sticky;
+      top: calc(var(--anchor-offset) + 10px);
+      max-height: calc(100vh - var(--anchor-offset) - 30px);
+      overflow-y: auto;
+      padding-right: 6px;
+    }
+    .channel-sidebar h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-tertiary);
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+    .channel-sidebar ul li a {
+      display: block;
+      padding: 7px 10px;
+      border-radius: 6px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s;
+    }
+    .channel-sidebar ul li a:hover, .channel-sidebar ul li a:focus-visible {
+      background: var(--brand-light);
+      color: var(--brand-dark);
+      outline: none;
+    }
+    .channel-sidebar ul li a.active {
+      background: var(--brand);
+      color: #fff;
+    }
+    .main-content { min-width: 0; }
+    .right-rail { position: sticky; top: calc(var(--anchor-offset) + 10px); }
+
+    /* 板块通用 */
+    .section-block { margin-bottom: 48px; scroll-margin-top: var(--anchor-offset); }
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .section-head h2 {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text);
+      position: relative;
+      padding-left: 14px;
+    }
+    .section-head h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      bottom: 4px;
+      width: 4px;
+      border-radius: 2px;
+      background: var(--brand);
+    }
+    .section-head .more-link {
+      font-size: 13px;
+      color: var(--brand);
+      white-space: nowrap;
+    }
+    .section-head .more-link:hover { text-decoration: underline; }
+
+    /* 概览 */
+    .overview-text {
+      background: var(--panel);
+      border-radius: var(--card-radius);
+      padding: 24px 28px;
+      box-shadow: var(--shadow);
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.85;
+    }
+    .overview-text p + p { margin-top: 12px; }
+
+    /* 精选卡片 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--panel);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .card-img-wrap { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--line); }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .card:hover .card-img-wrap img { transform: scale(1.03); }
+    .card-type {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: rgba(138, 40, 50, 0.88);
+      color: #fff;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: var(--tag-radius);
+      letter-spacing: 0.5px;
+    }
+    .card-body { padding: 14px 16px 16px; display: flex; flex-direction: column; flex: 1; }
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 6px;
+      color: var(--text);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+      margin-top: auto;
+    }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 4px; }
+    .tag {
+      background: #f3ede6;
+      color: var(--text-secondary);
+      font-size: 11px;
+      padding: 1px 7px;
+      border-radius: var(--tag-radius);
+    }
+
+    /* 最新更新 */
+    .update-list { display: flex; flex-direction: column; gap: 0; background: var(--panel); border-radius: var(--card-radius); overflow: hidden; box-shadow: var(--shadow); }
+    .update-item {
+      display: flex;
+      gap: 16px;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--line);
+      align-items: flex-start;
+    }
+    .update-item:last-child { border-bottom: none; }
+    .update-date {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+      min-width: 52px;
+      padding-top: 2px;
+      font-variant-numeric: tabular-nums;
+    }
+    .update-body { flex: 1; min-width: 0; }
+    .update-title { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+    .update-summary { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+    /* 分类入口 */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .cat-item {
+      background: var(--panel);
+      border-radius: var(--card-radius);
+      padding: 18px 16px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid transparent;
+    }
+    .cat-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); border-color: var(--brand-light); }
+    .cat-icon { font-family: var(--font-serif); font-size: 22px; color: var(--brand); margin-bottom: 6px; font-weight: 700; }
+    .cat-name { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+    .cat-count { font-size: 12px; color: var(--text-tertiary); }
+
+    /* 深度解析 */
+    .deep-dive {
+      background: var(--panel);
+      border-radius: var(--card-radius);
+      padding: 28px 32px;
+      box-shadow: var(--shadow);
+    }
+    .deep-dive h3 {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      font-weight: 700;
+      margin: 24px 0 10px;
+      color: var(--brand-dark);
+    }
+    .deep-dive h3:first-child { margin-top: 0; }
+    .deep-dive p { font-size: 15px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 12px; }
+    .deep-dive ul { margin: 8px 0 16px 18px; list-style: disc; color: var(--text-secondary); font-size: 15px; }
+    .deep-dive ul li { margin-bottom: 6px; }
+    .deep-dive .breakdown {
+      background: #faf5ef;
+      border-left: 3px solid var(--brand);
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 14px 0;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+    .deep-dive .breakdown strong { color: var(--text); }
+
+    /* 体验指南 */
+    .guide-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      counter-reset: step;
+    }
+    .guide-step {
+      background: var(--panel);
+      border-radius: var(--card-radius);
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+      position: relative;
+      counter-increment: step;
+    }
+    .guide-step::before {
+      content: counter(step, decimal-leading-zero);
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--brand-light);
+      display: block;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    .guide-step h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .guide-step p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    .faq-item {
+      background: var(--panel);
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .faq-item summary {
+      padding: 14px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--brand);
+      transition: transform 0.2s;
+      line-height: 1;
+    }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item summary:hover { background: #fdf8f4; }
+    .faq-item summary:focus-visible { outline: 2px solid var(--brand); outline-offset: -2px; }
+    .faq-answer {
+      padding: 0 20px 16px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .comment-item {
+      background: var(--panel);
+      border-radius: var(--card-radius);
+      padding: 14px 16px;
+      box-shadow: var(--shadow);
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--text-secondary);
+    }
+    .comment-user {
+      font-weight: 600;
+      color: var(--brand-dark);
+      font-size: 13px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .comment-user .avatar {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--brand-light);
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 11px; color: var(--brand-dark); font-weight: 700;
+    }
+    .comment-time { font-size: 11px; color: var(--text-tertiary); margin-left: auto; font-weight: 400; }
+
+    /* 资讯 */
+    .news-list { display: flex; flex-direction: column; gap: 0; background: var(--panel); border-radius: var(--card-radius); overflow: hidden; box-shadow: var(--shadow); }
+    .news-item { padding: 14px 20px; border-bottom: 1px solid var(--line); }
+    .news-item:last-child { border-bottom: none; }
+    .news-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .news-meta { font-size: 12px; color: var(--text-tertiary); margin-bottom: 4px; }
+    .news-summary { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* 推荐标签 */
+    .rec-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .rec-tag {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .rec-tag:hover { border-color: var(--brand); color: var(--brand-dark); }
+
+    /* 补充板块 - 榜单 */
+    .rank-list { background: var(--panel); border-radius: var(--card-radius); box-shadow: var(--shadow); overflow: hidden; }
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+    .rank-item:last-child { border-bottom: none; }
+    .rank-num {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--brand-light);
+      min-width: 28px;
+      text-align: center;
+    }
+    .rank-num.top3 { color: var(--brand); }
+    .rank-name { flex: 1; font-weight: 500; }
+    .rank-score { font-size: 13px; color: var(--text-tertiary); }
+
+    /* 右栏组件 */
+    .rail-card {
+      background: var(--panel);
+      border-radius: var(--card-radius);
+      padding: 18px 20px;
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+    }
+    .rail-card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+      color: var(--text);
+    }
+    .rail-list li {
+      font-size: 13px;
+      color: var(--text-secondary);
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .rail-list li:last-child { border-bottom: none; }
+    .rail-list li .r-title { flex: 1; }
+    .rail-list li .r-extra { color: var(--text-tertiary); font-size: 12px; white-space: nowrap; }
+    .rail-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .rail-tags .tag { font-size: 12px; padding: 3px 10px; background: #f3ede6; }
+    .rail-tags .tag:hover { background: var(--brand-light); color: var(--brand-dark); }
+
+    /* 投稿互动 */
+    .interact-bar {
+      background: linear-gradient(135deg, var(--brand-dark), var(--brand));
+      border-radius: var(--banner-radius);
+      padding: 24px 28px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      box-shadow: var(--shadow);
+    }
+    .interact-bar h3 { font-family: var(--font-serif); font-size: 20px; margin-bottom: 4px; }
+    .interact-bar p { font-size: 14px; opacity: 0.85; }
+    .interact-bar .btn-white {
+      background: #fff;
+      color: var(--brand-dark);
+      padding: 8px 22px;
+      border-radius: var(--btn-radius);
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: transform 0.2s;
+    }
+    .interact-bar .btn-white:hover { transform: translateY(-1px); }
+
+    /* 页脚 */
+    .site-footer {
+      background: #2a2522;
+      color: #c9beb5;
+      padding: 48px 0 28px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .footer-brand svg { width: 30px; height: 30px; }
+    .footer-brand-text { font-family: var(--font-serif); font-size: 18px; color: #f0e8e0; font-weight: 700; }
+    .footer-desc { font-size: 13px; color: #9e9089; line-height: 1.7; }
+    .footer-col h4 { font-size: 14px; color: #f0e8e0; margin-bottom: 12px; font-weight: 600; }
+    .footer-col ul li { margin-bottom: 6px; }
+    .footer-col ul li a { color: #9e9089; font-size: 13px; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: #f0e8e0; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: #6f655e;
+    }
+
+    /* 回到顶部 */
+    .back-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      font-size: 20px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(138,40,50,0.35);
+      z-index: 90;
+      transition: background 0.2s, transform 0.2s;
+      line-height: 1;
+    }
+    .back-top.show { display: flex; }
+    .back-top:hover { background: var(--brand-dark); transform: translateY(-2px); }
+
+    /* 无结果反馈 */
+    .no-result {
+      display: none;
+      padding: 24px;
+      text-align: center;
+      color: var(--text-tertiary);
+      font-size: 14px;
+      background: var(--panel);
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow);
+    }
+    .no-result.show { display: block; }
+
+    /* 移动端遮罩 */
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 98;
+    }
+    .overlay.show { display: block; }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .layout-3col { grid-template-columns: 1fr 260px; }
+      .channel-sidebar { display: none; }
+      .hero-content { grid-template-columns: 1fr; gap: 24px; }
+      .hero-visual { display: none; }
+      .hero-text h1 { font-size: 36px; }
+      .cat-grid { grid-template-columns: repeat(3, 1fr); }
+      .guide-steps { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 740px) {
+      .container { padding: 0 16px; }
+      .header-inner { padding: 10px 0; gap: 12px; flex-wrap: wrap; }
+      .nav-main { display: none; width: 100%; order: 4; flex-direction: column; padding: 8px 0; }
+      .nav-main.open { display: flex; }
+      .nav-main a { padding: 8px 12px; border-radius: 6px; }
+      .menu-toggle { display: block; }
+      .search-box input { width: 90px; }
+      .layout-3col { grid-template-columns: 1fr; padding: 20px 0 40px; }
+      .right-rail { position: static; }
+      .hero-text h1 { font-size: 28px; }
+      .hero { padding: 28px 0 20px; }
+      .card-grid { grid-template-columns: 1fr; }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .guide-steps { grid-template-columns: 1fr; }
+      .comment-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .section-head h2 { font-size: 20px; }
+      .deep-dive { padding: 20px 18px; }
+      .interact-bar { flex-direction: column; align-items: flex-start; }
+      .back-top { width: 40px; height: 40px; bottom: 18px; right: 18px; }
+      .notice-bar .container { flex-wrap: wrap; white-space: normal; animation: none; gap: 10px; }
+    }
+    @media (max-width: 400px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .search-box { display: none; }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="notice-bar" role="status" aria-label="最新内容更新">
+  <div class="container">
+    <span><span class="badge">番号</span> 11月7日 · 新增 SNIS-819 中文字幕版</span>
+    <span><span class="badge">榜单</span> 11月6日 · 2019年度单体作品TOP20发布</span>
+    <span><span class="badge">共演</span> 11月5日 · 三上悠亚×桥本有菜共演作合集上线</span>
+    <span><span class="badge">番号</span> 11月7日 · 新增 SNIS-819 中文字幕版</span>
+    <span><span class="badge">榜单</span> 11月6日 · 2019年度单体作品TOP20发布</span>
+    <span><span class="badge">共演</span> 11月5日 · 三上悠亚×桥本有菜共演作合集上线</span>
+  </div>
+</div>
+
+<!-- 页头 -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="brand" aria-label="桥本有菜经典作品番号首页">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="20" fill="#c13b4a"/><text x="50" y="68" font-size="52" text-anchor="middle" fill="#fffae8" font-family="serif">橋</text></svg>
+      <span class="brand-text">桥本有菜经典作品番号</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="展开导航菜单" aria-expanded="false" aria-controls="navMain">☰</button>
+    <nav class="nav-main" id="navMain" aria-label="主题导航">
+      <a href="/#overview">领域概览</a>
+      <a href="/#featured">精选推荐</a>
+      <a href="/#updates">最新更新</a>
+      <a href="/#categories">分类入口</a>
+      <a href="/#deepdive">深度解析</a>
+      <a href="/#guide">观看指南</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#comments">用户评论</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-box" role="search">
+        <input type="search" id="searchInput" placeholder="搜索番号/作品名" aria-label="搜索番号或作品名">
+        <button type="button" id="searchBtn">查找</button>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="overlay" id="overlay"></div>
+
+<!-- 首屏 -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <svg viewBox="0 0 1440 400" preserveAspectRatio="none"><defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#e8b4b8" stop-opacity="0.35"/><stop offset="100%" stop-color="#fbf8f3" stop-opacity="0"/></linearGradient></defs><path d="M0,200 C300,80 600,320 900,180 C1200,40 1350,260 1440,200 L1440,400 L0,400 Z" fill="url(#hg)"/><circle cx="1100" cy="100" r="60" fill="#c13b4a" opacity="0.06"/><circle cx="200" cy="280" r="40" fill="#c13b4a" opacity="0.08"/></svg>
+  </div>
+  <div class="container hero-content">
+    <div class="hero-text">
+      <h1>桥本有菜经典作品番号</h1>
+      <p>收录2016至2020年间桥本有菜在S1、Moodyz等厂牌下的高评分单体、共演与VR作品，按番号、题材和发行时间归类。附观众评分、收藏热度和中文字幕版本标注，方便按图索骥。</p>
+      <div class="hero-actions">
+        <a href="/#featured" class="btn-primary">浏览精选番号</a>
+        <a href="/#guide" class="btn-outline">按题材筛选</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 380 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="30" y="60" width="320" height="200" rx="16" fill="#ffffff" stroke="#e6ddd4" stroke-width="1.5"/>
+        <rect x="30" y="60" width="320" height="44" rx="16" fill="#c13b4a"/>
+        <rect x="30" y="88" width="320" height="16" fill="#c13b4a"/>
+        <circle cx="60" cy="82" r="8" fill="#e8b4b8"/>
+        <rect x="80" y="76" width="80" height="12" rx="4" fill="#fdf5ed" opacity="0.6"/>
+        <rect x="52" y="124" width="120" height="8" rx="4" fill="#e8b4b8"/>
+        <rect x="52" y="142" width="200" height="6" rx="3" fill="#e6ddd4"/>
+        <rect x="52" y="156" width="160" height="6" rx="3" fill="#e6ddd4"/>
+        <rect x="52" y="180" width="70" height="24" rx="6" fill="#c13b4a" opacity="0.12"/>
+        <rect x="132" y="180" width="70" height="24" rx="6" fill="#c13b4a" opacity="0.12"/>
+        <rect x="212" y="180" width="70" height="24" rx="6" fill="#c13b4a" opacity="0.12"/>
+        <rect x="52" y="220" width="100" height="6" rx="3" fill="#e6ddd4"/>
+        <rect x="260" y="218" width="60" height="10" rx="5" fill="#c13b4a" opacity="0.3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 主内容区 三栏门户 -->
+<div class="container layout-3col">
+  <!-- 左频道索引 -->
+  <aside class="channel-sidebar" aria-label="频道索引">
+    <h2>频道索引</h2>
+    <ul>
+      <li><a href="/#overview" class="active">领域概览</a></li>
+      <li><a href="/#featured">精选番号</a></li>
+      <li><a href="/#updates">更新动态</a></li>
+      <li><a href="/#categories">分类入口</a></li>
+      <li><a href="/#deepdive">深度解析</a></li>
+      <li><a href="/#guide">观看路径</a></li>
+      <li><a href="/#faq">常见问答</a></li>
+      <li><a href="/#comments">用户评论</a></li>
+      <li><a href="/#news">相关资讯</a></li>
+      <li><a href="/#recommend">相关推荐</a></li>
+      <li><a href="/#rank">热门榜单</a></li>
+      <li><a href="/#interact">投稿互动</a></li>
+    </ul>
+  </aside>
+
+  <!-- 中主内容 -->
+  <main class="main-content">
+
+    <!-- 1. 领域概览 -->
+    <section class="section-block" id="overview">
+      <div class="section-head"><h2>领域概览</h2></div>
+      <div class="overview-text">
+        <p>桥本有菜于2016年4月以S1专属身份出道，至2020年5月引退，四年间发行单体作品超过120部。番号体系以S1的“SNIS”前缀为主干，辅以Moodyz的“MIDE”、Prestige的“ABP”等厂牌编号。2017年下半年的“SNIS-9XX”序列被视为其表演成熟期的起点，画面调度与题材选择明显区别于出道初期的校园设定。</p>
+        <p>从题材分布看，VR作品集中在2017至2018年（如SIVR-001至SIVR-040区间），共演作品多与三上悠亚、樱空桃等同期演员搭配，单体剧情向作品则贯穿整个职业生涯。2019年发行的“SSNI”系列中，第400号之后的作品普遍配备中文字幕，海外观众讨论热度明显高于早期番号。</p>
+        <p>当前值得关注的方向有三个：一是2018年拍摄的“出差”“温泉”外景系列，场景实拍比例高；二是2019年下半年的“同居”“上司”题材，剧本结构较完整；三是2020年引退前的纪念合辑，收录了未公开花絮。按观众评分数据，SNIS-819、SSNI-412、SSNI-587三部作品在多个评分站点的加权均分位于前10%。</p>
+      </div>
+    </section>
+
+    <!-- 2. 精选内容推荐 -->
+    <section class="section-block" id="featured">
+      <div class="section-head"><h2>精选番号推荐</h2><a href="/#rank" class="more-link">查看榜单 →</a></div>
+      <div class="card-grid" id="cardGrid">
+        <article class="card" data-title="SNIS-819 中文字幕 温泉">
+          <div class="card-img-wrap">
+            <img src="https://picsum.photos/seed/snis819/400/300" width="400" height="300" loading="lazy" alt="SNIS-819 温泉外景剧照">
+            <span class="card-type">单体剧情</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">SNIS-819 温泉旅馆长篇</h3>
+            <p class="card-desc">2018年外景作品，全片在箱根实拍，包含四段不同场景的连续叙事。中文字幕版于2026年11月7日补档，画质修复至1080p。</p>
+            <div class="tag-list"><span class="tag">温泉</span><span class="tag">外景</span><span class="tag">中文字幕</span></div>
+            <div class="card-meta"><span>评分 4.6</span><span>收藏 2.1k</span></div>
+          </div>
+        </article>
+        <article class="card" data-title="SSNI-412 上司 办公室 剧情">
+          <div class="card-img-wrap">
+            <img src="https://picsum.photos/seed/ssni412/400/300" width="400" height="300" loading="lazy" alt="SSNI-412 办公室场景剧照">
+            <span class="card-type">剧情向</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">SSNI-412 上司与部下</h3>
+            <p class="card-desc">2019年发行的办公室题材，剧本获当年S1内部企划奖提名。对白密度高，非场景镜头占比约三成，适合偏好叙事的观众。</p>
+            <div class="tag-list"><span class="tag">办公室</span><span class="tag">剧情</span><span class="tag">2019</span></div>
+            <div class="card-meta"><span>评分 4.5</span><span>收藏 1.8k</span></div>
+          </div>
+        </article>
+        <article class="card" data-title="SSNI-587 同居 恋爱 长篇">
+          <div class="card-img-wrap">
+            <img src="https://picsum.photos/seed/ssni587/400/300" width="400" height="300" loading="lazy" alt="SSNI-587 同居题材剧照">
+            <span class="card-type">恋爱模拟</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">SSNI-587 同居生活180天</h3>
+            <p class="card-desc">2019年末的长篇企划，分三章记录同居关系变化。生活细节铺陈多，被观众评为“最像日剧的一部”。片长210分钟。</p>
+            <div class="tag-list"><span class="tag">同居</span><span class="tag">长篇</span><span class="tag">2019</span></div>
+            <div class="card-meta"><span>评分 4.7</span><span>收藏 2.6k</span></div>
+          </div>
+        </article>
+        <article class="card" data-title="SIVR-018 VR 第一视角">
+          <div class="card-img-wrap">
+            <img src="https://picsum.photos/seed/sivr018/400/300" width="400" height="300" loading="lazy" alt="SIVR-018 VR作品封面">
+            <span class="card-type">VR作品</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">SIVR-018 初VR体验</h3>
+            <p class="card-desc">2017年发行的早期VR番号，采用第一视角固定机位。分辨率适配当时主流头显，片长45分钟，适合想体验VR格式差异的观众。</p>
+            <div class="tag-list"><span class="tag">VR</span><span class="tag">第一视角</span><span class="tag">2017</span></div>
+            <div class="card-meta"><span>评分 4.2</span><span>收藏 960</span></div>
+          </div>
+        </article>
+        <article class="card" data-title="SNIS-901 共演 三上悠亚">
+          <div class="card-img-wrap">
+            <img src="https://picsum.photos/seed/snis901/400/300" width="400" height="300" loading="lazy" alt="SNIS-901 共演作品封面">
+            <span class="card-type">共演作品</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">SNIS-901 双人共演</h3>
+            <p class="card-desc">2018年与三上悠亚的共演企划，分为前后篇。两人对手戏集中在第二段，番号在二手市场溢价明显，中文字幕版覆盖率约六成。</p>
+            <div class="tag-list"><span class="tag">共演</span><span class="tag">三上悠亚</span><span class="tag">2018</span></div>
+            <div class="card-meta"><span>评分 4.4</span><span>收藏 3.2k</span></div>
+          </div>
+        </article>
+        <article class="card" data-title="SSNI-520 引退纪念 合辑">
+          <div class="card-img-wrap">
+            <img src="https://picsum.photos/seed/ssni520/400/300" width="400" height="300" loading="lazy" alt="SSNI-520 引退纪念合辑封面">
+            <span class="card-type">纪念合辑</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">SSNI-520 引退纪念合辑</h3>
+            <p class="card-desc">2020年5月发行的精选集，收录六部单体作品的片段与未公开采访。采访段落约20分钟，是了解其职业回顾的索引素材。</p>
+            <div class="tag-list"><span class="tag">引退</span><span class="tag">合辑</span><span class="tag">2020</span></div>
+            <div class="card-meta"><span>评分 4.3</span><span>收藏 1.5k</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="no-result" id="searchNoResult">没有匹配的番号或作品名，试试 SNIS-819、SSNI-412 或 VR。</div>
+    </section>
+
+    <!-- 3. 最新更新 -->
+    <section class="section-block" id="updates">
+      <div class="section-head"><h2>更新动态</h2></div>
+      <div class="update-list">
+        <div class="update-item"><span class="update-date">11月7日</span><div class="update-body"><div class="update-title">SNIS-819 中文字幕版补档</div><div class="update-summary">1080p修复版上线，字幕由“番号补完计划”组提供，时间轴匹配BD源。</div></div></div>
+        <div class="update-item"><span class="update-date">11月6日</span><div class="update-body"><div class="update-title">2019年度单体作品TOP20榜单发布</div><div class="update-summary">SSNI-587位列第三，前两名分别是SSNI-412与SSNI-503，评分基数均超过500人。</div></div></div>
+        <div class="update-item"><span class="update-date">11月5日</span><div class="update-body"><div class="update-title">三上悠亚×桥本有菜共演作合集上线</div><div class="update-summary">收录SNIS-901、SNIS-932两部共演作品，附当年拍摄花絮照片12张。</div></div></div>
+        <div class="update-item"><span class="update-date">11月4日</span><div class="update-body"><div class="update-title">SIVR-018 兼容性测试报告</div><div class="update-summary">在Quest 3与Pico 4上实测，画面比例需手动设为16:9，默认设置会有裁切。</div></div></div>
+        <div class="update-item"><span class="update-date">11月3日</span><div class="update-body"><div class="update-title">SNIS-819 二手市场均价更新</div><div class="update-summary">本周均价较上周上涨12%，中文字幕版比无字幕版溢价约40元。</div></div></div>
+        <div class="update-item"><span class="update-date">11月2日</span><div class="update-body"><div class="update-title">2017年VR作品专题页开放</div><div class="update-summary">汇总SIVR系列前40号作品，标注了拍摄机位与片长差异，方便横向比较。</div></div></div>
+        <div class="update-item"><span class="update-date">11月1日</span><div class="update-body"><div class="update-title">SSNI-587 观众长评精选</div><div class="update-summary">从87条长评中选出12条，涉及同居题材的剧本节奏与生活细节真实度讨论。</div></div></div>
+        <div class="update-item"><span class="update-date">10月30日</span><div class="update-body"><div class="update-title">SNIS-901 共演番号对照表更新</div><div class="update-summary">新增与樱空桃共演的SNIS-932番号信息，补充了发行日期与片长数据。</div></div></div>
+      </div>
+    </section>
+
+    <!-- 4. 分类入口 -->
+    <section class="section-block" id="categories">
+      <div class="section-head"><h2>分类入口</h2></div>
+      <div class="cat-grid">
+        <a href="/#featured" class="cat-item"><div class="cat-icon">単</div><div class="cat-name">单体剧情</div><div class="cat-count">42部番号</div></a>
+        <a href="/#featured" class="cat-item"><div class="cat-icon">共</div><div class="cat-name">共演作品</div><div class="cat-count">18部番号</div></a>
+        <a href="/#featured" class="cat-item"><div class="cat-icon">VR</div><div class="cat-name">VR作品</div><div class="cat-count">14部番号</div></a>
+        <a href="/#featured" class="cat-item"><div class="cat-icon">外</div><div class="cat-name">外景实拍</div><div class="cat-count">11部番号</div></a>
+        <a href="/#featured" class="cat-item"><div class="cat-icon">恋</div><div class="cat-name">恋爱模拟</div><div class="cat-count">9部番号</div></a>
+        <a href="/#featured" class="cat-item"><div class="cat-icon">合</div><div class="cat-name">纪念合辑</div><div class="cat-count">6部番号</div></a>
+        <a href="/#featured" class="cat-item"><div class="cat-icon">字</div><div class="cat-name">中文字幕</div><div class="cat-count">37部番号</div></a>
+        <a href="/#featured" class="cat-item"><div class="cat-icon">高</div><div class="cat-name">高评分精选</div><div class="cat-count">评分4.5+</div></a>
+      </div>
+    </section>
+
+    <!-- 5. 深度解析 -->
+    <section class="section-block" id="deepdive">
+      <div class="section-head"><h2>深度解析</h2></div>
+      <div class="deep-dive">
+        <h3>番号前缀与厂牌风格差异</h3>
+        <p>桥本有菜的番号分布横跨S1、Moodyz、Prestige三家厂牌，前缀直接对应制作方向。S1的“SNIS”与“SSNI”序列占据总数约七成，偏向剧情与场景并重；Moodyz的“MIDE”前缀作品更强调单人表演的完整度，对白少、镜头长；Prestige的“ABP”番号则常见于早期素人设定企划。</p>
+        <p>以2018年为例，同年发行的SNIS-819（温泉）与SSNI-412（办公室）在制作预算上差异明显。前者外景占比约六成，摄影组跟随拍摄两天；后者全片在棚内搭景完成，成本集中在剧本与美术。这种差异在观众评分上并不直接转化为高低——SNIS-819得分4.6，SSNI-412为4.5，差距在误差范围内。</p>
+        <div class="breakdown"><strong>可核对的结构：</strong>判断一部番号是否值得优先观看，拆成三个可查项。① 制作类型：外景实拍还是棚内搭景，外景作品通常片长更长但场景切换多；② 字幕覆盖：37部中文字幕番号中，2019年之后发行的占28部，早期作品字幕多来自爱好者补档；③ 评分基数：单品评分人数低于100的条目，分数波动大，参考价值有限。</div>
+        <h3>2019年为何成为分水岭</h3>
+        <p>2019年发行的SSNI-400之后番号，普遍在三个方面与前期不同。第一，片长从平均150分钟拉长到180分钟以上，SSNI-587达到210分钟。第二，剧本署名出现固定编剧（如“青木”）的编号作品，叙事连贯性较早期散点式场景更强。第三，中文字幕的同步发行比例上升，SSNI-412的字幕版与无字幕版发行间隔不到两个月。</p>
+        <p>从观众讨论看，2019年作品在“剧情合理性”一项的提及率比2017年高出约两倍。这一变化与S1当年调整制作体制有关——据2019年3月《AV监督》杂志的访谈，S1将部分作品的策划周期从三个月延长到五个月，编剧参与度提高。该说法目前只有杂志一面之词，尚未见厂牌官方确认，属于媒体转述层级。</p>
+        <h3>共演番号的稀缺性与判断</h3>
+        <p>桥本有菜的共演作品集中在2018至2019年，番号数量不超过20部。SNIS-901（与三上悠亚）是其中讨论度最高的一部，二手市场溢价约30%至50%。判断一部共演番号是否值得追踪，看两点：对手演员的搭配频率与两人在片中的对手戏时长占比。SNIS-901的第二段两人同框时间约40分钟，占全片近三成；部分共演番号同框仅15分钟，其余为单人段落拼接。</p>
+        <p>另一类容易混淆的是“合集”与“共演”。SSNI-520是引退纪念合辑，素材来自六部旧作加新采访，不属于共演。区分方法看番号说明中的“出演”字段：共演标注两人以上，合辑标注“他”或“总集编”。</p>
+      </div>
+    </section>
+
+    <!-- 6. 体验指南 -->
+    <section class="section-block" id="guide">
+      <div class="section-head"><h2>观看路径与判断</h2></div>
+      <div class="guide-steps">
+        <div class="guide-step"><h3>先定方向：剧情向还是场景向</h3><p>剧情向优先SSNI-412、SSNI-587，对白多、节奏慢；场景向优先SNIS-819、SIVR-018，外景和VR格式带来不同观感。两类交替看不容易审美疲劳。</p></div>
+        <div class="guide-step"><h3>再查字幕与片源版本</h3><p>中文字幕番号共37部，2019年后发行的占多数。早期作品的字幕补档质量参差，SNIS-819的1080p修复版字幕轴匹配度最好，SIVR-018需手动调比例。</p></div>
+        <div class="guide-step"><h3>最后比评分基数与片长</h3><p>评分人数低于100的条目谨慎参考。片长180分钟以上的作品适合整段观看，120分钟以下的更适合碎片时间。SNIS-901共演段落集中在后半段，可跳读。</p></div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="section-block" id="faq">
+      <div class="section-head"><h2>常见问答</h2></div>
+      <div class="faq-list">
+        <details class="faq-item"><summary>SNIS-819 有没有中文字幕版本？</summary><div class="faq-answer">有。中文字幕版于2026年11月7日补档，画质修复至1080p，字幕由“番号补完计划”组制作，时间轴匹配BD源。无字幕版发行更早，二手市场两者价差约40元。</div></details>
+        <details class="faq-item"><summary>桥本有菜的VR作品哪部适合入门？</summary><div class="faq-answer">SIVR-018是2017年发行的早期VR番号，第一视角固定机位，片长45分钟，对头显兼容性要求低。在Quest 3上需手动设为16:9比例，默认设置会有裁切。后续VR作品机位更复杂，建议从这部开始适应。</div></details>
+        <details class="faq-item"><summary>SSNI-412 和 SNIS-819 哪部评分更高？</summary><div class="faq-answer">SNIS-819 在多个评分站点的加权均分是4.6，SSNI-412是4.5。差距在误差范围内，但SNIS-819的评分基数约2.1k，SSNI-412约1.8k，前者样本稍大。两部题材差异大，按偏好选比按分数选更实际。</div></details>
+        <details class="faq-item"><summary>共演作品和合辑怎么区分？</summary><div class="faq-answer">看番号说明中的“出演”字段。共演标注两人以上，如SNIS-901标注三上悠亚与桥本有菜；合辑标注“他”或“总集编”，如SSNI-520是六部旧作片段加新采访，不算共演。</div></details>
+        <details class="faq-item"><summary>2019年之后的番号为什么片长变长？</summary><div class="faq-answer">2019年S1调整了制作体制，部分作品的策划周期从三个月延长到五个月，编剧参与度提高，片长从平均150分钟拉长到180分钟以上。该说法来自2019年3月《AV监督》杂志的访谈，厂牌官方未做确认。</div></details>
+        <details class="faq-item"><summary>早期番号的中文字幕质量怎么样？</summary><div class="faq-answer">2017年及之前的番号，中文字幕多由爱好者补档，时间轴偏移和翻译准确度参差。SNIS-819的补档版质量较好，SIVR-018的字幕存在个别术语未统一的情况。建议优先选2019年后发行的字幕版。</div></details>
+      </div>
+    </section>
+
+    <!-- 8. 用户评论 -->
+    <section class="section-block" id="comments">
+      <div class="section-head"><h2>用户评论</h2></div>
+      <div class="comment-grid">
+        <div class="comment-item"><div class="comment-user"><span class="avatar">A</span> 番号猎人 <span class="comment-time">11月7日</span></div>SNIS-819的温泉场景拍得确实好，箱根外景两天不是白待的。但后半段剧情有点拖，1.5倍速看完的。</div>
+        <div class="comment-item"><div class="comment-user"><span class="avatar">B</span> 悠亚的粉丝 <span class="comment-time">11月7日</span></div>SNIS-901两人同框那段反复看了三遍，对手戏比单人段落自然太多。就是二手价格炒得离谱。</div>
+        <div class="comment-item"><div class="comment-user"><span class="avatar">C</span> 棚内派 <span class="comment-time">11月6日</span></div>SSNI-412的剧本在同类里算扎实的，办公室设定不违和。但灯光太亮了，少了点生活感。</div>
+        <div class="comment-item"><div class="comment-user"><span class="avatar">D</span> 只看VR <span class="comment-time">11月6日</span></div>SIVR-018在Pico 4上默认比例真的会裁边，手动改16:9才正常。2017年的VR放到现在看画质有点糊，但视角的沉浸感还在。</div>
+        <div class="comment-item"><div class="comment-user"><span class="avatar">E</span> 字幕组观察员 <span class="comment-time">11月5日</span></div>“番号补完计划”做的SNIS-819字幕质量比之前那版好，术语统一了。不过SSNI-587的字幕有一处时间轴提前了半秒，影响不大。</div>
+        <div class="comment-item"><div class="comment-user"><span class="avatar">F</span> 路人观众 <span class="comment-time">11月5日</span></div>之前只听说过名字，按这个单子看了SSNI-587，确实像日剧，生活细节多。就是210分钟太长了，分两次才看完。</div>
+        <div class="comment-item"><div class="comment-user"><span class="avatar">G</span> 收藏癖 <span class="comment-time">11月4日</span></div>SSNI-520引退合辑里的采访段落比正片有意思，讲了不少拍摄时的细节。合辑本身剪辑有点碎。</div>
+        <div class="comment-item"><div class="comment-user"><span class="avatar">H</span> 不吐不快 <span class="comment-time">11月4日</span></div>2017年那些VR作品现在看就是试验品，机位固定得死死的，动都不能动。SIVR-018已经是里面比较好的了。</div>
+        <div class="comment-item"><div class="comment-user"><span class="avatar">I</span> 评分党 <span class="comment-time">11月3日</span></div>SSNI-587评分4.7但评分基数才800多，SNIS-819基数2100多，前者分数虚高的可能性不小。等基数过1500再看。</div>
+        <div class="comment-item"><div class="comment-user"><span class="avatar">J</span> 外景爱好者 <span class="comment-time">11月3日</span></div>SNIS-819之后好像没再出过那么长的外景了，2019年基本都是棚内。不知道是预算问题还是别的原因。</div>
+        <div class="comment-item"><div class="comment-user"><span class="avatar">K</span> 潜水员 <span class="comment-time">11月2日</span></div>SSNI-412的编剧署名是“青木”，查了下他2019年参与了三部S1作品，叙事风格确实统一。这种固定编剧的做法值得关注。</div>
+        <div class="comment-item"><div class="comment-user"><span class="avatar">L</span> 随便看看 <span class="comment-time">11月2日</span></div>对番号不太懂，就看评分高的下了几部。SNIS-901共演那段确实不错，其他部分快进了。</div>
+        <div class="comment-item"><div class="comment-user"><span class="avatar">M</span> 怀旧派 <span class="comment-time">11月1日</span></div>2016年出道那几部SNIS-2XX其实也不错，校园设定虽然老套但拍得清爽。现在都没人提了。</div>
+        <div class="comment-item"><div class="comment-user"><span class="avatar">N</span> 数据控 <span class="comment-time">11月1日</span></div>共演番号不超过20部这个数字，按S1和Moodyz的发行记录对了一下，大概18部左右，差不太多。</div>
+        <div class="comment-item"><div class="comment-user"><span class="avatar">O</span> 音质优先 <span class="comment-time">10月31日</span></div>SNIS-819的BD源音轨比流媒体版好不少，环境声明显更清楚。建议有条件的还是收碟。</div>
+        <div class="comment-item"><div class="comment-user"><span class="avatar">P</span> 路过 <span class="comment-time">10月30日</span></div>看到榜单进来的，SSNI-587排第三有点意外，前面两部没看过，找时间补一下。</div>
+      </div>
+    </section>
+
+    <!-- 9. 相关资讯 -->
+    <section class="section-block" id="news">
+      <div class="section-head"><h2>相关资讯</h2></div>
+      <div class="news-list">
+        <div class="news-item"><div class="news-title">SNIS-819 中文字幕补档带动二手价格上涨</div><div class="news-meta">2026年11月7日 · 番号补完计划</div><div class="news-summary">本周均价较上周上涨12%，有卖家将中文字幕版标价提高40元，成交记录显示11月6日单日售出7张。</div></div>
+        <div class="news-item"><div class="news-title">2019年度单体作品TOP20榜单公布 SSNI-587位列第三</div><div class="news-meta">2026年11月6日 · 评分聚合站</div><div class="news-summary">前两名分别为SSNI-412与SSNI-503，评分基数均超过500人。SSNI-587以210分钟片长和4.7分进入前三。</div></div>
+        <div class="news-item"><div class="news-title">三上悠亚×桥本有菜共演合集上线 附12张花絮照</div><div class="news-meta">2026年11月5日 · 共演档案</div><div class="news-summary">合集收录SNIS-901与SNIS-932，花絮照包含两张未公开的片场休息照，拍摄于2018年8月。</div></div>
+        <div class="news-item"><div class="news-title">SIVR-018 在Quest 3与Pico 4上的兼容性实测</div><div class="news-meta">2026年11月4日 · VR测试组</div><div class="news-summary">默认设置下画面左右各裁切约5%，手动设为16:9后恢复正常。Pico 4的视场角适配优于Quest 3。</div></div>
+        <div class="news-item"><div class="news-title">2017年VR作品专题页开放 收录SIVR前40号</div><div class="news-meta">2026年11月2日 · 番号档案</div><div class="news-summary">专题页标注了每部作品的拍摄机位、片长与头显兼容性，SIVR-018的推荐指数为四星半。</div></div>
+        <div class="news-item"><div class="news-title">SSNI-587 长评精选：同居题材的剧本节奏讨论</div><div class="news-meta">2026年11月1日 · 观众评议会</div><div class="news-summary">从87条长评中选出12条，其中7条提到“生活细节真实”，4条认为“中段节奏偏慢”，1条批评配乐。</div></div>
+      </div>
+    </section>
+
+    <!-- 10. 相关推荐 -->
+    <section class="section-block" id="recommend">
+      <div class="section-head"><h2>相关推荐</h2></div>
+      <div class="rec-tags">
+        <a href="/#featured" class="rec-tag">SNIS-932 樱空桃共演</a>
+        <a href="/#featured" class="rec-tag">SSNI-503 2019年度亚军</a>
+        <a href="/#featured" class="rec-tag">SIVR-040 VR后期作品</a>
+        <a href="/#featured" class="rec-tag">SNIS-2XX 出道初期校园设定</a>
+        <a href="/#featured" class="rec-tag">MIDE-580 单人表演向</a>
+        <a href="/#featured" class="rec-tag">SSNI-412 青木编剧作品</a>
+        <a href="/#featured" class="rec-tag">ABP-7XX Prestige早期番号</a>
+      </div>
+    </section>
+
+    <!-- 11. 补充板块 - 热门榜单 -->
+    <section class="section-block" id="rank">
+      <div class="section-head"><h2>热门番号榜单</h2></div>
+      <div class="rank-list">
+        <div class="rank-item"><span class="rank-num top3">1</span><span class="rank-name">SSNI-587 同居生活180天</span><span class="rank-score">4.7 · 2.6k收藏</span></div>
+        <div class="rank-item"><span class="rank-num top3">2</span><span class="rank-name">SNIS-819 温泉旅馆长篇</span><span class="rank-score">4.6 · 2.1k收藏</span></div>
+        <div class="rank-item"><span class="rank-num top3">3</span><span class="rank-name">SSNI-412 上司与部下</span><span class="rank-score">4.5 · 1.8k收藏</span></div>
+        <div class="rank-item"><span class="rank-num">4</span><span class="rank-name">SNIS-901 双人共演</span><span class="rank-score">4.4 · 3.2k收藏</span></div>
+        <div class="rank-item"><span class="rank-num">5</span><span class="rank-name">SSNI-520 引退纪念合辑</span><span class="rank-score">4.3 · 1.5k收藏</span></div>
+        <div class="rank-item"><span class="rank-num">6</span><span class="rank-name">SIVR-018 初VR体验</span><span class="rank-score">4.2 · 960收藏</span></div>
+      </div>
+    </section>
+
+    <!-- 12. 投稿互动 -->
+    <section class="section-block" id="interact">
+      <div class="interact-bar">
+        <div>
+          <h3>投稿你收藏的番号</h3>
+          <p>补充遗漏的经典条目，或分享中文字幕补档信息。每条投稿会经过人工核对后收录。</p>
+        </div>
+        <a href="/#interact" class="btn-white">提交番号 →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右辅助栏 -->
+  <aside class="right-rail" aria-label="辅助信息">
+    <div class="rail-card">
+      <h3>本周热度榜</h3>
+      <ul class="rail-list">
+        <li><span class="r-title">SNIS-819 温泉旅馆</span><span class="r-extra">2.1k</span></li>
+        <li><span class="r-title">SSNI-587 同居生活</span><span class="r-extra">2.6k</span></li>
+        <li><span class="r-title">SSNI-412 上司与部下</span><span class="r-extra">1.8k</span></li>
+        <li><span class="r-title">SNIS-901 双人共演</span><span class="r-extra">3.2k</span></li>
+        <li><span class="r-title">SIVR-018 VR初体验</span><span class="r-extra">960</span></li>
+      </ul>
+    </div>
+    <div class="rail-card">
+      <h3>番号速查</h3>
+      <ul class="rail-list">
+        <li><span class="r-title">SNIS 前缀</span><span class="r-extra">S1 2016-2018</span></li>
+        <li><span class="r-title">SSNI 前缀</span><span class="r-extra">S1 2018-2020</span></li>
+        <li><span class="r-title">SIVR 前缀</span><span class="r-extra">VR 2017-2018</span></li>
+        <li><span class="r-title">MIDE 前缀</span><span class="r-extra">Moodyz</span></li>
+        <li><span class="r-title">ABP 前缀</span><span class="r-extra">Prestige</span></li>
+      </ul>
+    </div>
+    <div class="rail-card">
+      <h3>标签索引</h3>
+      <div class="rail-tags">
+        <span class="tag">温泉</span><span class="tag">办公室</span><span class="tag">同居</span><span class="tag">VR</span><span class="tag">共演</span><span class="tag">中文字幕</span><span class="tag">外景</span><span class="tag">引退</span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- 页脚 -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="20" fill="#c13b4a"/><text x="50" y="68" font-size="52" text-anchor="middle" fill="#fffae8" font-family="serif">橋</text></svg>
+          <span class="footer-brand-text">桥本有菜经典作品番号</span>
+        </div>
+        <p class="footer-desc">覆盖2016年4月至2020年5月发行的单体、共演、VR及合辑番号。条目按季度更新，中文字幕补档信息随发行方动态同步。页脚所列数据截至2026年11月8日，与正文条目逐一对应。</p>
+      </div>
+      <div class="footer-col">
+        <h4>按番号</h4>
+        <ul>
+          <li><a href="/#featured">SNIS 系列</a></li>
+          <li><a href="/#featured">SSNI 系列</a></li>
+          <li><a href="/#featured">SIVR 系列</a></li>
+          <li><a href="/#featured">MIDE 系列</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>按题材</h4>
+        <ul>
+          <li><a href="/#featured">温泉外景</a></li>
+          <li><a href="/#featured">办公室剧情</a></li>
+          <li><a href="/#featured">同居恋爱</a></li>
+          <li><a href="/#featured">共演作品</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>互动</h4>
+        <ul>
+          <li><a href="/#interact">投稿番号</a></li>
+          <li><a href="/#comments">用户评论</a></li>
+          <li><a href="/#rank">热门榜单</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 桥本有菜经典作品番号 · 内容聚合示例页面</span>
+      <span>页面更新于2026年11月8日 · 对应条目：SNIS-819字幕补档、2019年度TOP20</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+<script>
+  // 菜单切换
+  const menuToggle = document.getElementById('menuToggle');
+  const navMain = document.getElementById('navMain');
+  const overlay = document.getElementById('overlay');
+
+  function closeMenu() {
+    navMain.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    overlay.classList.remove('show');
+  }
+
+  menuToggle.addEventListener('click', function () {
+    const isOpen = navMain.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    overlay.classList.toggle('show', isOpen);
+  });
+
+  overlay.addEventListener('click', closeMenu);
+  navMain.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  // 搜索筛选
+  const searchInput = document.getElementById('searchInput');
+  const searchBtn = document.getElementById('searchBtn');
+  const cards = document.querySelectorAll('#cardGrid .card');
+  const noResult = document.getElementById('searchNoResult');
+
+  function performSearch() {
+    const query = searchInput.value.trim().toLowerCase();
+    let visibleCount = 0;
+    cards.forEach(card => {
+      const title = (card.getAttribute('data-title') || '').toLowerCase();
+      const text = card.textContent.toLowerCase();
+      const match = !query || title.includes(query) || text.includes(query);
+      card.style.display = match ? '' : 'none';
+      if (match) visibleCount++;
+    });
+    noResult.classList.toggle('show', visibleCount === 0);
+  }
+
+  searchBtn.addEventListener('click', performSearch);
+  searchInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') performSearch();
+  });
+  searchInput.addEventListener('input', performSearch);
+
+  // 回到顶部
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', function () {
+    backTop.classList.toggle('show', window.scrollY > window.innerHeight);
+  });
+  backTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // 侧栏高亮
+  const sections = document.querySelectorAll('.section-block');
+  const sideLinks = document.querySelectorAll('.channel-sidebar a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        sideLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '/' + '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -60% 0px' });
+  sections.forEach(section => observer.observe(section));
+</script>
+
+<!-- FAQ结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "SNIS-819 有没有中文字幕版本？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "有。中文字幕版于2026年11月7日补档，画质修复至1080p，字幕由“番号补完计划”组制作，时间轴匹配BD源。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "桥本有菜的VR作品哪部适合入门？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SIVR-018是2017年发行的早期VR番号，第一视角固定机位，片长45分钟，对头显兼容性要求低。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "SSNI-412 和 SNIS-819 哪部评分更高？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SNIS-819 在多个评分站点的加权均分是4.6，SSNI-412是4.5。差距在误差范围内。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "共演作品和合辑怎么区分？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "看番号说明中的“出演”字段。共演标注两人以上，如SNIS-901；合辑标注“他”或“总集编”，如SSNI-520。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "2019年之后的番号为什么片长变长？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "2019年S1调整了制作体制，部分作品的策划周期从三个月延长到五个月，编剧参与度提高，片长从平均150分钟拉长到180分钟以上。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "早期番号的中文字幕质量怎么样？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "2017年及之前的番号，中文字幕多由爱好者补档，时间轴偏移和翻译准确度参差。建议优先选2019年后发行的字幕版。"
+      }
+    }
+  ]
+}
+</script>
+
+<!-- WebSite结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "桥本有菜经典作品番号",
+  "description": "汇总2016至2020年间桥本有菜的高评分番号、共演作品、单体企划与VR条目，按题材与发行时间整理。",
+  "inLanguage": "zh-CN"
+}
+</script>
+
+</body>
+              </html>
